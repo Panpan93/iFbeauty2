@@ -109,7 +109,7 @@
         //初始化导航控制器
     UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:denglu];
     //动画效果
-    nc.modalTransitionStyle = UIModalTransitionStylePartialCurl;
+    nc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     //导航条隐藏掉
     nc.navigationBarHidden = NO;
     //类似那个箭头 跳转到第二个界面

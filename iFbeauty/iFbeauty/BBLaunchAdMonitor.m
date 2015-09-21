@@ -89,11 +89,11 @@ static BBLaunchAdMonitor *monitor = nil;
     [container bringSubviewToFront:v];
     
     UIButton *showDetailBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [showDetailBtn setTitle:@"详情>>" forState:UIControlStateNormal];
+    [showDetailBtn setTitle:@"点击跳过>>" forState:UIControlStateNormal];
     [showDetailBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [showDetailBtn setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
     showDetailBtn.titleLabel.font = [UIFont systemFontOfSize:13];
-    showDetailBtn.frame = CGRectMake(f.size.width - 70, 30, 60, 30);
+    showDetailBtn.frame = CGRectMake(f.size.width - 72, 30, 72, 30);
     showDetailBtn.layer.borderColor = [UIColor whiteColor].CGColor;
     showDetailBtn.layer.borderWidth = 1.0f;
     showDetailBtn.layer.cornerRadius = 3.0f;

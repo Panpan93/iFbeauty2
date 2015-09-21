@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>D72DB0F4-062F-4047-A972-C53C337F7B9E</string>
 	<key>IDESourceControlProjectName</key>
-	<string>iFbeauty</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>D5530B217368828A9E80E40D2E1D0D4B282EEF11</key>
 		<string>https://github.com/Panpan93/iFbeauty2.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iFbeauty/iFbeauty.xcodeproj</string>
+	<string>iFbeauty/iFbeauty.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>D5530B217368828A9E80E40D2E1D0D4B282EEF11</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>D5530B217368828A9E80E40D2E1D0D4B282EEF11</string>
 			<key>IDESourceControlWCCName</key>
-			<string>iFbeauty</string>
+			<string>iFbeauty%203</string>
 		</dict>
 	</array>
 </dict>

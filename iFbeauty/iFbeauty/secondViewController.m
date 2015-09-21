@@ -7,10 +7,9 @@
 //
 
 #import "secondViewController.h"
-#import "SendViewController.h"
 
 @interface secondViewController ()
-- (IBAction)send:(UIButton *)sender forEvent:(UIEvent *)event;
+
 
 @end
 
@@ -43,13 +42,4 @@
 //    NSLog(@"进入附近好友界面");
 //}
 
-- (IBAction)send:(UIButton *)sender forEvent:(UIEvent *)event {
-    
-    SendViewController *send = [[SendViewController alloc] init];
-    send.title =@"发帖";
-    [self.navigationController pushViewController:send animated:YES];
-    NSLog(@"进入发帖界面");
-    
-
-}
 @end

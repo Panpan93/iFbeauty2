@@ -8,9 +8,11 @@
 
 #import "firstViewController.h"
 #import "ViewController.h"
+#import "SendpostViewController.h"
 
 @interface firstViewController ()
-- (IBAction)logIn:(UIBarButtonItem *)sender;
+
+- (IBAction)send:(UIBarButtonItem *)sender;
 
 @end
 
@@ -36,17 +38,18 @@
 }
 */
 
-- (IBAction)logIn:(UIBarButtonItem *)sender {
-    ViewController *denglu = [self.storyboard instantiateViewControllerWithIdentifier:@"denglu"];
+
+
+- (IBAction)send:(UIBarButtonItem *)sender {
     
-    //初始化导航控制器
+    SendpostViewController *denglu = [self.storyboard instantiateViewControllerWithIdentifier:@"send"];
     UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:denglu];
-    //动画效果
+       //动画效果
     nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    //导航条隐藏掉
-    nc.navigationBarHidden = NO;
-    //类似那个箭头 跳转到第二个界面
+        //导航条隐藏掉
+    nc.navigationBarHidden = YES;
+        //类似那个箭头 跳转到第二个界面
     [self presentViewController:nc animated:YES completion:nil];
-    
+
 }
 @end

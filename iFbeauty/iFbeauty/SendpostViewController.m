@@ -1,20 +1,20 @@
 //
-//  SendViewController.m
+//  SendpostViewController.m
 //  iFbeauty
 //
-//  Created by 王梦雅 on 15/9/20.
+//  Created by 王梦雅 on 15/9/21.
 //  Copyright (c) 2015年 第八组. All rights reserved.
 //
 
-#import "SendViewController.h"
+#import "SendpostViewController.h"
 
-@interface SendViewController ()
+@interface SendpostViewController ()
 - (IBAction)pickAction:(UITapGestureRecognizer *)sender;
 - (IBAction)saveAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
 @end
 
-@implementation SendViewController
+@implementation SendpostViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,17 +36,17 @@
         [Utilities popUpAlertViewWithMsg:@"请选择一张照片" andTitle:nil];
         return;
     }
-//    if ([title isEqualToString:@""] || [detail isEqualToString:@""]) {
-//        [Utilities popUpAlertViewWithMsg:@"请填写所有信息" andTitle:nil];
-//        return;
-//    }
+    //    if ([title isEqualToString:@""] || [detail isEqualToString:@""]) {
+    //        [Utilities popUpAlertViewWithMsg:@"请填写所有信息" andTitle:nil];
+    //        return;
+    //    }
     
     //创建一个item
     PFObject *item = [PFObject objectWithClassName:@"Item"];
     item[@"title"] = title;
     item[@"detail"] = detail;
     item[@"comment"] = @"";
-        
+    
     //设置照片的上传
     NSData *photoData = UIImagePNGRepresentation(_imageView.image);
     PFFile *photoFile = [PFFile fileWithName:@"photo.png" data:photoData];
@@ -69,7 +69,7 @@
             [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
         }
     }];
-
+    
 }
 
 - (IBAction)pickAction:(UITapGestureRecognizer *)sender {
@@ -77,7 +77,7 @@
     [actionSheet setExclusiveTouch:YES];
     actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
     [actionSheet showInView:self.view];
-
+    
     
 }
 

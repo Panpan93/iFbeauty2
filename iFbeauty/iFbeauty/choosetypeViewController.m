@@ -16,15 +16,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self requestData];
    // _tableView.tableFooterView = [[UIView alloc] init]; //去掉多余的tableView下划线
 }
 
 - (void)requestData {
     //    PFUser *currentUser = [PFUser currentUser];
     PFQuery *query = [PFQuery queryWithClassName:@"Type"];
+   
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
         if (!error) {
+            NSLog(@"%@",query);
+
             _objectsForShow = returnedObjects;
             NSLog(@"%@", _objectsForShow);
         } else {

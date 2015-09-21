@@ -11,6 +11,8 @@
 		214C1B821BAE87AB005823D2 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 214C1B7E1BAE87AB005823D2 /* SVProgressHUD.m */; };
 		214C1B831BAE87AB005823D2 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 214C1B801BAE87AB005823D2 /* SVIndefiniteAnimatedView.m */; };
 		214C1B851BAE8832005823D2 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 214C1B841BAE8832005823D2 /* SVProgressHUD.bundle */; };
+		21A658021BAFAC5900685F6A /* SendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A658001BAFAC5900685F6A /* SendViewController.m */; };
+		21A658031BAFAC5900685F6A /* SendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A658011BAFAC5900685F6A /* SendViewController.xib */; };
 		757337481BACF7DE00DD08E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 757337471BACF7DE00DD08E1 /* main.m */; };
 		7573374B1BACF7DE00DD08E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7573374A1BACF7DE00DD08E1 /* AppDelegate.m */; };
 		7573374E1BACF7DF00DD08E1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7573374D1BACF7DF00DD08E1 /* ViewController.m */; };
@@ -77,6 +79,9 @@
 		214C1B7F1BAE87AB005823D2 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		214C1B801BAE87AB005823D2 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		214C1B841BAE8832005823D2 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		21A657FF1BAFAC5900685F6A /* SendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendViewController.h; path = iFbeauty/SendViewController.h; sourceTree = "<group>"; };
+		21A658001BAFAC5900685F6A /* SendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendViewController.m; path = iFbeauty/SendViewController.m; sourceTree = "<group>"; };
+		21A658011BAFAC5900685F6A /* SendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SendViewController.xib; path = iFbeauty/SendViewController.xib; sourceTree = "<group>"; };
 		757337421BACF7DE00DD08E1 /* iFbeauty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFbeauty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		757337461BACF7DE00DD08E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		757337471BACF7DE00DD08E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -265,6 +270,9 @@
 				75D8B3251BAD448B007DE2C2 /* secondViewController.m */,
 				757AA0511BAEA61C00AB2C2C /* MineViewController.h */,
 				757AA0521BAEA61C00AB2C2C /* MineViewController.m */,
+				21A657FF1BAFAC5900685F6A /* SendViewController.h */,
+				21A658001BAFAC5900685F6A /* SendViewController.m */,
+				21A658011BAFAC5900685F6A /* SendViewController.xib */,
 			);
 			name = controller;
 			path = ..;
@@ -415,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				757337511BACF7DF00DD08E1 /* Main.storyboard in Resources */,
+				21A658031BAFAC5900685F6A /* SendViewController.xib in Resources */,
 				757337561BACF7DF00DD08E1 /* LaunchScreen.xib in Resources */,
 				757337531BACF7DF00DD08E1 /* Images.xcassets in Resources */,
 				214C1B851BAE8832005823D2 /* SVProgressHUD.bundle in Resources */,
@@ -435,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21A658021BAFAC5900685F6A /* SendViewController.m in Sources */,
 				75D8B32F1BAD448B007DE2C2 /* registeredViewController.m in Sources */,
 				7573374E1BACF7DF00DD08E1 /* ViewController.m in Sources */,
 				75D8B3321BAD448B007DE2C2 /* TabViewController.m in Sources */,

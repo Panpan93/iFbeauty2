@@ -17,7 +17,6 @@
 		756379861BB12AA0002F5350 /* messageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 756379851BB12AA0002F5350 /* messageTableViewCell.m */; };
 		756379891BB14FA0002F5350 /* personalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 756379881BB14FA0002F5350 /* personalTableViewCell.m */; };
 		7563798C1BB14FC3002F5350 /* personalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7563798B1BB14FC3002F5350 /* personalViewController.m */; };
-		7563798F1BB150C0002F5350 /* usercellTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7563798E1BB150C0002F5350 /* usercellTableViewController.m */; };
 		757337481BACF7DE00DD08E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 757337471BACF7DE00DD08E1 /* main.m */; };
 		7573374B1BACF7DE00DD08E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7573374A1BACF7DE00DD08E1 /* AppDelegate.m */; };
 		7573374E1BACF7DF00DD08E1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7573374D1BACF7DF00DD08E1 /* ViewController.m */; };
@@ -95,8 +94,6 @@
 		756379881BB14FA0002F5350 /* personalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = personalTableViewCell.m; sourceTree = "<group>"; };
 		7563798A1BB14FC3002F5350 /* personalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = personalViewController.h; sourceTree = "<group>"; };
 		7563798B1BB14FC3002F5350 /* personalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = personalViewController.m; sourceTree = "<group>"; };
-		7563798D1BB150C0002F5350 /* usercellTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = usercellTableViewController.h; sourceTree = "<group>"; };
-		7563798E1BB150C0002F5350 /* usercellTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = usercellTableViewController.m; sourceTree = "<group>"; };
 		757337421BACF7DE00DD08E1 /* iFbeauty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFbeauty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		757337461BACF7DE00DD08E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		757337471BACF7DE00DD08E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -209,8 +206,6 @@
 				756379881BB14FA0002F5350 /* personalTableViewCell.m */,
 				7563798A1BB14FC3002F5350 /* personalViewController.h */,
 				7563798B1BB14FC3002F5350 /* personalViewController.m */,
-				7563798D1BB150C0002F5350 /* usercellTableViewController.h */,
-				7563798E1BB150C0002F5350 /* usercellTableViewController.m */,
 			);
 			name = Mine;
 			path = iFbeauty;
@@ -497,7 +492,6 @@
 				7573374B1BACF7DE00DD08E1 /* AppDelegate.m in Sources */,
 				75D8B3301BAD448B007DE2C2 /* secondViewController.m in Sources */,
 				75D8B32E1BAD448B007DE2C2 /* firstViewController.m in Sources */,
-				7563798F1BB150C0002F5350 /* usercellTableViewController.m in Sources */,
 				757AA0531BAEA61C00AB2C2C /* MineViewController.m in Sources */,
 				214C1B831BAE87AB005823D2 /* SVIndefiniteAnimatedView.m in Sources */,
 				751ED4CB1BAFC972000AF80B /* NewsViewController.m in Sources */,

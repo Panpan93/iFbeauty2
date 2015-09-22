@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface personalTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *photoview;
+@property (weak, nonatomic) IBOutlet UILabel *userName;
 
-@property (weak, nonatomic) IBOutlet UILabel *namelable;
+@property (weak, nonatomic) IBOutlet UITextField *editor;
 
 @end

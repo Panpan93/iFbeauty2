@@ -63,7 +63,7 @@
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
         if (!error) {
-            _objectsForShow = returnedObjects;
+         
             NSLog(@"%@", _objectsForShow);
             [_tableView reloadData];
         } else {

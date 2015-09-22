@@ -110,16 +110,16 @@
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
       //   [aiv stopAnimating];
         [SVProgressHUD dismiss];
-        //动画效果
-        CATransition *animation = [CATransition animation];
-        animation.duration = 1.0;//持续时间
-        animation.timingFunction = UIViewAnimationCurveEaseInOut;//缓慢的开始和结束
-        
-        animation.type = @"rippleEffect";//产生波纹效果
-        animation.subtype = kCATransitionFromBottom;//图标类型从左过度
-        [self.view.window.layer addAnimation:animation forKey:nil];
-        
-
+//        //动画效果
+//        CATransition *animation = [CATransition animation];
+//        animation.duration = 1.0;//持续时间
+//        animation.timingFunction = UIViewAnimationCurveEaseInOut;//缓慢的开始和结束
+//        
+//        animation.type = @"rippleEffect";//产生波纹效果
+//        animation.subtype = kCATransitionFromBottom;//图标类型从左过度
+//        [self.view.window.layer addAnimation:animation forKey:nil];
+//        
+//
 
         if (user) {
             [Utilities setUserDefaults:@"userName" content:username];//记住用户名

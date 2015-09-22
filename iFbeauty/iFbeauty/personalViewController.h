@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface personalViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *photoView;
+@property (weak, nonatomic) IBOutlet UILabel *uName;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property(strong,nonatomic)NSArray *objectviewshow;
+@property(strong,nonatomic)NSMutableArray *objectArray;
 
 @end

@@ -13,6 +13,10 @@
 @interface firstViewController ()
 
 - (IBAction)send:(UIBarButtonItem *)sender;
+- (IBAction)mrButton:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)mfButton:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)mtButton:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)dpButton:(UIButton *)sender forEvent:(UIEvent *)event;
 
 @end
 
@@ -51,5 +55,17 @@
         //类似那个箭头 跳转到第二个界面
     [self presentViewController:nc animated:YES completion:nil];
 
+}
+
+- (IBAction)mrButton:(UIButton *)sender forEvent:(UIEvent *)event {
+}
+
+- (IBAction)mfButton:(UIButton *)sender forEvent:(UIEvent *)event {
+}
+
+- (IBAction)mtButton:(UIButton *)sender forEvent:(UIEvent *)event {
+}
+
+- (IBAction)dpButton:(UIButton *)sender forEvent:(UIEvent *)event {
 }
 @end

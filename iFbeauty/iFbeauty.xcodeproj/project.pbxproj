@@ -19,6 +19,7 @@
 		754EB5B91BB0EF0E00D490DD /* PersonalinformViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 754EB5B71BB0EF0E00D490DD /* PersonalinformViewController.xib */; };
 		756379821BB1235D002F5350 /* persoCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 756379801BB1235D002F5350 /* persoCellViewController.m */; };
 		756379831BB1235D002F5350 /* persoCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756379811BB1235D002F5350 /* persoCellViewController.xib */; };
+		756379861BB12AA0002F5350 /* messageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 756379851BB12AA0002F5350 /* messageTableViewCell.m */; };
 		757337481BACF7DE00DD08E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 757337471BACF7DE00DD08E1 /* main.m */; };
 		7573374B1BACF7DE00DD08E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7573374A1BACF7DE00DD08E1 /* AppDelegate.m */; };
 		7573374E1BACF7DF00DD08E1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7573374D1BACF7DF00DD08E1 /* ViewController.m */; };
@@ -98,6 +99,8 @@
 		7563797F1BB1235D002F5350 /* persoCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = persoCellViewController.h; sourceTree = "<group>"; };
 		756379801BB1235D002F5350 /* persoCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = persoCellViewController.m; sourceTree = "<group>"; };
 		756379811BB1235D002F5350 /* persoCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = persoCellViewController.xib; sourceTree = "<group>"; };
+		756379841BB12AA0002F5350 /* messageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = messageTableViewCell.h; path = iFbeauty/messageTableViewCell.h; sourceTree = "<group>"; };
+		756379851BB12AA0002F5350 /* messageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = messageTableViewCell.m; path = iFbeauty/messageTableViewCell.m; sourceTree = "<group>"; };
 		757337421BACF7DE00DD08E1 /* iFbeauty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFbeauty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		757337461BACF7DE00DD08E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		757337471BACF7DE00DD08E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -312,6 +315,8 @@
 				75D8B3291BAD448B007DE2C2 /* TabViewController.m */,
 				75D8B3201BAD448B007DE2C2 /* firstViewController.h */,
 				75D8B3211BAD448B007DE2C2 /* firstViewController.m */,
+				756379841BB12AA0002F5350 /* messageTableViewCell.h */,
+				756379851BB12AA0002F5350 /* messageTableViewCell.m */,
 				75D8B3241BAD448B007DE2C2 /* secondViewController.h */,
 				75D8B3251BAD448B007DE2C2 /* secondViewController.m */,
 				757AA0511BAEA61C00AB2C2C /* MineViewController.h */,
@@ -511,6 +516,7 @@
 				75D8B2F21BAD0CD8007DE2C2 /* ECSlidingAnimationController.m in Sources */,
 				75D8B3331BAD448B007DE2C2 /* Utilities.m in Sources */,
 				757337481BACF7DE00DD08E1 /* main.m in Sources */,
+				756379861BB12AA0002F5350 /* messageTableViewCell.m in Sources */,
 				75D8B2F11BAD0CD8007DE2C2 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				214C1B821BAE87AB005823D2 /* SVProgressHUD.m in Sources */,
 				75D8B2F61BAD0CD8007DE2C2 /* UIViewController+ECSlidingViewController.m in Sources */,

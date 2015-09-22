@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface firstViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *scrollVIew;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

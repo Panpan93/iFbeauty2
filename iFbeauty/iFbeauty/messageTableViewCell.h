@@ -11,7 +11,8 @@
 @interface messageTableViewCell : UITableViewCell
 @property (strong,nonatomic)NSDictionary *titleName;
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageview;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end

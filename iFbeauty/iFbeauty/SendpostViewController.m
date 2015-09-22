@@ -19,6 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    _pickerarray=@[@"关于美容",@"关于美发",@"关于美体",@"关于搭配"];
+    _sexarray = @[@"关于男士",@"关于女士"];
+    
+    self.picker.delegate=self;//设置代理
+    self.picker.dataSource=self;//设置数据源
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,25 +33,27 @@
 }
 
 - (IBAction)saveAction:(UIButton *)sender forEvent:(UIEvent *)event {
-    
     NSString *title = _titleTF.text;
     NSString *detail = _detailTV.text;//得到用户手动输入的东西
-    
+    NSString *type=[NSString stringWithFormat:@"%@",[_pickerarray objectAtIndex:[self.picker selectedRowInComponent:0]]] ;
+    NSString *msg=[NSString stringWithFormat:@"%@",[_sexarray objectAtIndex:[self.picker selectedRowInComponent:1]]] ;
     //判断照片的情况
     if (_imageView.image == nil) {
         [Utilities popUpAlertViewWithMsg:@"请选择一张照片" andTitle:nil];
         return;
     }
-    //    if ([title isEqualToString:@""] || [detail isEqualToString:@""]) {
-    //        [Utilities popUpAlertViewWithMsg:@"请填写所有信息" andTitle:nil];
-    //        return;
-    //    }
+    if ([title isEqualToString:@""] || [detail isEqualToString:@""]) {
+        [Utilities popUpAlertViewWithMsg:@"请填写所有信息" andTitle:nil];
+        return;
+    }
     
     //创建一个item
     PFObject *item = [PFObject objectWithClassName:@"Item"];
     item[@"title"] = title;
     item[@"detail"] = detail;
     item[@"comment"] = @"";
+    item[@"typetei"] = type;
+    item[@"sex"] = msg;
     
     //设置照片的上传
     NSData *photoData = UIImagePNGRepresentation(_imageView.image);
@@ -56,12 +64,10 @@
     PFUser *currentUser = [PFUser currentUser];
     item[@"owner"] = currentUser;
     
-    //调出菊花  活动指示器
-    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
-    
+    [SVProgressHUD show];
     //判断上传成功
     [item saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)/*如果成功的插入数据库*/ {
-        [aiv stopAnimating];
+        [SVProgressHUD dismiss];
         if (succeeded) {
             [[NSNotificationCenter defaultCenter] performSelectorOnMainThread:@selector(postNotification:) withObject:[NSNotification notificationWithName:@"refreshMine" object:self] waitUntilDone:YES];//通过通知去刷新列表。自动刷新，
             [self.navigationController popViewControllerAnimated:YES];//刷新页面
@@ -71,6 +77,37 @@
     }];
     
 }
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 2;
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    if (component==0)
+    {
+        return [_sexarray count];
+    }
+    else
+    {
+        return [_pickerarray count];
+    }
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    if (component == 0)
+    {
+        return [_sexarray objectAtIndex:row];
+    }
+    else
+    {
+        return [_pickerarray objectAtIndex:row];
+    }
+}
+
+
 
 - (IBAction)pickAction:(UITapGestureRecognizer *)sender {
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照", @"从相册选择", nil];

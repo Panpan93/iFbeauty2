@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SendpostViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate,UIActionSheetDelegate>
+@interface SendpostViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate,UIActionSheetDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTF;
 @property (weak, nonatomic) IBOutlet UITextView *detailTV;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UIButton *typeB;
 
+@property (weak, nonatomic) IBOutlet UIPickerView *picker;
+@property(nonatomic,strong)  NSArray *pickerarray;
+@property(nonatomic,strong)  NSArray *sexarray;
 
 @property (strong, nonatomic) UIImagePickerController *imagePickerController;
 

@@ -12,7 +12,6 @@
 		214C1B831BAE87AB005823D2 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 214C1B801BAE87AB005823D2 /* SVIndefiniteAnimatedView.m */; };
 		214C1B851BAE8832005823D2 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 214C1B841BAE8832005823D2 /* SVProgressHUD.bundle */; };
 		21A658101BAFFECC00685F6A /* SendpostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6580F1BAFFECC00685F6A /* SendpostViewController.m */; };
-		21A658131BAFFF2500685F6A /* choosetypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A658121BAFFF2500685F6A /* choosetypeViewController.m */; };
 		751ED4CB1BAFC972000AF80B /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751ED4C91BAFC972000AF80B /* NewsViewController.m */; };
 		751ED4CC1BAFC972000AF80B /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 751ED4CA1BAFC972000AF80B /* NewsViewController.xib */; };
 		756379861BB12AA0002F5350 /* messageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 756379851BB12AA0002F5350 /* messageTableViewCell.m */; };
@@ -87,8 +86,6 @@
 		214C1B841BAE8832005823D2 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		21A6580E1BAFFECC00685F6A /* SendpostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendpostViewController.h; path = iFbeauty/SendpostViewController.h; sourceTree = "<group>"; };
 		21A6580F1BAFFECC00685F6A /* SendpostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendpostViewController.m; path = iFbeauty/SendpostViewController.m; sourceTree = "<group>"; };
-		21A658111BAFFF2500685F6A /* choosetypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = choosetypeViewController.h; path = iFbeauty/choosetypeViewController.h; sourceTree = "<group>"; };
-		21A658121BAFFF2500685F6A /* choosetypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = choosetypeViewController.m; path = iFbeauty/choosetypeViewController.m; sourceTree = "<group>"; };
 		751ED4C81BAFC972000AF80B /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		751ED4C91BAFC972000AF80B /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		751ED4CA1BAFC972000AF80B /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
@@ -198,8 +195,6 @@
 			children = (
 				21A6580E1BAFFECC00685F6A /* SendpostViewController.h */,
 				21A6580F1BAFFECC00685F6A /* SendpostViewController.m */,
-				21A658111BAFFF2500685F6A /* choosetypeViewController.h */,
-				21A658121BAFFF2500685F6A /* choosetypeViewController.m */,
 			);
 			name = fatie;
 			sourceTree = "<group>";
@@ -493,7 +488,6 @@
 			files = (
 				75D8B32F1BAD448B007DE2C2 /* registeredViewController.m in Sources */,
 				756379891BB14FA0002F5350 /* personalTableViewCell.m in Sources */,
-				21A658131BAFFF2500685F6A /* choosetypeViewController.m in Sources */,
 				7573374E1BACF7DF00DD08E1 /* ViewController.m in Sources */,
 				75D8B3321BAD448B007DE2C2 /* TabViewController.m in Sources */,
 				75D8B3311BAD448B007DE2C2 /* storageMgr.m in Sources */,

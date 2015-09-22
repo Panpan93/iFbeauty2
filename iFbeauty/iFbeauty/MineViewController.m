@@ -9,6 +9,7 @@
 #import "MineViewController.h"
 #import "NewsViewController.h"
 #import "ViewController.h"
+#import "PersonalinformViewController.h"
 
 @interface MineViewController ()
 - (IBAction)sender:(UIButton *)sender forEvent:(UIEvent *)event;//帖子
@@ -16,6 +17,7 @@
 - (IBAction)focus:(UIButton *)sender forEvent:(UIEvent *)event;//关注
 - (IBAction)tapGester:(UITapGestureRecognizer *)sender;
 - (IBAction)logIn:(UIBarButtonItem *)sender;
+- (IBAction)tuichu:(UIButton *)sender forEvent:(UIEvent *)event;
 @end
 
 @implementation MineViewController
@@ -23,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     hidden=NO;
-    _objectforshow=[[NSMutableArray alloc]initWithObjects:@"时尚芭莎",@"收藏的帖子",@"收藏的店铺",@"购物",@"设置", nil];
+    _objectforshow=[[NSMutableArray alloc]initWithObjects:@"个人信息",@"时尚芭莎",@"收藏的帖子",@"收藏的店铺",@"购物",@"设置", nil];
 //    _tableIV.delegate=self;
 //    _tableIV.dataSource=self;
     _tableIV.tableFooterView=[[UIView alloc]init];//不显示多余的分隔符
@@ -32,7 +34,7 @@
 -(void)read
 {
     PFUser *currentUser = [PFUser currentUser];
-    _usernameLB.text = currentUser[@"username"];
+   _usernameLB.text = currentUser[@"username"];
     
     PFFile *photo = currentUser[@"photo"];
     [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
@@ -52,6 +54,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     //    return self.objectforshow.count;
@@ -70,7 +74,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.tableIV deselectRowAtIndexPath:indexPath animated:YES];
     
-    NewsViewController *news = [[NewsViewController alloc] init];
+    PersonalinformViewController *news = [[PersonalinformViewController alloc] init];
     news.title = @"时尚芭莎";
     [news setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:news animated:YES];
@@ -102,7 +106,7 @@
     actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
     [actionSheet showInView:self.view];
     }
-//
+    //登录
 - (IBAction)logIn:(UIBarButtonItem *)sender {
       ViewController *denglu = [self.storyboard instantiateViewControllerWithIdentifier:@"denglu"];
     if (!hidden) {
@@ -117,6 +121,14 @@
           _buttonItem.enabled=YES;
         
     }
+}
+//退出
+- (IBAction)tuichu:(UIButton *)sender forEvent:(UIEvent *)event {
+    
+    [PFUser logOut];//Parse 退出
+     [self dismissViewControllerAnimated:YES completion:nil];//点击退出返回首页
+    
+
 }
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 2)

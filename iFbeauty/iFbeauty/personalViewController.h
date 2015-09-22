@@ -1,5 +1,5 @@
 //
-//  persoCellViewController.h
+//  personalViewController.h
 //  iFbeauty
 //
 //  Created by  张艳芳 on 15/9/22.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface persoCellViewController : UIViewController
+@interface personalViewController : UIViewController
 
 @end

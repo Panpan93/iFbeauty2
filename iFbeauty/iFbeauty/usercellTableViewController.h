@@ -1,5 +1,5 @@
 //
-//  PersonalinformViewController.h
+//  usercellTableViewController.h
 //  iFbeauty
 //
 //  Created by  张艳芳 on 15/9/22.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PersonalinformViewController : UIViewController
+@interface usercellTableViewController : UITableViewController
 
 @end

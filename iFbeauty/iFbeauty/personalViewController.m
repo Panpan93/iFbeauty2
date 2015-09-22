@@ -1,22 +1,22 @@
 //
-//  persoCellViewController.m
+//  personalViewController.m
 //  iFbeauty
 //
 //  Created by  张艳芳 on 15/9/22.
 //  Copyright (c) 2015年 第八组. All rights reserved.
 //
 
-#import "persoCellViewController.h"
+#import "personalViewController.h"
 
-@interface persoCellViewController ()
+@interface personalViewController ()
 
 @end
 
-@implementation persoCellViewController
+@implementation personalViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

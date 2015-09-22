@@ -15,11 +15,10 @@
 		21A658131BAFFF2500685F6A /* choosetypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A658121BAFFF2500685F6A /* choosetypeViewController.m */; };
 		751ED4CB1BAFC972000AF80B /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751ED4C91BAFC972000AF80B /* NewsViewController.m */; };
 		751ED4CC1BAFC972000AF80B /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 751ED4CA1BAFC972000AF80B /* NewsViewController.xib */; };
-		754EB5B81BB0EF0E00D490DD /* PersonalinformViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 754EB5B61BB0EF0E00D490DD /* PersonalinformViewController.m */; };
-		754EB5B91BB0EF0E00D490DD /* PersonalinformViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 754EB5B71BB0EF0E00D490DD /* PersonalinformViewController.xib */; };
-		756379821BB1235D002F5350 /* persoCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 756379801BB1235D002F5350 /* persoCellViewController.m */; };
-		756379831BB1235D002F5350 /* persoCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756379811BB1235D002F5350 /* persoCellViewController.xib */; };
 		756379861BB12AA0002F5350 /* messageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 756379851BB12AA0002F5350 /* messageTableViewCell.m */; };
+		756379891BB14FA0002F5350 /* personalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 756379881BB14FA0002F5350 /* personalTableViewCell.m */; };
+		7563798C1BB14FC3002F5350 /* personalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7563798B1BB14FC3002F5350 /* personalViewController.m */; };
+		7563798F1BB150C0002F5350 /* usercellTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7563798E1BB150C0002F5350 /* usercellTableViewController.m */; };
 		757337481BACF7DE00DD08E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 757337471BACF7DE00DD08E1 /* main.m */; };
 		7573374B1BACF7DE00DD08E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7573374A1BACF7DE00DD08E1 /* AppDelegate.m */; };
 		7573374E1BACF7DF00DD08E1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7573374D1BACF7DF00DD08E1 /* ViewController.m */; };
@@ -93,14 +92,14 @@
 		751ED4C81BAFC972000AF80B /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		751ED4C91BAFC972000AF80B /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		751ED4CA1BAFC972000AF80B /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
-		754EB5B51BB0EF0E00D490DD /* PersonalinformViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalinformViewController.h; sourceTree = "<group>"; };
-		754EB5B61BB0EF0E00D490DD /* PersonalinformViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalinformViewController.m; sourceTree = "<group>"; };
-		754EB5B71BB0EF0E00D490DD /* PersonalinformViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalinformViewController.xib; sourceTree = "<group>"; };
-		7563797F1BB1235D002F5350 /* persoCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = persoCellViewController.h; sourceTree = "<group>"; };
-		756379801BB1235D002F5350 /* persoCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = persoCellViewController.m; sourceTree = "<group>"; };
-		756379811BB1235D002F5350 /* persoCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = persoCellViewController.xib; sourceTree = "<group>"; };
 		756379841BB12AA0002F5350 /* messageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = messageTableViewCell.h; path = iFbeauty/messageTableViewCell.h; sourceTree = "<group>"; };
 		756379851BB12AA0002F5350 /* messageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = messageTableViewCell.m; path = iFbeauty/messageTableViewCell.m; sourceTree = "<group>"; };
+		756379871BB14FA0002F5350 /* personalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = personalTableViewCell.h; sourceTree = "<group>"; };
+		756379881BB14FA0002F5350 /* personalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = personalTableViewCell.m; sourceTree = "<group>"; };
+		7563798A1BB14FC3002F5350 /* personalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = personalViewController.h; sourceTree = "<group>"; };
+		7563798B1BB14FC3002F5350 /* personalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = personalViewController.m; sourceTree = "<group>"; };
+		7563798D1BB150C0002F5350 /* usercellTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = usercellTableViewController.h; sourceTree = "<group>"; };
+		7563798E1BB150C0002F5350 /* usercellTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = usercellTableViewController.m; sourceTree = "<group>"; };
 		757337421BACF7DE00DD08E1 /* iFbeauty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFbeauty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		757337461BACF7DE00DD08E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		757337471BACF7DE00DD08E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -211,12 +210,12 @@
 				751ED4C81BAFC972000AF80B /* NewsViewController.h */,
 				751ED4C91BAFC972000AF80B /* NewsViewController.m */,
 				751ED4CA1BAFC972000AF80B /* NewsViewController.xib */,
-				754EB5B51BB0EF0E00D490DD /* PersonalinformViewController.h */,
-				754EB5B61BB0EF0E00D490DD /* PersonalinformViewController.m */,
-				754EB5B71BB0EF0E00D490DD /* PersonalinformViewController.xib */,
-				7563797F1BB1235D002F5350 /* persoCellViewController.h */,
-				756379801BB1235D002F5350 /* persoCellViewController.m */,
-				756379811BB1235D002F5350 /* persoCellViewController.xib */,
+				756379871BB14FA0002F5350 /* personalTableViewCell.h */,
+				756379881BB14FA0002F5350 /* personalTableViewCell.m */,
+				7563798A1BB14FC3002F5350 /* personalViewController.h */,
+				7563798B1BB14FC3002F5350 /* personalViewController.m */,
+				7563798D1BB150C0002F5350 /* usercellTableViewController.h */,
+				7563798E1BB150C0002F5350 /* usercellTableViewController.m */,
 			);
 			name = Mine;
 			path = iFbeauty;
@@ -470,12 +469,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				754EB5B91BB0EF0E00D490DD /* PersonalinformViewController.xib in Resources */,
 				757337511BACF7DF00DD08E1 /* Main.storyboard in Resources */,
 				757337561BACF7DF00DD08E1 /* LaunchScreen.xib in Resources */,
 				757337531BACF7DF00DD08E1 /* Images.xcassets in Resources */,
 				214C1B851BAE8832005823D2 /* SVProgressHUD.bundle in Resources */,
-				756379831BB1235D002F5350 /* persoCellViewController.xib in Resources */,
 				751ED4CC1BAFC972000AF80B /* NewsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,18 +492,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				75D8B32F1BAD448B007DE2C2 /* registeredViewController.m in Sources */,
+				756379891BB14FA0002F5350 /* personalTableViewCell.m in Sources */,
 				21A658131BAFFF2500685F6A /* choosetypeViewController.m in Sources */,
 				7573374E1BACF7DF00DD08E1 /* ViewController.m in Sources */,
 				75D8B3321BAD448B007DE2C2 /* TabViewController.m in Sources */,
 				75D8B3311BAD448B007DE2C2 /* storageMgr.m in Sources */,
-				754EB5B81BB0EF0E00D490DD /* PersonalinformViewController.m in Sources */,
 				75D8B2F51BAD0CD8007DE2C2 /* ECSlidingViewController.m in Sources */,
+				7563798C1BB14FC3002F5350 /* personalViewController.m in Sources */,
 				757AA04D1BAE803D00AB2C2C /* changePWViewController.m in Sources */,
 				7573374B1BACF7DE00DD08E1 /* AppDelegate.m in Sources */,
 				75D8B3301BAD448B007DE2C2 /* secondViewController.m in Sources */,
 				75D8B32E1BAD448B007DE2C2 /* firstViewController.m in Sources */,
+				7563798F1BB150C0002F5350 /* usercellTableViewController.m in Sources */,
 				757AA0531BAEA61C00AB2C2C /* MineViewController.m in Sources */,
-				756379821BB1235D002F5350 /* persoCellViewController.m in Sources */,
 				214C1B831BAE87AB005823D2 /* SVIndefiniteAnimatedView.m in Sources */,
 				751ED4CB1BAFC972000AF80B /* NewsViewController.m in Sources */,
 				75D8B2F41BAD0CD8007DE2C2 /* ECSlidingSegue.m in Sources */,

@@ -716,6 +716,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Vix-D9-2GA" id="w31-pw-e8Z"/>
+                                    <outlet property="delegate" destination="Vix-D9-2GA" id="V3f-jJ-MTm"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface firstViewController : UIViewController
+@interface firstViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+@property (strong, nonatomic) NSArray *objectsForShow;
+@property (strong, nonatomic) PFObject *hh;
 @property (weak, nonatomic) IBOutlet UITableView *scrollVIew;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

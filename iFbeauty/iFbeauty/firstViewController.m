@@ -9,6 +9,7 @@
 #import "firstViewController.h"
 #import "ViewController.h"
 #import "SendpostViewController.h"
+#import "messageTableViewCell.h"
 
 @interface firstViewController ()
 
@@ -57,7 +58,58 @@
 
 }
 
+
+- (void)requestData {
+    //    PFUser *currentUser = [PFUser currentUser];
+    //    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"Name == %@", currentUser];// 查询owner字段为当前用户的所有商品
+    PFQuery *query = [PFQuery queryWithClassName:@"Activity"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
+        if (!error) {
+            _objectsForShow = returnedObjects;
+            NSLog(@"%@", _objectsForShow);
+            [_tableView reloadData];
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
+
+// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    messageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];//复用Cell
+    
+    PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
+    cell.titleLabel.text = [NSString stringWithFormat:@"%@", object[@"title"]];
+    PFFile *photo = _hh[@"photot"];
+    [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:photoData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.imageView.image = image;
+            });
+        }
+    }];
+    //   NSInteger price = [object[@"price"] integerValue];
+    
+    
+    
+    
+    
+    
+    return cell;
+}
+
+
+
 - (IBAction)mrButton:(UIButton *)sender forEvent:(UIEvent *)event {
+    
 }
 
 - (IBAction)mfButton:(UIButton *)sender forEvent:(UIEvent *)event {

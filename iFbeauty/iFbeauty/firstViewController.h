@@ -10,7 +10,10 @@
 
 @interface firstViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property (strong, nonatomic) NSArray *objectsForShow;
-@property (weak, nonatomic) IBOutlet UITableView *scrollVIew;
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (strong,nonatomic) NSMutableArray * slideImages;
 
 @end

@@ -21,6 +21,10 @@
 		21D8FC411BB24CA8004DFC35 /* hairdressingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D8FC3F1BB24CA8004DFC35 /* hairdressingViewController.m */; };
 		21D8FC441BB24E53004DFC35 /* meifaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D8FC431BB24E53004DFC35 /* meifaTableViewCell.m */; };
 		21D8FC471BB24E68004DFC35 /* meifaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D8FC461BB24E68004DFC35 /* meifaViewController.m */; };
+		21D8FC4A1BB27618004DFC35 /* bodybuildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D8FC491BB27618004DFC35 /* bodybuildingViewController.m */; };
+		21D8FC4D1BB27627004DFC35 /* bodybuildingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D8FC4C1BB27627004DFC35 /* bodybuildingTableViewCell.m */; };
+		21D8FC501BB27CFA004DFC35 /* matchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D8FC4F1BB27CFA004DFC35 /* matchViewController.m */; };
+		21D8FC531BB27D0B004DFC35 /* matchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D8FC521BB27D0B004DFC35 /* matchTableViewCell.m */; };
 		751ED4CB1BAFC972000AF80B /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751ED4C91BAFC972000AF80B /* NewsViewController.m */; };
 		751ED4CC1BAFC972000AF80B /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 751ED4CA1BAFC972000AF80B /* NewsViewController.xib */; };
 		756379861BB12AA0002F5350 /* messageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 756379851BB12AA0002F5350 /* messageTableViewCell.m */; };
@@ -107,6 +111,14 @@
 		21D8FC431BB24E53004DFC35 /* meifaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = meifaTableViewCell.m; sourceTree = "<group>"; };
 		21D8FC451BB24E68004DFC35 /* meifaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = meifaViewController.h; sourceTree = "<group>"; };
 		21D8FC461BB24E68004DFC35 /* meifaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = meifaViewController.m; sourceTree = "<group>"; };
+		21D8FC481BB27618004DFC35 /* bodybuildingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bodybuildingViewController.h; sourceTree = "<group>"; };
+		21D8FC491BB27618004DFC35 /* bodybuildingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bodybuildingViewController.m; sourceTree = "<group>"; };
+		21D8FC4B1BB27627004DFC35 /* bodybuildingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bodybuildingTableViewCell.h; sourceTree = "<group>"; };
+		21D8FC4C1BB27627004DFC35 /* bodybuildingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bodybuildingTableViewCell.m; sourceTree = "<group>"; };
+		21D8FC4E1BB27CFA004DFC35 /* matchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matchViewController.h; sourceTree = "<group>"; };
+		21D8FC4F1BB27CFA004DFC35 /* matchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = matchViewController.m; sourceTree = "<group>"; };
+		21D8FC511BB27D0B004DFC35 /* matchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matchTableViewCell.h; sourceTree = "<group>"; };
+		21D8FC521BB27D0B004DFC35 /* matchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = matchTableViewCell.m; sourceTree = "<group>"; };
 		751ED4C81BAFC972000AF80B /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		751ED4C91BAFC972000AF80B /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		751ED4CA1BAFC972000AF80B /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
@@ -241,6 +253,14 @@
 				21D8FC431BB24E53004DFC35 /* meifaTableViewCell.m */,
 				21D8FC451BB24E68004DFC35 /* meifaViewController.h */,
 				21D8FC461BB24E68004DFC35 /* meifaViewController.m */,
+				21D8FC481BB27618004DFC35 /* bodybuildingViewController.h */,
+				21D8FC491BB27618004DFC35 /* bodybuildingViewController.m */,
+				21D8FC4B1BB27627004DFC35 /* bodybuildingTableViewCell.h */,
+				21D8FC4C1BB27627004DFC35 /* bodybuildingTableViewCell.m */,
+				21D8FC4E1BB27CFA004DFC35 /* matchViewController.h */,
+				21D8FC4F1BB27CFA004DFC35 /* matchViewController.m */,
+				21D8FC511BB27D0B004DFC35 /* matchTableViewCell.h */,
+				21D8FC521BB27D0B004DFC35 /* matchTableViewCell.m */,
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -537,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21D8FC4A1BB27618004DFC35 /* bodybuildingViewController.m in Sources */,
 				75D8B32F1BAD448B007DE2C2 /* registeredViewController.m in Sources */,
 				756379891BB14FA0002F5350 /* personalTableViewCell.m in Sources */,
 				7573374E1BACF7DF00DD08E1 /* ViewController.m in Sources */,
@@ -547,6 +568,8 @@
 				7563798C1BB14FC3002F5350 /* personalViewController.m in Sources */,
 				757AA04D1BAE803D00AB2C2C /* changePWViewController.m in Sources */,
 				7573374B1BACF7DE00DD08E1 /* AppDelegate.m in Sources */,
+				21D8FC531BB27D0B004DFC35 /* matchTableViewCell.m in Sources */,
+				21D8FC501BB27CFA004DFC35 /* matchViewController.m in Sources */,
 				75D8B3301BAD448B007DE2C2 /* secondViewController.m in Sources */,
 				75D8B32E1BAD448B007DE2C2 /* firstViewController.m in Sources */,
 				21D8FC441BB24E53004DFC35 /* meifaTableViewCell.m in Sources */,
@@ -557,6 +580,7 @@
 				21D8FC471BB24E68004DFC35 /* meifaViewController.m in Sources */,
 				21A658101BAFFECC00685F6A /* SendpostViewController.m in Sources */,
 				75D8B2F01BAD0CD8007DE2C2 /* BBLaunchAdMonitor.m in Sources */,
+				21D8FC4D1BB27627004DFC35 /* bodybuildingTableViewCell.m in Sources */,
 				75D8B2F31BAD0CD8007DE2C2 /* ECSlidingInteractiveTransition.m in Sources */,
 				75D8B2F21BAD0CD8007DE2C2 /* ECSlidingAnimationController.m in Sources */,
 				75D8B3331BAD448B007DE2C2 /* Utilities.m in Sources */,

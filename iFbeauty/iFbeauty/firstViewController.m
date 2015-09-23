@@ -12,6 +12,8 @@
 #import "messageTableViewCell.h"
 #import "hairdressingViewController.h"
 #import "meifaViewController.h"
+#import "bodybuildingViewController.h"
+#import "matchViewController.h"
 
 @interface firstViewController ()
 
@@ -215,9 +217,15 @@
 }
 
 - (IBAction)mtButton:(UIButton *)sender forEvent:(UIEvent *)event {
+    bodybuildingViewController *meif = [self.storyboard instantiateViewControllerWithIdentifier:@"bodybuilding"];
+    meif.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:meif animated:YES];
 }
 
 - (IBAction)dpButton:(UIButton *)sender forEvent:(UIEvent *)event {
+    matchViewController *meif = [self.storyboard instantiateViewControllerWithIdentifier:@"match"];
+    meif.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:meif animated:YES];
 }
 /*下拉刷新*/
 -(void)uiConfiguration

@@ -10,6 +10,7 @@
 #import "personalTableViewCell.h"
 
 @interface personalViewController ()
+- (IBAction)logout:(UIButton *)sender forEvent:(UIEvent *)event;
 
 - (IBAction)save:(UIButton *)sender forEvent:(UIEvent *)event;
 @end
@@ -126,6 +127,9 @@
 //
 //    return YES;//可清除内容
 //}
+- (IBAction)logout:(UIButton *)sender forEvent:(UIEvent *)event {
+}
+
 - (IBAction)save:(UIButton *)sender forEvent:(UIEvent *)event {
     
         if(isedit == NO)

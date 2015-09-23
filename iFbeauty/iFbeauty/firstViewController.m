@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "SendpostViewController.h"
 #import "messageTableViewCell.h"
+#import "hairdressingViewController.h"
 
 @interface firstViewController ()
 
@@ -199,7 +200,10 @@
 
 
 - (IBAction)mrButton:(UIButton *)sender forEvent:(UIEvent *)event {
-    
+    hairdressingViewController *meir = [self.storyboard instantiateViewControllerWithIdentifier:@"meirong"];
+    meir.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:meir animated:YES];
+
 }
 
 - (IBAction)mfButton:(UIButton *)sender forEvent:(UIEvent *)event {

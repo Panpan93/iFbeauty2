@@ -16,11 +16,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    NSString *path = @"http://img5.duitang.com/uploads/item/201310/28/20131028191211_T5skc.jpeg";
-    [BBLaunchAdMonitor showAdAtPath:path
-                             onView:self.window.rootViewController.view
-                       timeInterval:3.
-                   detailParameters:@{@"carId":@(12345), @"name":@"健美馆"}];
+//    NSString *path = @"http://img5.duitang.com/uploads/item/201310/28/20131028191211_T5skc.jpeg";
+//    [BBLaunchAdMonitor showAdAtPath:path
+//                             onView:self.window.rootViewController.view
+//                       timeInterval:3.
+//                   detailParameters:@{@"carId":@(12345), @"name":@"健美馆"}];
     //进入数据库
     [Parse setApplicationId:@"JUmB88QYzuB6QYmwXwLC4B4wn80PDDRr0uIaD518" clientKey:@"pzUb3bSIIFIq8ZgvioJcVXTqADIb0iFWk89bNVuG"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];

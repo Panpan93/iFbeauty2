@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface personalViewController : UIViewController
+@interface personalViewController : UIViewController  <UITableViewDataSource, UITableViewDelegate>
+{
+    BOOL isedit;
+}
+
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
 @property (weak, nonatomic) IBOutlet UILabel *uName;
 
@@ -16,4 +20,5 @@
 @property(strong,nonatomic)NSArray *objectviewshow;
 @property(strong,nonatomic)NSMutableArray *objectArray;
 
+@property (weak, nonatomic) IBOutlet UIButton *button;
 @end

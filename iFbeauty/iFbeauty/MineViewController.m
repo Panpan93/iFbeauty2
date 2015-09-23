@@ -9,6 +9,8 @@
 #import "MineViewController.h"
 #import "NewsViewController.h"
 #import "ViewController.h"
+#import "personalViewController.h"
+
 
 @interface MineViewController ()
 - (IBAction)sender:(UIButton *)sender forEvent:(UIEvent *)event;//帖子
@@ -73,11 +75,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.tableIV deselectRowAtIndexPath:indexPath animated:YES];
     
-    NewsViewController *news = [[NewsViewController alloc] init];
-    news.title = @"时尚芭莎";
-    [news setHidesBottomBarWhenPushed:YES];
-    [self.navigationController pushViewController:news animated:YES];
-    NSLog(@"进入新闻界面");
+//    NewsViewController *news = [[NewsViewController alloc] init];
+//    news.title = @"时尚芭莎";
+//    [news setHidesBottomBarWhenPushed:YES];
+//    [self.navigationController pushViewController:news animated:YES];
+//    NSLog(@"进入新闻界面");
+    personalViewController *person = [self.storyboard instantiateViewControllerWithIdentifier:@"personal"];
+    person.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:person animated:YES];
 }
 
 

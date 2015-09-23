@@ -10,6 +10,7 @@
 
 @interface personalTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *userName;
+@property (nonatomic) BOOL editable;
 
 @property (weak, nonatomic) IBOutlet UITextField *editor;
 

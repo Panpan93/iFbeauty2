@@ -20,4 +20,16 @@
     // Configure the view for the selected state
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    if (_editable) {
+        NSLog(@"YES");
+        _editor.enabled = YES;
+    } else {
+        NSLog(@"NO");
+        _editor.enabled = NO;
+    }
+}
+
 @end

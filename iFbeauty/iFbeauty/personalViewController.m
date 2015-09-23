@@ -11,6 +11,7 @@
 
 @interface personalViewController ()
 
+- (IBAction)save:(UIButton *)sender forEvent:(UIEvent *)event;
 @end
 
 @implementation personalViewController
@@ -18,7 +19,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _objectviewshow=[[NSMutableArray alloc]initWithObjects:@"昵称",@"个性签名",@"性别",@"年龄",@"地址",@"邮箱", nil];
+    isedit = NO;
     [self requestData];
+    [self creatbutton];
+}
+
+
+//点击return键盘回收
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    [theTextField resignFirstResponder];
+    return YES;
+}
+//点击空白处键盘回收
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,20 +44,19 @@
 
 - (void)requestData {
     PFUser *currentUser = [PFUser currentUser];
-    
+    _uName.text = currentUser[@"username"];
     PFFile *photo = currentUser[@"photo"];
     [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
         if (!error) {
             UIImage *image = [UIImage imageWithData:photoData];
             dispatch_async(dispatch_get_main_queue(), ^{
                 _photoView.image = image;
-                
+                [_tableView reloadData];
             });
         }
     }];
-    _uName.text = currentUser[@"username"];
     
-
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -53,16 +67,19 @@
 // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    personalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];//复用Cell
-        cell.userName .text =[_objectviewshow objectAtIndex:indexPath.row];
-      PFObject *object = [_objectArray objectAtIndex:indexPath.row];
+    personalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.userName .text =[_objectviewshow objectAtIndex:indexPath.row];
+    PFObject *object = [_objectArray objectAtIndex:indexPath.row];
+    
+    cell.editable = isedit;
+    
     if (indexPath.row==1) {
         
         cell.editor.text=[NSString stringWithFormat:@"%@", object[@"username"]];
         
     }else if (indexPath.row==2)
     {
-     cell.editor.text=[NSString stringWithFormat:@"%@", object[@"signature"]];
+        cell.editor.text=[NSString stringWithFormat:@"%@", object[@"signature"]];
     }
     else if (indexPath.row==3)
     {
@@ -80,12 +97,56 @@
     {
         cell.editor.text=[NSString stringWithFormat:@"%@", object[@"age"]];
     }
-
-    
-    //   NSInteger price = [object[@"price"] integerValue];
     
     
     return cell;
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 90;
+}
+
+-(void)creatbutton
+{
+    self.tabBarController.tabBar.hidden=YES;
+    self.navigationController.navigationBar.translucent=NO;
+    _button.titleLabel.text=@"编辑";
+    
+}
+#pragma mark-保存按钮的点击事件
+
+
+//- (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
+//    return YES;//可编辑
+//}
+//- (BOOL)textFieldShouldClear:(UITextField *)textField{
+//
+//    return YES;//可清除内容
+//}
+
+
+- (IBAction)save:(UIButton *)sender forEvent:(UIEvent *)event {
+    
+        if(isedit == NO)
+        {
+    
+            isedit=YES;
+            //        UIButton *b=(UIButton *)[self.view viewWithTag:800];
+            //        b.userInteractionEnabled=YES;
+            [_button setTitle:@"保存" forState:UIControlStateNormal];
+            [_tableView reloadData];
+        }
+        else if([_button.titleLabel.text isEqualToString:@"保存"])
+        {
+            //        UIButton *b=(UIButton *)[self.view viewWithTag:800];
+            //        b.userInteractionEnabled=NO;
+            isedit=NO;
+            [_button setTitle:@"编辑" forState:UIControlStateNormal];
+            [_tableView reloadData];
+        }
+        
+    
+
+}
 @end

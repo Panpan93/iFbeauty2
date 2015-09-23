@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KiI-A1-N48">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KiI-A1-N48">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1057,7 +1057,7 @@
         <!--个人信息-->
         <scene sceneID="KPl-rt-fBC">
             <objects>
-                <viewController id="AXR-2q-fWy" customClass="personalViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="personal" id="AXR-2q-fWy" customClass="personalViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="olF-ZY-XuC"/>
                         <viewControllerLayoutGuide type="bottom" id="aZg-HO-qNH"/>
@@ -1086,24 +1086,32 @@
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="90" id="cCa-wK-Nci" customClass="personalTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="90" id="cCa-wK-Nci" customClass="personalTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" tableViewCell="cCa-wK-Nci" id="p6F-7n-noc">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SaQ-kb-cr1">
-                                                    <rect key="frame" x="8" y="51" width="185" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SaQ-kb-cr1">
+                                                    <rect key="frame" x="8" y="44" width="359" height="37"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="用户名:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O39-AZ-cWA">
-                                                    <rect key="frame" x="13" y="8" width="56" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O39-AZ-cWA">
+                                                    <rect key="frame" x="15" y="8" width="56" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="SaQ-kb-cr1" secondAttribute="bottom" constant="8" id="6ZR-Ey-eCd"/>
+                                                <constraint firstItem="O39-AZ-cWA" firstAttribute="top" secondItem="p6F-7n-noc" secondAttribute="top" constant="8" id="7d5-jO-Unm"/>
+                                                <constraint firstItem="O39-AZ-cWA" firstAttribute="leading" secondItem="p6F-7n-noc" secondAttribute="leading" constant="15" id="b2k-Lb-4dZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="SaQ-kb-cr1" secondAttribute="trailing" constant="8" id="nVu-af-HuB"/>
+                                                <constraint firstItem="SaQ-kb-cr1" firstAttribute="leading" secondItem="p6F-7n-noc" secondAttribute="leading" constant="8" id="syU-N0-P6d"/>
+                                                <constraint firstItem="SaQ-kb-cr1" firstAttribute="top" secondItem="O39-AZ-cWA" secondAttribute="bottom" constant="15" id="zYG-Lh-2ak"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="editor" destination="SaQ-kb-cr1" id="wK1-Bu-p5M"/>
@@ -1112,8 +1120,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="AXR-2q-fWy" id="E8V-rN-1lN"/>
-                                    <outlet property="delegate" destination="AXR-2q-fWy" id="iUm-BR-jHF"/>
+                                    <outlet property="dataSource" destination="AXR-2q-fWy" id="7Zi-zM-Hnh"/>
+                                    <outlet property="delegate" destination="AXR-2q-fWy" id="Al2-Ix-i1J"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -1130,9 +1138,12 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sfm-VB-moB">
                                 <rect key="frame" x="-23" y="-15" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="编辑">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="save:forEvent:" destination="AXR-2q-fWy" eventType="touchUpInside" id="WDt-1f-jSa"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>

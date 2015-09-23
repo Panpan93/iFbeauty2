@@ -17,7 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    CALayer *layer = [_zhuceButton layer];
+    layer.cornerRadius = 40;//角的弧度
+    layer.borderColor = [[UIColor whiteColor]CGColor];
+    layer.borderWidth = 1;//边框宽度
+    layer.masksToBounds = YES;//图片填充边框
+     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     hidden=NO;
-    _objectforshow=[[NSMutableArray alloc]initWithObjects:@"个人信息",@"时尚芭莎",@"收藏的帖子",@"收藏的店铺",@"购物",@"设置", nil];
+    _objectforshow=[[NSMutableArray alloc]initWithObjects:@"个人信息",@"时尚芭莎",@"收藏的帖子",@"购物",@"设置", nil];
 //    _tableIV.delegate=self;
 //    _tableIV.dataSource=self;
     _tableIV.tableFooterView=[[UIView alloc]init];//不显示多余的分隔符
@@ -75,14 +75,19 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.tableIV deselectRowAtIndexPath:indexPath animated:YES];
     
-//    NewsViewController *news = [[NewsViewController alloc] init];
-//    news.title = @"时尚芭莎";
-//    [news setHidesBottomBarWhenPushed:YES];
-//    [self.navigationController pushViewController:news animated:YES];
-//    NSLog(@"进入新闻界面");
-    personalViewController *person = [self.storyboard instantiateViewControllerWithIdentifier:@"personal"];
-    person.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:person animated:YES];
+    
+    if (indexPath.row==0) {
+        personalViewController *person = [self.storyboard instantiateViewControllerWithIdentifier:@"personal"];
+        person.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:person animated:YES];
+              }
+        if (indexPath.row==1) {
+            NewsViewController *news = [[NewsViewController alloc] init];
+            news.title = @"时尚芭莎";
+            [news setHidesBottomBarWhenPushed:YES];
+            [self.navigationController pushViewController:news animated:YES];
+
+        }
 }
 
 

@@ -149,9 +149,10 @@
 - (void)requestData {
     PFQuery *query = [PFQuery queryWithClassName:@"Item"];
     [query includeKey:@"owner"];//关联查询
-    
+      UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
+            [aiv stopAnimating];
         if (!error) {
             _objectsForShow = returnedObjects;
             NSLog(@"%@", _objectsForShow);
@@ -183,7 +184,7 @@
     
     //    PFUser *user = [PFUser user];
     PFObject *activity = object[@"owner"];
-    
+      
     cell.nameLabel.text =[NSString stringWithFormat:@"发帖人： %@", activity[@"username"]];
     NSLog(@"%@",activity);
     PFFile *photo = object[@"photot"];

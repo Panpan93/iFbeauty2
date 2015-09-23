@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 //<UIViewControllerAnimatedTransitioning, ECSlidingViewControllerDelegate, ECSlidingViewControllerLayout>//外观
+@property (weak, nonatomic) IBOutlet UIButton *dengluButton;
 
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTF;//账号

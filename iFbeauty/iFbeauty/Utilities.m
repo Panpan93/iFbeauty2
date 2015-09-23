@@ -41,13 +41,6 @@
 
 + (UIActivityIndicatorView *)getCoverOnView:(UIView *)view
 {
-//    FDActivityIndicatorView *aiv= [[FDActivityIndicatorView alloc]initWithFrame:CGRectMake(UI_SCREEN_W /2 -40, UI_SCREEN_H /2-40, 80, 80)];
-//    
-////     aiv.backgroundColor = [[UIColor darkGrayColor] colorWithAlphaComponent:0.4];
-//    aiv.color = [UIColor orangeColor];
-//
-//    [view addSubview:aiv];
-//      [aiv addAnimation];
     UIActivityIndicatorView *aiv = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     aiv.backgroundColor = [[UIColor darkGrayColor] colorWithAlphaComponent:0.4];
     aiv.frame = view.bounds;

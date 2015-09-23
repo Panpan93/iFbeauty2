@@ -12,6 +12,7 @@
 {
     BOOL isedit;
 }
+@property (weak, nonatomic) IBOutlet UIButton *baocunButton;
 
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
 @property (weak, nonatomic) IBOutlet UILabel *uName;
@@ -23,4 +24,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *savebutton;
 
 @property (weak, nonatomic) IBOutlet UIButton *button;
+
+@property (strong, nonatomic) NSString *secondname;
+@property (strong, nonatomic) NSString *signature;
+@property (strong, nonatomic) NSString *xingbie;
+//@property (strong, nonatomic) NSString *age;
+@property (strong, nonatomic) NSString *address;
+@property (strong, nonatomic) NSString *secongemail;
+
 @end

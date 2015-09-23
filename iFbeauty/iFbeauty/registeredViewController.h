@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface registeredViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *zhuceButton;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTF;
 @property (weak, nonatomic) IBOutlet UITextField *emealTF;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTF;

@@ -1095,7 +1095,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kuh-WM-v9c">
                                             <rect key="frame" x="71" y="8" width="213" height="30"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <state key="normal" title="退出">
+                                            <state key="normal" title="保存">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -1171,6 +1171,7 @@
                     <connections>
                         <outlet property="button" destination="sfm-VB-moB" id="Ndd-1f-VRL"/>
                         <outlet property="photoView" destination="mWo-ay-ijY" id="Ov4-Ak-4rb"/>
+                        <outlet property="savebutton" destination="Kuh-WM-v9c" id="Mw3-Xv-vzK"/>
                         <outlet property="tableView" destination="TvG-vY-0cW" id="Krx-J5-D5a"/>
                         <outlet property="uName" destination="2IH-XW-O3n" id="shW-Fi-ZNG"/>
                     </connections>
@@ -1693,6 +1694,12 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="userDate" destination="Uhg-Q5-TOs" id="PAf-Td-ogh"/>
+                                            <outlet property="userImage" destination="sMP-A7-sUa" id="vpI-nL-GFx"/>
+                                            <outlet property="userName" destination="gi9-cc-zoe" id="vZH-cM-gP8"/>
+                                            <outlet property="userTitle" destination="zDg-bb-Z6z" id="gU8-cu-8wB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

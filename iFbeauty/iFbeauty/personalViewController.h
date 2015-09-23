@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(strong,nonatomic)NSArray *objectviewshow;
 @property(strong,nonatomic)NSMutableArray *objectArray;
+@property(strong,nonatomic)NSArray *objects;
+@property (weak, nonatomic) IBOutlet UIButton *savebutton;
 
 @property (weak, nonatomic) IBOutlet UIButton *button;
 @end

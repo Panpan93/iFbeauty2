@@ -21,6 +21,7 @@
     [super viewDidLoad];
     _objectviewshow=[[NSMutableArray alloc]initWithObjects:@"昵称",@"个性签名",@"性别",@"年龄",@"地址",@"邮箱", nil];
     isedit = NO;
+    _savebutton.hidden = YES;
     [self requestData];
     [self creatbutton];
 }
@@ -73,34 +74,67 @@
   //  PFObject *object = [_objectArray objectAtIndex:indexPath.row];
 
     PFUser *user = [PFUser currentUser];
-    user = [_objectArray objectAtIndex:indexPath.row];
-    NSLog(@"   111111111%@",_objectArray);
+//    user = [_objectArray objectAtIndex:indexPath.row];
+//    PFUser *user = [PFUser currentUser];
+    NSLog(@"%@", user);
+
 
     cell.editable = isedit;
     
     if (indexPath.row==0) {
-        
-        cell.editor.text=[NSString stringWithFormat:@"%@", user[@"username"]];
+        if (!(user[@"username"])) {
+            cell.editor.text=@"";
+        }else
+        {
+         cell.editor.text=[NSString stringWithFormat:@"%@", user[@"username"]];
+        }
         
     }else if (indexPath.row==1)
     {
+        if (!(user[@"signaturer"])) {
+            cell.editor.text=@"";
+        }else
+        {
+            
         cell.editor.text=[NSString stringWithFormat:@"%@", user[@"signature"]];
+        }
     }
     else if (indexPath.row==2)
     {
+        if (!(user[@"xingbie"])) {
+            cell.editor.text=@"";
+        }else
+        {
+
         cell.editor.text=[NSString stringWithFormat:@"%@", user[@"xingbie"]];
+        }
     }
     else if (indexPath.row==3)
     {
+        if (!(user[@"age"])) {
+            cell.editor.text=@"";
+        }else
+        {
         cell.editor.text=[NSString stringWithFormat:@"%@", user[@"age"]];
+        }
     }
     else if (indexPath.row==4)
     {
+        if (!(user[@"address"])) {
+            cell.editor.text=@"";
+        }else
+        {
         cell.editor.text=[NSString stringWithFormat:@"%@", user[@"address"]];
+        }
     }
     else if (indexPath.row==5)
     {
-        cell.editor.text=[NSString stringWithFormat:@"%@", user[@"age"]];
+        if (!(user[@"email"])) {
+            cell.editor.text=@"";
+        }else
+        {
+        cell.editor.text=[NSString stringWithFormat:@"%@", user[@"email"]];
+        }
     }
     
     
@@ -128,6 +162,9 @@
 //    return YES;//可清除内容
 //}
 - (IBAction)logout:(UIButton *)sender forEvent:(UIEvent *)event {
+    
+    
+    
 }
 
 - (IBAction)save:(UIButton *)sender forEvent:(UIEvent *)event {
@@ -136,17 +173,17 @@
         {
     
             isedit=YES;
-            //        UIButton *b=(UIButton *)[self.view viewWithTag:800];
-            //        b.userInteractionEnabled=YES;
-            [_button setTitle:@"保存" forState:UIControlStateNormal];
+            [_button setTitle:@"取消" forState:UIControlStateNormal];
+            _savebutton.hidden = NO;
+
             [_tableView reloadData];
         }
-        else if([_button.titleLabel.text isEqualToString:@"保存"])
+        else if([_button.titleLabel.text isEqualToString:@"取消"])
         {
-            //        UIButton *b=(UIButton *)[self.view viewWithTag:800];
-            //        b.userInteractionEnabled=NO;
             isedit=NO;
             [_button setTitle:@"编辑" forState:UIControlStateNormal];
+            _savebutton.hidden = YES;
+
             [_tableView reloadData];
         }
         

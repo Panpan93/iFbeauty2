@@ -17,6 +17,10 @@
 		21B58BF61BB17C4800EB1E51 /* lunbo5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21B58BF11BB17C4800EB1E51 /* lunbo5.jpg */; };
 		21B58BF71BB17C4800EB1E51 /* luobo2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21B58BF21BB17C4800EB1E51 /* luobo2.jpg */; };
 		21B58BF81BB17C4800EB1E51 /* luobo3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21B58BF31BB17C4800EB1E51 /* luobo3.jpg */; };
+		21D8FC401BB24CA8004DFC35 /* hairdressingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D8FC3D1BB24CA8004DFC35 /* hairdressingTableViewCell.m */; };
+		21D8FC411BB24CA8004DFC35 /* hairdressingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D8FC3F1BB24CA8004DFC35 /* hairdressingViewController.m */; };
+		21D8FC441BB24E53004DFC35 /* meifaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D8FC431BB24E53004DFC35 /* meifaTableViewCell.m */; };
+		21D8FC471BB24E68004DFC35 /* meifaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D8FC461BB24E68004DFC35 /* meifaViewController.m */; };
 		751ED4CB1BAFC972000AF80B /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751ED4C91BAFC972000AF80B /* NewsViewController.m */; };
 		751ED4CC1BAFC972000AF80B /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 751ED4CA1BAFC972000AF80B /* NewsViewController.xib */; };
 		756379861BB12AA0002F5350 /* messageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 756379851BB12AA0002F5350 /* messageTableViewCell.m */; };
@@ -95,6 +99,14 @@
 		21B58BF11BB17C4800EB1E51 /* lunbo5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lunbo5.jpg; sourceTree = "<group>"; };
 		21B58BF21BB17C4800EB1E51 /* luobo2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = luobo2.jpg; sourceTree = "<group>"; };
 		21B58BF31BB17C4800EB1E51 /* luobo3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = luobo3.jpg; sourceTree = "<group>"; };
+		21D8FC3C1BB24CA8004DFC35 /* hairdressingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hairdressingTableViewCell.h; path = iFbeauty/hairdressingTableViewCell.h; sourceTree = "<group>"; };
+		21D8FC3D1BB24CA8004DFC35 /* hairdressingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = hairdressingTableViewCell.m; path = iFbeauty/hairdressingTableViewCell.m; sourceTree = "<group>"; };
+		21D8FC3E1BB24CA8004DFC35 /* hairdressingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hairdressingViewController.h; path = iFbeauty/hairdressingViewController.h; sourceTree = "<group>"; };
+		21D8FC3F1BB24CA8004DFC35 /* hairdressingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = hairdressingViewController.m; path = iFbeauty/hairdressingViewController.m; sourceTree = "<group>"; };
+		21D8FC421BB24E53004DFC35 /* meifaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = meifaTableViewCell.h; sourceTree = "<group>"; };
+		21D8FC431BB24E53004DFC35 /* meifaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = meifaTableViewCell.m; sourceTree = "<group>"; };
+		21D8FC451BB24E68004DFC35 /* meifaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = meifaViewController.h; sourceTree = "<group>"; };
+		21D8FC461BB24E68004DFC35 /* meifaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = meifaViewController.m; sourceTree = "<group>"; };
 		751ED4C81BAFC972000AF80B /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		751ED4C91BAFC972000AF80B /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		751ED4CA1BAFC972000AF80B /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
@@ -218,6 +230,21 @@
 			name = image;
 			sourceTree = "<group>";
 		};
+		21D8FC3B1BB24C92004DFC35 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				21D8FC3C1BB24CA8004DFC35 /* hairdressingTableViewCell.h */,
+				21D8FC3D1BB24CA8004DFC35 /* hairdressingTableViewCell.m */,
+				21D8FC3E1BB24CA8004DFC35 /* hairdressingViewController.h */,
+				21D8FC3F1BB24CA8004DFC35 /* hairdressingViewController.m */,
+				21D8FC421BB24E53004DFC35 /* meifaTableViewCell.h */,
+				21D8FC431BB24E53004DFC35 /* meifaTableViewCell.m */,
+				21D8FC451BB24E68004DFC35 /* meifaViewController.h */,
+				21D8FC461BB24E68004DFC35 /* meifaViewController.m */,
+			);
+			name = home;
+			sourceTree = "<group>";
+		};
 		751ED4C71BAFC8AC000AF80B /* Mine */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +338,7 @@
 		75D8B2CA1BAD0069007DE2C2 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				21D8FC3B1BB24C92004DFC35 /* home */,
 				21A6580A1BAFFE7700685F6A /* fatie */,
 				751ED4C71BAFC8AC000AF80B /* Mine */,
 				757AA04E1BAEA27600AB2C2C /* ChangemessageViewController.h */,
@@ -513,6 +541,7 @@
 				756379891BB14FA0002F5350 /* personalTableViewCell.m in Sources */,
 				7573374E1BACF7DF00DD08E1 /* ViewController.m in Sources */,
 				75D8B3321BAD448B007DE2C2 /* TabViewController.m in Sources */,
+				21D8FC401BB24CA8004DFC35 /* hairdressingTableViewCell.m in Sources */,
 				75D8B3311BAD448B007DE2C2 /* storageMgr.m in Sources */,
 				75D8B2F51BAD0CD8007DE2C2 /* ECSlidingViewController.m in Sources */,
 				7563798C1BB14FC3002F5350 /* personalViewController.m in Sources */,
@@ -520,10 +549,12 @@
 				7573374B1BACF7DE00DD08E1 /* AppDelegate.m in Sources */,
 				75D8B3301BAD448B007DE2C2 /* secondViewController.m in Sources */,
 				75D8B32E1BAD448B007DE2C2 /* firstViewController.m in Sources */,
+				21D8FC441BB24E53004DFC35 /* meifaTableViewCell.m in Sources */,
 				757AA0531BAEA61C00AB2C2C /* MineViewController.m in Sources */,
 				214C1B831BAE87AB005823D2 /* SVIndefiniteAnimatedView.m in Sources */,
 				751ED4CB1BAFC972000AF80B /* NewsViewController.m in Sources */,
 				75D8B2F41BAD0CD8007DE2C2 /* ECSlidingSegue.m in Sources */,
+				21D8FC471BB24E68004DFC35 /* meifaViewController.m in Sources */,
 				21A658101BAFFECC00685F6A /* SendpostViewController.m in Sources */,
 				75D8B2F01BAD0CD8007DE2C2 /* BBLaunchAdMonitor.m in Sources */,
 				75D8B2F31BAD0CD8007DE2C2 /* ECSlidingInteractiveTransition.m in Sources */,
@@ -535,6 +566,7 @@
 				214C1B821BAE87AB005823D2 /* SVProgressHUD.m in Sources */,
 				75D8B2F61BAD0CD8007DE2C2 /* UIViewController+ECSlidingViewController.m in Sources */,
 				75D8B32C1BAD448B007DE2C2 /* cehuaViewController.m in Sources */,
+				21D8FC411BB24CA8004DFC35 /* hairdressingViewController.m in Sources */,
 				757AA0501BAEA27600AB2C2C /* ChangemessageViewController.m in Sources */,
 				214C1B811BAE87AB005823D2 /* SVRadialGradientLayer.m in Sources */,
 			);

@@ -56,7 +56,7 @@
         }
     }];
     
-    
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -69,33 +69,37 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     personalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.userName .text =[_objectviewshow objectAtIndex:indexPath.row];
-    PFObject *object = [_objectArray objectAtIndex:indexPath.row];
-    
+  //  PFObject *object = [_objectArray objectAtIndex:indexPath.row];
+
+    PFUser *user = [PFUser currentUser];
+    user = [_objectArray objectAtIndex:indexPath.row];
+    NSLog(@"   111111111%@",_objectArray);
+
     cell.editable = isedit;
     
-    if (indexPath.row==1) {
+    if (indexPath.row==0) {
         
-        cell.editor.text=[NSString stringWithFormat:@"%@", object[@"username"]];
+        cell.editor.text=[NSString stringWithFormat:@"%@", user[@"username"]];
         
-    }else if (indexPath.row==2)
+    }else if (indexPath.row==1)
     {
-        cell.editor.text=[NSString stringWithFormat:@"%@", object[@"signature"]];
+        cell.editor.text=[NSString stringWithFormat:@"%@", user[@"signature"]];
+    }
+    else if (indexPath.row==2)
+    {
+        cell.editor.text=[NSString stringWithFormat:@"%@", user[@"xingbie"]];
     }
     else if (indexPath.row==3)
     {
-        cell.editor.text=[NSString stringWithFormat:@"%@", object[@"xingbie"]];
+        cell.editor.text=[NSString stringWithFormat:@"%@", user[@"age"]];
     }
     else if (indexPath.row==4)
     {
-        cell.editor.text=[NSString stringWithFormat:@"%@", object[@"age"]];
+        cell.editor.text=[NSString stringWithFormat:@"%@", user[@"address"]];
     }
     else if (indexPath.row==5)
     {
-        cell.editor.text=[NSString stringWithFormat:@"%@", object[@"address"]];
-    }
-    else if (indexPath.row==6)
-    {
-        cell.editor.text=[NSString stringWithFormat:@"%@", object[@"age"]];
+        cell.editor.text=[NSString stringWithFormat:@"%@", user[@"age"]];
     }
     
     
@@ -115,8 +119,6 @@
     
 }
 #pragma mark-保存按钮的点击事件
-
-
 //- (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
 //    return YES;//可编辑
 //}
@@ -124,8 +126,6 @@
 //
 //    return YES;//可清除内容
 //}
-
-
 - (IBAction)save:(UIButton *)sender forEvent:(UIEvent *)event {
     
         if(isedit == NO)

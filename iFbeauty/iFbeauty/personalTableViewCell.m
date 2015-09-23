@@ -17,7 +17,17 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+    [self textfile];
+}
+
+-(void)textfile
+{
+    _editor.textColor=[UIColor blackColor];
+    _editor.clearButtonMode=UITextFieldViewModeAlways;
+    _editor.clearsOnBeginEditing=YES;
+    _editor.adjustsFontSizeToFitWidth=YES;
+    _editor.backgroundColor=[UIColor clearColor];
+    _editor.borderStyle=UITextBorderStyleNone;
 }
 
 - (void)layoutSubviews {

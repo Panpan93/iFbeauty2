@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KiI-A1-N48">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KiI-A1-N48">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -632,14 +632,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.63974958250000002" green="1" blue="0.74748962919999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="oIW-NQ-m3e">
-                                    <rect key="frame" x="0.0" y="64" width="375" height="188"/>
+                                    <rect key="frame" x="0.0" y="64" width="375" height="220"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
+                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="Y9p-39-uRd">
+                                            <rect key="frame" x="137" y="92" width="100" height="37"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="byf-7I-6yE"/>
+                                            </constraints>
+                                            <color key="pageIndicatorTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="currentPageIndicatorTintColor" red="0.63974958250000002" green="1" blue="0.74748962919999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        </pageControl>
                                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nob-11-zxa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="115"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="150" id="uE3-vi-JsA"/>
+                                            </constraints>
                                         </scrollView>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9k-YX-7Mr">
-                                            <rect key="frame" x="18" y="138" width="30" height="30"/>
+                                            <rect key="frame" x="18" y="165" width="30" height="45"/>
                                             <state key="normal" title="美容">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -647,8 +658,8 @@
                                                 <action selector="mrButton:forEvent:" destination="Vix-D9-2GA" eventType="touchUpInside" id="9pU-zB-V6F"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auq-2e-GYX">
-                                            <rect key="frame" x="210" y="138" width="50" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auq-2e-GYX">
+                                            <rect key="frame" x="201" y="173" width="54" height="30"/>
                                             <state key="normal" title="美体">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -656,17 +667,8 @@
                                                 <action selector="mtButton:forEvent:" destination="Vix-D9-2GA" eventType="touchUpInside" id="zmB-A3-XA7"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTB-d5-brX">
-                                            <rect key="frame" x="329" y="138" width="30" height="30"/>
-                                            <state key="normal" title="搭配">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="dpButton:forEvent:" destination="Vix-D9-2GA" eventType="touchUpInside" id="G5x-Sq-7w4"/>
-                                            </connections>
-                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tq0-OU-dvU">
-                                            <rect key="frame" x="111" y="138" width="30" height="30"/>
+                                            <rect key="frame" x="111" y="173" width="30" height="30"/>
                                             <state key="normal" title="美发">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -674,23 +676,33 @@
                                                 <action selector="mfButton:forEvent:" destination="Vix-D9-2GA" eventType="touchUpInside" id="odL-AE-qOQ"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBg-YP-Iq1">
+                                            <rect key="frame" x="315" y="173" width="30" height="30"/>
+                                            <state key="normal" title="搭配">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="auq-2e-GYX" firstAttribute="leading" secondItem="tq0-OU-dvU" secondAttribute="trailing" constant="69" id="01k-Nm-Zjd"/>
+                                        <constraint firstItem="auq-2e-GYX" firstAttribute="leading" secondItem="tq0-OU-dvU" secondAttribute="trailing" constant="60" id="01k-Nm-Zjd"/>
+                                        <constraint firstItem="LBg-YP-Iq1" firstAttribute="leading" secondItem="auq-2e-GYX" secondAttribute="trailing" constant="60" id="1XE-Fb-w69"/>
+                                        <constraint firstItem="auq-2e-GYX" firstAttribute="centerY" secondItem="X9k-YX-7Mr" secondAttribute="centerY" id="2l4-QI-Sc1"/>
                                         <constraint firstItem="X9k-YX-7Mr" firstAttribute="leading" secondItem="oIW-NQ-m3e" secondAttribute="leading" constant="18" id="4N2-aK-gI0"/>
-                                        <constraint firstItem="X9k-YX-7Mr" firstAttribute="top" secondItem="nob-11-zxa" secondAttribute="bottom" constant="23" id="8sd-fN-wK9"/>
+                                        <constraint firstItem="nob-11-zxa" firstAttribute="top" secondItem="oIW-NQ-m3e" secondAttribute="top" id="8cS-fN-hZD"/>
+                                        <constraint firstItem="auq-2e-GYX" firstAttribute="centerY" secondItem="LBg-YP-Iq1" secondAttribute="centerY" id="ARA-51-hq5"/>
                                         <constraint firstItem="nob-11-zxa" firstAttribute="leading" secondItem="oIW-NQ-m3e" secondAttribute="leading" id="CvZ-AB-H4V"/>
-                                        <constraint firstItem="nob-11-zxa" firstAttribute="top" secondItem="oIW-NQ-m3e" secondAttribute="top" id="Nzv-zU-zOf"/>
-                                        <constraint firstAttribute="bottom" secondItem="UTB-d5-brX" secondAttribute="bottom" constant="20" id="TFq-uX-nme"/>
+                                        <constraint firstItem="Y9p-39-uRd" firstAttribute="centerX" secondItem="nob-11-zxa" secondAttribute="centerX" id="Eka-E7-JzA"/>
+                                        <constraint firstAttribute="trailing" secondItem="LBg-YP-Iq1" secondAttribute="trailing" constant="30" id="GxW-lO-eBW"/>
+                                        <constraint firstItem="X9k-YX-7Mr" firstAttribute="top" secondItem="nob-11-zxa" secondAttribute="bottom" constant="15" id="K1a-6N-gha"/>
                                         <constraint firstAttribute="trailing" secondItem="nob-11-zxa" secondAttribute="trailing" id="VPH-7K-Vyw"/>
+                                        <constraint firstItem="auq-2e-GYX" firstAttribute="centerY" secondItem="X9k-YX-7Mr" secondAttribute="centerY" id="X1b-Pp-vdt"/>
                                         <constraint firstItem="tq0-OU-dvU" firstAttribute="leading" secondItem="X9k-YX-7Mr" secondAttribute="trailing" constant="63" id="ZZ0-BE-0nB"/>
-                                        <constraint firstItem="UTB-d5-brX" firstAttribute="top" secondItem="nob-11-zxa" secondAttribute="bottom" constant="23" id="fRp-gT-oRl"/>
-                                        <constraint firstAttribute="trailing" secondItem="UTB-d5-brX" secondAttribute="trailing" constant="16" id="fqi-I7-ngE"/>
                                         <constraint firstItem="auq-2e-GYX" firstAttribute="baseline" secondItem="tq0-OU-dvU" secondAttribute="baseline" id="kS5-ip-y0i"/>
-                                        <constraint firstAttribute="bottom" secondItem="nob-11-zxa" secondAttribute="bottom" constant="73" id="knK-YF-UqH"/>
-                                        <constraint firstItem="UTB-d5-brX" firstAttribute="leading" secondItem="auq-2e-GYX" secondAttribute="trailing" constant="69" id="yAo-l9-3AC"/>
-                                        <constraint firstItem="tq0-OU-dvU" firstAttribute="top" secondItem="nob-11-zxa" secondAttribute="bottom" constant="23" id="zaw-TL-ShB"/>
+                                        <constraint firstItem="auq-2e-GYX" firstAttribute="centerY" secondItem="tq0-OU-dvU" secondAttribute="centerY" id="o3f-2m-WSy"/>
+                                        <constraint firstItem="auq-2e-GYX" firstAttribute="centerY" secondItem="tq0-OU-dvU" secondAttribute="centerY" id="x9K-mN-7nd"/>
+                                        <constraint firstItem="Y9p-39-uRd" firstAttribute="centerY" secondItem="oIW-NQ-m3e" secondAttribute="centerY" id="zGM-1j-Uza"/>
+                                        <constraint firstAttribute="bottom" secondItem="X9k-YX-7Mr" secondAttribute="bottom" constant="10" id="zqm-yI-qyQ"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
@@ -760,7 +772,8 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="scrollVIew" destination="iam-wI-Wda" id="uSD-8f-wRu"/>
+                        <outlet property="pageControl" destination="Y9p-39-uRd" id="c2J-AJ-fVc"/>
+                        <outlet property="scrollView" destination="nob-11-zxa" id="Pq2-9g-3X8"/>
                         <outlet property="tableView" destination="iam-wI-Wda" id="gyz-Fc-tXu"/>
                     </connections>
                 </viewController>
@@ -1066,7 +1079,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2IH-XW-O3n">
                                             <rect key="frame" x="96" y="26" width="90" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>

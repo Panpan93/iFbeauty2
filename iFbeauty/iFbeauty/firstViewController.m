@@ -27,6 +27,51 @@
     [super viewDidLoad];
     [self requestData];
     [self uiConfiguration];
+    
+    [self.navigationController.navigationBar setTranslucent:NO];
+    // 定时器 循环
+    [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(runTimePage) userInfo:nil repeats:YES];
+    _scrollView.bounces = YES;
+    _scrollView.pagingEnabled = YES;
+    _scrollView.userInteractionEnabled = YES;
+    _scrollView.showsHorizontalScrollIndicator = NO;
+    _scrollView.alwaysBounceHorizontal = YES;
+    
+    // 初始化 数组 并添加六张图片
+    _slideImages = [[NSMutableArray alloc] init];
+    [_slideImages addObject:@"lunbo1.jpg"];
+    [_slideImages addObject:@"lunbo2.jpg"];
+    [_slideImages addObject:@"lunbo3.jpg"];
+    [_slideImages addObject:@"lunbo4.jpg"];
+    [_slideImages addObject:@"lunbo5.jpg"];
+    
+    //[_pageControl setCurrentPageIndicatorTintColor:[UIColor redColor]];
+    //[_pageControl setPageIndicatorTintColor:[UIColor blackColor]];
+    _pageControl.numberOfPages = [self.slideImages count];
+    _pageControl.currentPage = 0;
+    [_pageControl addTarget:self action:@selector(turnPage) forControlEvents:UIControlEventValueChanged]; // 触摸mypagecontrol触发change这个方法事件
+    
+    //创建6个图片
+    for (int i = 0;i<[_slideImages count];i++)
+    {
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[_slideImages objectAtIndex:i]]];
+        imageView.clipsToBounds = YES;
+        imageView.frame = CGRectMake((UI_SCREEN_W * i) + UI_SCREEN_W, 0,UI_SCREEN_W, 150);
+        [_scrollView addSubview:imageView]; // 首页是第0页,默认从第1页开始的。所以+UI_SCREEN_W。。。
+    }
+    
+    // 取数组最后一张图片 放在第0页
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[_slideImages objectAtIndex:([_slideImages count]-1)]]];
+    imageView.frame = CGRectMake(0, 0, UI_SCREEN_W,150); // 添加最后1页在首页 循环
+    [_scrollView addSubview:imageView];
+    // 取数组第一张图片 放在最后1页
+    imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[_slideImages objectAtIndex:0]]];
+    imageView.frame = CGRectMake((UI_SCREEN_W * ([_slideImages count] + 1)) , 0,UI_SCREEN_W, 150); // 添加第1页在最后 循环
+    [_scrollView addSubview:imageView];
+    
+    [_scrollView setContentSize:CGSizeMake(UI_SCREEN_W * ([_slideImages count] + 2), 150)]; //  +上第1页和第4页  原理：4-[1-2-3-4]-1
+    [_scrollView setContentOffset:CGPointMake(0, 0)];
+
 
     // Do any additional setup after loading the view.
 }
@@ -35,6 +80,47 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+// scrollview 委托函数
+- (void)scrollViewDidScroll:(UIScrollView *)sender
+{
+    CGFloat pagewidth = self.scrollView.frame.size.width;
+    int page = floor((self.scrollView.contentOffset.x - pagewidth/([_slideImages count]+2))/pagewidth)+1;
+    page --;  // 默认从第二页开始
+    _pageControl.currentPage = page;
+}
+
+// scrollview 委托函数
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    CGFloat pagewidth = self.scrollView.frame.size.width;
+    int currentPage = floor((self.scrollView.contentOffset.x - pagewidth/ ([_slideImages count]+2)) / pagewidth) + 1;
+    if (currentPage==0)
+    {
+        [self.scrollView scrollRectToVisible:CGRectMake(UI_SCREEN_W * [_slideImages count],0,[UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.height) animated:NO]; // 序号0 最后1页
+    }
+    else if (currentPage==([_slideImages count]+1))
+    {
+        [self.scrollView scrollRectToVisible:CGRectMake(UI_SCREEN_W,0,[UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.height) animated:NO]; // 最后+1,循环第1页
+    }
+}
+// pagecontrol 选择器的方法
+- (void)turnPage
+{
+    long page = _pageControl.currentPage; // 获取当前的page
+    [self.scrollView scrollRectToVisible:CGRectMake(UI_SCREEN_W*(page+1),0,[UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.height) animated:NO]; // 触摸pagecontroller那个点点 往后翻一页 +1
+}
+// 定时器 绑定的方法
+- (void)runTimePage
+{
+    long page = _pageControl.currentPage; // 获取当前的page
+    page++;
+    page = page >=5 ? 0 : page ;
+    _pageControl.currentPage = page;
+    [self turnPage];
+}
+
 
 /*
 #pragma mark - Navigation
@@ -63,7 +149,7 @@
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
         if (!error) {
-         
+            _objectsForShow = returnedObjects;
             NSLog(@"%@", _objectsForShow);
             [_tableView reloadData];
         } else {
@@ -73,13 +159,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    return 1;
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
 // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     messageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];//复用Cell
     
     PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];

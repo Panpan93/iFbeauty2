@@ -10,7 +10,8 @@
 #import "personalTableViewCell.h"
 
 @interface personalViewController ()
-- (IBAction)tapGesture:(UITapGestureRecognizer *)sender;
+- (IBAction)tap:(UITapGestureRecognizer *)sender;
+
 - (IBAction)logout:(UIButton *)sender forEvent:(UIEvent *)event;
 
 - (IBAction)save:(UIButton *)sender forEvent:(UIEvent *)event;
@@ -53,7 +54,12 @@
 
 - (void)requestData {
     PFUser *currentUser = [PFUser currentUser];
+    if (!(currentUser[@"username"])) {
+         _uName.text=@"";
+    }else
+    {
     _uName.text = [NSString stringWithFormat:@"账号信息：%@", currentUser[@"username"]];
+    }
     PFFile *photo = currentUser[@"photo"];
     [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
         if (!error) {
@@ -209,6 +215,61 @@
 //
 //    return YES;//可清除内容
 //}
+
+- (IBAction)tap:(UITapGestureRecognizer *)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照", @"从相册选择", nil];
+    [actionSheet setExclusiveTouch:YES];
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+    [actionSheet showInView:self.view];
+}
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 2)
+        return;
+    
+    UIImagePickerControllerSourceType temp;
+    if (buttonIndex == 0) {
+        temp = UIImagePickerControllerSourceTypeCamera;
+    } else if (buttonIndex == 1) {
+        temp = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    if ([UIImagePickerController isSourceTypeAvailable:temp]) {
+        _imagePickerController = nil;
+        _imagePickerController = [[UIImagePickerController alloc] init];
+        _imagePickerController.delegate = self;
+        _imagePickerController.allowsEditing = YES;
+        _imagePickerController.sourceType = temp;
+        [self presentViewController:_imagePickerController animated:YES completion:nil];
+    } else {
+        if (temp == UIImagePickerControllerSourceTypeCamera) {
+            [Utilities popUpAlertViewWithMsg:@"当前设备无照相功能" andTitle:nil];
+        }
+    }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = [info valueForKey:UIImagePickerControllerEditedImage];
+    _photoView.image = image;
+    [self dismissViewControllerAnimated:YES completion:nil];
+    //    上传图片
+    PFUser *currentUser = [PFUser currentUser];
+    NSData *photoData = UIImagePNGRepresentation(_photoView.image);
+    PFFile *photoFile = [PFFile fileWithName:@"photo.png" data:photoData];
+    currentUser[@"photo"] = photoFile;
+    
+    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    
+    [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [aiv stopAnimating];
+        if (succeeded) {
+            [[NSNotificationCenter defaultCenter] performSelectorOnMainThread:@selector(postNotification:) withObject:[NSNotification notificationWithName:@"refreshMine" object:self] waitUntilDone:YES];
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+        }
+    }];
+}
+
 
 - (IBAction)logout:(UIButton *)sender forEvent:(UIEvent *)event {
     

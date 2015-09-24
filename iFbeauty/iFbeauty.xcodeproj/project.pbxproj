@@ -40,6 +40,8 @@
 		758A64031BB2849D00889B90 /* matchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 758A63FD1BB2849D00889B90 /* matchViewController.m */; };
 		758A64041BB2849D00889B90 /* meifaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 758A63FF1BB2849D00889B90 /* meifaTableViewCell.m */; };
 		758A64051BB2849D00889B90 /* meifaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 758A64011BB2849D00889B90 /* meifaViewController.m */; };
+		75AE1AB21BB3C1E700CE4111 /* shoppingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75AE1AB01BB3C1E700CE4111 /* shoppingViewController.m */; };
+		75AE1AB31BB3C1E700CE4111 /* shoppingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75AE1AB11BB3C1E700CE4111 /* shoppingViewController.xib */; };
 		75D8B2CF1BAD0116007DE2C2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D8B2CD1BAD0116007DE2C2 /* Bolts.framework */; };
 		75D8B2D01BAD0116007DE2C2 /* Bolts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75D8B2CD1BAD0116007DE2C2 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75D8B2D11BAD0116007DE2C2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D8B2CE1BAD0116007DE2C2 /* Parse.framework */; };
@@ -147,6 +149,9 @@
 		758A63FF1BB2849D00889B90 /* meifaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = meifaTableViewCell.m; path = iFbeauty/meifaTableViewCell.m; sourceTree = "<group>"; };
 		758A64001BB2849D00889B90 /* meifaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = meifaViewController.h; path = iFbeauty/meifaViewController.h; sourceTree = "<group>"; };
 		758A64011BB2849D00889B90 /* meifaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = meifaViewController.m; path = iFbeauty/meifaViewController.m; sourceTree = "<group>"; };
+		75AE1AAF1BB3C1E700CE4111 /* shoppingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shoppingViewController.h; sourceTree = "<group>"; };
+		75AE1AB01BB3C1E700CE4111 /* shoppingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shoppingViewController.m; sourceTree = "<group>"; };
+		75AE1AB11BB3C1E700CE4111 /* shoppingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = shoppingViewController.xib; sourceTree = "<group>"; };
 		75D8B2CD1BAD0116007DE2C2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		75D8B2CE1BAD0116007DE2C2 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		75D8B2D91BAD01D9007DE2C2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -275,6 +280,9 @@
 				756379881BB14FA0002F5350 /* personalTableViewCell.m */,
 				7563798A1BB14FC3002F5350 /* personalViewController.h */,
 				7563798B1BB14FC3002F5350 /* personalViewController.m */,
+				75AE1AAF1BB3C1E700CE4111 /* shoppingViewController.h */,
+				75AE1AB01BB3C1E700CE4111 /* shoppingViewController.m */,
+				75AE1AB11BB3C1E700CE4111 /* shoppingViewController.xib */,
 			);
 			name = Mine;
 			path = iFbeauty;
@@ -532,6 +540,7 @@
 			files = (
 				21B58BF41BB17C4800EB1E51 /* lunbo1.jpg in Resources */,
 				757337511BACF7DF00DD08E1 /* Main.storyboard in Resources */,
+				75AE1AB31BB3C1E700CE4111 /* shoppingViewController.xib in Resources */,
 				21B58BF51BB17C4800EB1E51 /* lunbo4.jpg in Resources */,
 				757337561BACF7DF00DD08E1 /* LaunchScreen.xib in Resources */,
 				757337531BACF7DF00DD08E1 /* Images.xcassets in Resources */,
@@ -582,6 +591,7 @@
 				75D8B2F31BAD0CD8007DE2C2 /* ECSlidingInteractiveTransition.m in Sources */,
 				75D8B2F21BAD0CD8007DE2C2 /* ECSlidingAnimationController.m in Sources */,
 				75D8B3331BAD448B007DE2C2 /* Utilities.m in Sources */,
+				75AE1AB21BB3C1E700CE4111 /* shoppingViewController.m in Sources */,
 				757337481BACF7DE00DD08E1 /* main.m in Sources */,
 				756379861BB12AA0002F5350 /* messageTableViewCell.m in Sources */,
 				75D8B2F11BAD0CD8007DE2C2 /* ECPercentDrivenInteractiveTransition.m in Sources */,

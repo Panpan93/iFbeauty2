@@ -10,6 +10,7 @@
 #import "NewsViewController.h"
 #import "ViewController.h"
 #import "personalViewController.h"
+#import "shoppingViewController.h"
 
 
 @interface MineViewController ()
@@ -108,6 +109,12 @@
             [self.navigationController pushViewController:news animated:YES];
 
         }
+    if (indexPath.row==3) {
+        shoppingViewController *shop = [[shoppingViewController alloc] init];
+        shop.title = @"京东商城";
+        [shop setHidesBottomBarWhenPushed:YES];
+        [self.navigationController pushViewController:shop animated:YES];
+    }
 }
 
 

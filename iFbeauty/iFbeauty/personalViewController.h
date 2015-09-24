@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface personalViewController : UIViewController  <UITableViewDataSource, UITableViewDelegate>
+@interface personalViewController : UIViewController  <UITableViewDataSource, UITableViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
     BOOL isedit;
 }

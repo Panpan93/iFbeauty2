@@ -1105,7 +1105,8 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <gestureRecognizers/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="mWo-ay-ijY" secondAttribute="bottom" constant="7" id="4RU-kM-WoY"/>
                                         <constraint firstItem="mWo-ay-ijY" firstAttribute="top" secondItem="FlQ-mk-u12" secondAttribute="top" constant="7" id="GcP-qV-rms"/>
@@ -1114,6 +1115,9 @@
                                         <constraint firstAttribute="trailing" secondItem="2IH-XW-O3n" secondAttribute="trailing" constant="20" id="ihG-uA-yE6"/>
                                         <constraint firstItem="2IH-XW-O3n" firstAttribute="leading" secondItem="mWo-ay-ijY" secondAttribute="trailing" constant="15" id="irj-42-nXU"/>
                                     </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="fsi-u0-yJe" appends="YES" id="IaR-64-x06"/>
+                                    </connections>
                                 </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="90" id="cCa-wK-Nci" customClass="personalTableViewCell">
@@ -1203,8 +1207,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMX-8x-L25" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fsi-u0-yJe">
+                    <connections>
+                        <action selector="tap:" destination="AXR-2q-fWy" id="n7X-mf-dum"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="242.5" y="1991.5"/>
+            <point key="canvasLocation" x="302.5" y="1976.5"/>
         </scene>
         <!--我的-->
         <scene sceneID="FV7-IS-B2z">

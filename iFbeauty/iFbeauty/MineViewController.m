@@ -31,6 +31,13 @@
 //    _tableIV.delegate=self;
 //    _tableIV.dataSource=self;
     _tableIV.tableFooterView=[[UIView alloc]init];//不显示多余的分隔符
+    
+    CALayer *layer = [_logoutBU layer];
+    layer.cornerRadius = 40;//角的弧度
+    layer.borderColor = [[UIColor whiteColor]CGColor];
+    layer.borderWidth = 1;//边框宽度
+    layer.masksToBounds = YES;//图片填充边框
+    
     [self read];
   }
 

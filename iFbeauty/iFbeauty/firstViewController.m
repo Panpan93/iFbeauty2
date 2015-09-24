@@ -14,6 +14,8 @@
 #import "meifaViewController.h"
 #import "bodybuildingViewController.h"
 #import "matchViewController.h"
+#import "particularsViewController.h"
+
 
 @interface firstViewController ()
 
@@ -126,18 +128,6 @@
 }
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
-
 - (IBAction)send:(UIBarButtonItem *)sender {
     
     SendpostViewController *denglu = [self.storyboard instantiateViewControllerWithIdentifier:@"send"];
@@ -155,7 +145,7 @@
             [aiv stopAnimating];
         if (!error) {
             _objectsForShow = returnedObjects;
-            NSLog(@"%@", _objectsForShow);
+//            NSLog(@"%@", _objectsForShow);
             [_tableView reloadData];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -163,8 +153,36 @@
     }];
 }
 
+//取消选择行
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
+
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+     if ([segue.identifier isEqualToString:@"particulars"]) {
+         PFObject *object = [_objectsForShow objectAtIndex:[_tableView indexPathForSelectedRow].row];//获得当前tablview选中行的数据
+         particularsViewController *miVC = segue.destinationViewController;//目的地视图控制器
+         PFObject *par = object[@"owner"];
+         miVC.item = object;
+         miVC.ownername = par;
+         miVC.hidesBottomBarWhenPushed = YES;//把切换按钮隐藏掉
+         //
+     }
+
+ }
+
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return [_objectsForShow count];
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -177,17 +195,14 @@
     PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
     cell.titleLabel.text = [NSString stringWithFormat:@"%@", object[@"title"]];
     
-    //    NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];//实例化一个NSDateFormatter对象
-    //    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];//设定时间格式
-    //    NSString *dateString = [dateFormat stringFromDate:object[@"createdAt"]]; //求出当天的时间字符串，当更改时间格式时，时间字符串也能随之改变
-    //    cell.datalabel.text = [NSString stringWithFormat:@"%@", dateString];
-    
-    //    PFUser *user = [PFUser user];
     PFObject *activity = object[@"owner"];
       
     cell.nameLabel.text =[NSString stringWithFormat:@"发帖人： %@", activity[@"username"]];
     NSLog(@"%@",activity);
     PFFile *photo = object[@"photot"];
+    if (photo == NULL) {
+        cell.imageview.image = nil;
+    } else
     [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
         if (!error) {
             UIImage *image = [UIImage imageWithData:photoData];
@@ -196,7 +211,6 @@
             });
         }
     }];
-    //   NSInteger price = [object[@"price"] integerValue];
     
     return cell;
 }

@@ -19,6 +19,7 @@
 		21B58BF81BB17C4800EB1E51 /* luobo3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21B58BF31BB17C4800EB1E51 /* luobo3.jpg */; };
 		21D8FC401BB24CA8004DFC35 /* hairdressingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D8FC3D1BB24CA8004DFC35 /* hairdressingTableViewCell.m */; };
 		21D8FC411BB24CA8004DFC35 /* hairdressingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D8FC3F1BB24CA8004DFC35 /* hairdressingViewController.m */; };
+		21E5AF851BB404CE001C7974 /* particularsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5AF841BB404CE001C7974 /* particularsViewController.m */; };
 		751ED4CB1BAFC972000AF80B /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751ED4C91BAFC972000AF80B /* NewsViewController.m */; };
 		751ED4CC1BAFC972000AF80B /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 751ED4CA1BAFC972000AF80B /* NewsViewController.xib */; };
 		756379861BB12AA0002F5350 /* messageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 756379851BB12AA0002F5350 /* messageTableViewCell.m */; };
@@ -109,6 +110,8 @@
 		21D8FC3D1BB24CA8004DFC35 /* hairdressingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = hairdressingTableViewCell.m; path = iFbeauty/hairdressingTableViewCell.m; sourceTree = "<group>"; };
 		21D8FC3E1BB24CA8004DFC35 /* hairdressingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hairdressingViewController.h; path = iFbeauty/hairdressingViewController.h; sourceTree = "<group>"; };
 		21D8FC3F1BB24CA8004DFC35 /* hairdressingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = hairdressingViewController.m; path = iFbeauty/hairdressingViewController.m; sourceTree = "<group>"; };
+		21E5AF831BB404CE001C7974 /* particularsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = particularsViewController.h; path = iFbeauty/particularsViewController.h; sourceTree = "<group>"; };
+		21E5AF841BB404CE001C7974 /* particularsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = particularsViewController.m; path = iFbeauty/particularsViewController.m; sourceTree = "<group>"; };
 		751ED4C81BAFC972000AF80B /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		751ED4C91BAFC972000AF80B /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		751ED4CA1BAFC972000AF80B /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
@@ -270,6 +273,15 @@
 			name = home;
 			sourceTree = "<group>";
 		};
+		21E5AF821BB40480001C7974 /* read */ = {
+			isa = PBXGroup;
+			children = (
+				21E5AF831BB404CE001C7974 /* particularsViewController.h */,
+				21E5AF841BB404CE001C7974 /* particularsViewController.m */,
+			);
+			name = read;
+			sourceTree = "<group>";
+		};
 		751ED4C71BAFC8AC000AF80B /* Mine */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +378,7 @@
 		75D8B2CA1BAD0069007DE2C2 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				21E5AF821BB40480001C7974 /* read */,
 				21D8FC3B1BB24C92004DFC35 /* home */,
 				21A6580A1BAFFE7700685F6A /* fatie */,
 				751ED4C71BAFC8AC000AF80B /* Mine */,
@@ -585,6 +598,7 @@
 				214C1B831BAE87AB005823D2 /* SVIndefiniteAnimatedView.m in Sources */,
 				751ED4CB1BAFC972000AF80B /* NewsViewController.m in Sources */,
 				75D8B2F41BAD0CD8007DE2C2 /* ECSlidingSegue.m in Sources */,
+				21E5AF851BB404CE001C7974 /* particularsViewController.m in Sources */,
 				21A658101BAFFECC00685F6A /* SendpostViewController.m in Sources */,
 				758A63F91BB2827C00889B90 /* bodybuildingViewController.m in Sources */,
 				75D8B2F01BAD0CD8007DE2C2 /* BBLaunchAdMonitor.m in Sources */,

@@ -86,11 +86,12 @@
 #pragma mark   页面跳转方法
 - (void)popUpHomePage
 {
-    TabViewController *tabVC = [Utilities getStoryboardInstanceByIdentity:@"Tab"];
-    UINavigationController* naviVC = [[UINavigationController alloc] initWithRootViewController:tabVC];//创建一个导航控制器
-    naviVC.navigationBarHidden = YES;
-//    _navigationItem.hidesBackButton=YES;
-    [self presentViewController:naviVC animated:YES completion:nil];
+//    TabViewController *tabVC = [Utilities getStoryboardInstanceByIdentity:@"Tab"];
+//    UINavigationController* naviVC = [[UINavigationController alloc] initWithRootViewController:tabVC];//创建一个导航控制器
+//    naviVC.navigationBarHidden = YES;
+////    _navigationItem.hidesBackButton=YES;
+//    [self presentViewController:naviVC animated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];//点击退出返回首页
 }
 - (IBAction)forgot:(UIButton *)sender forEvent:(UIEvent *)event {
         [PFUser requestPasswordResetForEmailInBackground:@"emaile"];

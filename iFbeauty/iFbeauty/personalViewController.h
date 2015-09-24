@@ -21,6 +21,9 @@
 @property(strong,nonatomic)NSArray *objectviewshow;
 @property(strong,nonatomic)NSMutableArray *objectArray;
 @property(strong,nonatomic)NSArray *objects;
+//调用
+@property(strong,nonatomic)UIImagePickerController *imagePickerController;
+
 @property (weak, nonatomic) IBOutlet UIButton *savebutton;
 
 @property (weak, nonatomic) IBOutlet UIButton *button;

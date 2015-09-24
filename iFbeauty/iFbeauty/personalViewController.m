@@ -10,6 +10,7 @@
 #import "personalTableViewCell.h"
 
 @interface personalViewController ()
+- (IBAction)tapGesture:(UITapGestureRecognizer *)sender;
 - (IBAction)logout:(UIButton *)sender forEvent:(UIEvent *)event;
 
 - (IBAction)save:(UIButton *)sender forEvent:(UIEvent *)event;
@@ -52,7 +53,7 @@
 
 - (void)requestData {
     PFUser *currentUser = [PFUser currentUser];
-    _uName.text = currentUser[@"username"];
+    _uName.text = [NSString stringWithFormat:@"账号信息：%@", currentUser[@"username"]];
     PFFile *photo = currentUser[@"photo"];
     [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
         if (!error) {
@@ -208,6 +209,7 @@
 //
 //    return YES;//可清除内容
 //}
+
 - (IBAction)logout:(UIButton *)sender forEvent:(UIEvent *)event {
     
     PFUser *user = [PFUser currentUser];
@@ -243,12 +245,6 @@
     isedit=NO;
     [_button setTitle:@"编辑" forState:UIControlStateNormal];
     _savebutton.hidden = YES;
-    //    user[@"signature"] = signature;
-    //    user[@"xingbie"] = xingbie;
-    //    user[@"age"] = age;
-    //    user[@"address"] = address;
-    //    user[@"email"] = email;
-    
     
     
 

@@ -13,6 +13,9 @@
     BOOL hidden;
 
 }
+@property (weak, nonatomic) IBOutlet UILabel *account;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *loginbutton;
+@property (weak, nonatomic) IBOutlet UIButton *logoutBU;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonItem;
 @property (weak, nonatomic) IBOutlet UIImageView *imageIV;//头像
 @property (weak, nonatomic) IBOutlet UILabel *usernameLB;//名称

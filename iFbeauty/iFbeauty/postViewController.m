@@ -7,8 +7,7 @@
 //
 
 #import "postViewController.h"
-#import "postCellTableViewCell.h"
-
+#import "deleteViewController.h"
 
 @interface postViewController ()
 
@@ -51,21 +50,46 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    postCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"postcell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"postcell" forIndexPath:indexPath];
     
     PFObject *object = [_postArray objectAtIndex:indexPath.row];
     
           if (!(object[@"title"])) {
-            cell.postLabel.text=@"";
+              
+           cell.textLabel.text =@"";
         }
 
-    cell.postLabel.text = [NSString stringWithFormat:@"%@", object[@"title"]];
-    
-    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", object[@"title"]];
     
 
     return cell;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    PFObject *object = [_postArray objectAtIndex:indexPath.row];
+    deleteViewController *pvc = [Utilities getStoryboardInstanceByIdentity:@"delete"];
+    PFObject *par = object[@"owner"];
+    pvc.ownername = par;
+    pvc.item = object;
+    pvc.hidesBottomBarWhenPushed = YES;//把切换按钮隐藏掉
+    [self.navigationController pushViewController:pvc animated:YES];
+    
+}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
+//    particularsViewController *pvc = [Utilities getStoryboardInstanceByIdentity:@"particulars"];
+//    PFObject *par = object[@"owner"];
+//    pvc.ownername = par;
+//    pvc.item = object;
+//    pvc.hidesBottomBarWhenPushed = YES;//把切换按钮隐藏掉
+//    [self.navigationController pushViewController:pvc animated:YES];
+//    
+//}
 
 /*
 #pragma mark - Navigation

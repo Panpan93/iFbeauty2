@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "postCellTableViewCell.h"
+
 
 @interface postViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *postTable;

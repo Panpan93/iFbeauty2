@@ -11,6 +11,7 @@
 		214C1B821BAE87AB005823D2 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 214C1B7E1BAE87AB005823D2 /* SVProgressHUD.m */; };
 		214C1B831BAE87AB005823D2 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 214C1B801BAE87AB005823D2 /* SVIndefiniteAnimatedView.m */; };
 		214C1B851BAE8832005823D2 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 214C1B841BAE8832005823D2 /* SVProgressHUD.bundle */; };
+		218ACD771BB5170B00BE79C7 /* readcommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 218ACD761BB5170B00BE79C7 /* readcommentTableViewCell.m */; };
 		21A658101BAFFECC00685F6A /* SendpostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6580F1BAFFECC00685F6A /* SendpostViewController.m */; };
 		21B58BF41BB17C4800EB1E51 /* lunbo1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21B58BEF1BB17C4800EB1E51 /* lunbo1.jpg */; };
 		21B58BF51BB17C4800EB1E51 /* lunbo4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21B58BF01BB17C4800EB1E51 /* lunbo4.jpg */; };
@@ -101,6 +102,8 @@
 		214C1B7F1BAE87AB005823D2 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		214C1B801BAE87AB005823D2 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		214C1B841BAE8832005823D2 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		218ACD751BB5170B00BE79C7 /* readcommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = readcommentTableViewCell.h; path = iFbeauty/readcommentTableViewCell.h; sourceTree = "<group>"; };
+		218ACD761BB5170B00BE79C7 /* readcommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = readcommentTableViewCell.m; path = iFbeauty/readcommentTableViewCell.m; sourceTree = "<group>"; };
 		21A6580E1BAFFECC00685F6A /* SendpostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendpostViewController.h; path = iFbeauty/SendpostViewController.h; sourceTree = "<group>"; };
 		21A6580F1BAFFECC00685F6A /* SendpostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendpostViewController.m; path = iFbeauty/SendpostViewController.m; sourceTree = "<group>"; };
 		21B58BEF1BB17C4800EB1E51 /* lunbo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lunbo1.jpg; sourceTree = "<group>"; };
@@ -284,6 +287,8 @@
 			children = (
 				21E5AF831BB404CE001C7974 /* particularsViewController.h */,
 				21E5AF841BB404CE001C7974 /* particularsViewController.m */,
+				218ACD751BB5170B00BE79C7 /* readcommentTableViewCell.h */,
+				218ACD761BB5170B00BE79C7 /* readcommentTableViewCell.m */,
 			);
 			name = read;
 			sourceTree = "<group>";
@@ -603,6 +608,7 @@
 				757AA04D1BAE803D00AB2C2C /* changePWViewController.m in Sources */,
 				7573374B1BACF7DE00DD08E1 /* AppDelegate.m in Sources */,
 				75D8B3301BAD448B007DE2C2 /* secondViewController.m in Sources */,
+				218ACD771BB5170B00BE79C7 /* readcommentTableViewCell.m in Sources */,
 				75D8B32E1BAD448B007DE2C2 /* firstViewController.m in Sources */,
 				757AA0531BAEA61C00AB2C2C /* MineViewController.m in Sources */,
 				214C1B831BAE87AB005823D2 /* SVIndefiniteAnimatedView.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "meifaViewController.h"
 #import "meifaTableViewCell.h"
+#import "particularsViewController.h"
 
 @interface meifaViewController ()
 
@@ -42,8 +43,10 @@
     
     [query includeKey:@"owner"];//关联查询
     
-    
+    [SVProgressHUD show];
+
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
+        [SVProgressHUD dismiss];
         if (!error) {
             _objectsForShow = returnedObjects;
             NSLog(@"%@", _objectsForShow);
@@ -53,6 +56,24 @@
         }
     }];
 }
+
+//取消选择行
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
+    particularsViewController *pvc = [Utilities getStoryboardInstanceByIdentity:@"particulars"];
+    PFObject *par = object[@"owner"];
+    pvc.ownername = par;
+    pvc.item = object;
+    pvc.hidesBottomBarWhenPushed = YES;//把切换按钮隐藏掉
+    [self.navigationController pushViewController:pvc animated:YES];
+    
+}
+
+
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [_objectsForShow count];

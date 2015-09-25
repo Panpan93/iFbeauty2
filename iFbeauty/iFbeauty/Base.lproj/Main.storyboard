@@ -806,7 +806,7 @@
         <scene sceneID="fO4-hY-IJm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AP1-eI-T2I" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" id="xQv-sS-p6g"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="1.png" id="xQv-sS-p6g"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HA3-Oq-64P">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -825,7 +825,7 @@
         <scene sceneID="DD2-Qe-GNd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nES-UM-Hhs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="动态" id="ZxF-sd-uqm"/>
+                    <tabBarItem key="tabBarItem" title="动态" image="未标题-3.png" id="ZxF-sd-uqm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="M04-7w-kwT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1482,7 +1482,7 @@
         <scene sceneID="FV7-IS-B2z">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w1G-T2-ZJC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" id="tzu-VQ-uYe"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="未标题-1.png" id="tzu-VQ-uYe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7ip-b2-Eld">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -2622,4 +2622,9 @@
             <point key="canvasLocation" x="1248" y="2447"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1.png" width="40" height="40"/>
+        <image name="未标题-1.png" width="40" height="40"/>
+        <image name="未标题-3.png" width="40" height="40"/>
+    </resources>
 </document>

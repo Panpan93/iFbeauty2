@@ -22,6 +22,8 @@
 		21E5AF851BB404CE001C7974 /* particularsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5AF841BB404CE001C7974 /* particularsViewController.m */; };
 		751ED4CB1BAFC972000AF80B /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751ED4C91BAFC972000AF80B /* NewsViewController.m */; };
 		751ED4CC1BAFC972000AF80B /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 751ED4CA1BAFC972000AF80B /* NewsViewController.xib */; };
+		7525429D1BB4CACE002F9F95 /* postCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7525429C1BB4CACE002F9F95 /* postCellTableViewCell.m */; };
+		752542A31BB4D47B002F9F95 /* postViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752542A21BB4D47B002F9F95 /* postViewController.m */; };
 		756379861BB12AA0002F5350 /* messageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 756379851BB12AA0002F5350 /* messageTableViewCell.m */; };
 		756379891BB14FA0002F5350 /* personalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 756379881BB14FA0002F5350 /* personalTableViewCell.m */; };
 		7563798C1BB14FC3002F5350 /* personalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7563798B1BB14FC3002F5350 /* personalViewController.m */; };
@@ -115,6 +117,10 @@
 		751ED4C81BAFC972000AF80B /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		751ED4C91BAFC972000AF80B /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		751ED4CA1BAFC972000AF80B /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
+		7525429B1BB4CACE002F9F95 /* postCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = postCellTableViewCell.h; sourceTree = "<group>"; };
+		7525429C1BB4CACE002F9F95 /* postCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = postCellTableViewCell.m; sourceTree = "<group>"; };
+		752542A11BB4D47B002F9F95 /* postViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = postViewController.h; sourceTree = "<group>"; };
+		752542A21BB4D47B002F9F95 /* postViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = postViewController.m; sourceTree = "<group>"; };
 		756379841BB12AA0002F5350 /* messageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = messageTableViewCell.h; path = iFbeauty/messageTableViewCell.h; sourceTree = "<group>"; };
 		756379851BB12AA0002F5350 /* messageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = messageTableViewCell.m; path = iFbeauty/messageTableViewCell.m; sourceTree = "<group>"; };
 		756379871BB14FA0002F5350 /* personalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = personalTableViewCell.h; sourceTree = "<group>"; };
@@ -295,6 +301,10 @@
 				75AE1AAF1BB3C1E700CE4111 /* shoppingViewController.h */,
 				75AE1AB01BB3C1E700CE4111 /* shoppingViewController.m */,
 				75AE1AB11BB3C1E700CE4111 /* shoppingViewController.xib */,
+				7525429B1BB4CACE002F9F95 /* postCellTableViewCell.h */,
+				7525429C1BB4CACE002F9F95 /* postCellTableViewCell.m */,
+				752542A11BB4D47B002F9F95 /* postViewController.h */,
+				752542A21BB4D47B002F9F95 /* postViewController.m */,
 			);
 			name = Mine;
 			path = iFbeauty;
@@ -601,11 +611,13 @@
 				21E5AF851BB404CE001C7974 /* particularsViewController.m in Sources */,
 				21A658101BAFFECC00685F6A /* SendpostViewController.m in Sources */,
 				758A63F91BB2827C00889B90 /* bodybuildingViewController.m in Sources */,
+				7525429D1BB4CACE002F9F95 /* postCellTableViewCell.m in Sources */,
 				75D8B2F01BAD0CD8007DE2C2 /* BBLaunchAdMonitor.m in Sources */,
 				75D8B2F31BAD0CD8007DE2C2 /* ECSlidingInteractiveTransition.m in Sources */,
 				75D8B2F21BAD0CD8007DE2C2 /* ECSlidingAnimationController.m in Sources */,
 				75D8B3331BAD448B007DE2C2 /* Utilities.m in Sources */,
 				75AE1AB21BB3C1E700CE4111 /* shoppingViewController.m in Sources */,
+				752542A31BB4D47B002F9F95 /* postViewController.m in Sources */,
 				757337481BACF7DE00DD08E1 /* main.m in Sources */,
 				756379861BB12AA0002F5350 /* messageTableViewCell.m in Sources */,
 				75D8B2F11BAD0CD8007DE2C2 /* ECPercentDrivenInteractiveTransition.m in Sources */,

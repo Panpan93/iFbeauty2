@@ -11,6 +11,7 @@
 #import "ViewController.h"
 #import "personalViewController.h"
 #import "shoppingViewController.h"
+#import "postViewController.h"
 
 
 @interface MineViewController ()
@@ -135,8 +136,15 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+#pragma   读自己发的帖子
 - (IBAction)sender:(UIButton *)sender forEvent:(UIEvent *)event {
+    
+        postViewController *post = [self.storyboard instantiateViewControllerWithIdentifier:@"post"];
+        post.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:post animated:YES];
+        
+
+    
 }
 - (IBAction)focus:(UIButton *)sender forEvent:(UIEvent *)event {
 }

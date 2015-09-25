@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KiI-A1-N48">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KiI-A1-N48">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -746,7 +746,6 @@
                                             <outlet property="imageview" destination="cLp-VY-ZYk" id="Dft-lC-b3m"/>
                                             <outlet property="nameLabel" destination="Zxz-aX-bZ0" id="mOw-N6-pbk"/>
                                             <outlet property="titleLabel" destination="unW-bf-hZw" id="bmB-cY-vK7"/>
-                                            <segue destination="d5f-MN-hax" kind="show" identifier="particulars" id="1lp-T4-w16"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1954,11 +1953,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="etc-tL-NWL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="etc-tL-NWL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="vyD-up-4iA">
-                                    <rect key="frame" x="0.0" y="64" width="375" height="328"/>
+                                    <rect key="frame" x="0.0" y="64" width="375" height="153"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrN-se-4pj">
@@ -2112,11 +2111,65 @@
                                     </variation>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" verticalCompressionResistancePriority="751" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="particularsCell" id="KkM-Xj-X1W">
+                                    <tableViewCell contentMode="scaleToFill" verticalCompressionResistancePriority="751" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="commentCell" rowHeight="150" id="KkM-Xj-X1W" customClass="readcommentTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KkM-Xj-X1W" id="a5f-Sf-YOf">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3j5-RZ-Rac">
+                                                    <rect key="frame" x="20" y="8" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="Hmt-39-F6c"/>
+                                                        <constraint firstAttribute="width" constant="60" id="ZVp-oP-vgZ"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="30"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerWidth">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BW-Ts-2kj">
+                                                    <rect key="frame" x="95" y="17" width="240" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyy-2P-g7W">
+                                                    <rect key="frame" x="20" y="88" width="335" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DiC-gm-Xhu">
+                                                    <rect key="frame" x="95" y="45" width="240" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="7BW-Ts-2kj" secondAttribute="trailing" constant="40" id="2qU-Ne-Sr8"/>
+                                                <constraint firstItem="Zyy-2P-g7W" firstAttribute="top" secondItem="3j5-RZ-Rac" secondAttribute="bottom" constant="20" id="8g7-oL-Kq8"/>
+                                                <constraint firstItem="3j5-RZ-Rac" firstAttribute="top" secondItem="a5f-Sf-YOf" secondAttribute="top" constant="8" id="H7c-0r-6Aa"/>
+                                                <constraint firstItem="7BW-Ts-2kj" firstAttribute="top" secondItem="a5f-Sf-YOf" secondAttribute="top" constant="17" id="MNf-y6-wUj"/>
+                                                <constraint firstItem="7BW-Ts-2kj" firstAttribute="leading" secondItem="3j5-RZ-Rac" secondAttribute="trailing" constant="15" id="Neo-l7-siM"/>
+                                                <constraint firstItem="DiC-gm-Xhu" firstAttribute="leading" secondItem="3j5-RZ-Rac" secondAttribute="trailing" constant="15" id="ON2-nf-zrZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="DiC-gm-Xhu" secondAttribute="trailing" constant="40" id="YV5-4g-1uN"/>
+                                                <constraint firstAttribute="trailing" secondItem="Zyy-2P-g7W" secondAttribute="trailing" constant="20" id="ZAy-w5-f5v"/>
+                                                <constraint firstItem="3j5-RZ-Rac" firstAttribute="leading" secondItem="a5f-Sf-YOf" secondAttribute="leading" constant="20" id="eUg-sI-CXW"/>
+                                                <constraint firstItem="DiC-gm-Xhu" firstAttribute="top" secondItem="7BW-Ts-2kj" secondAttribute="bottom" constant="10" id="kaK-yf-A3R"/>
+                                                <constraint firstItem="Zyy-2P-g7W" firstAttribute="leading" secondItem="a5f-Sf-YOf" secondAttribute="leading" constant="20" id="t4b-9h-ZiQ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentUserDate" destination="DiC-gm-Xhu" id="dCj-kE-bZl"/>
+                                            <outlet property="commentUserDetail" destination="Zyy-2P-g7W" id="yp7-IH-PYg"/>
+                                            <outlet property="commentUserImage" destination="3j5-RZ-Rac" id="sZ4-i5-yEW"/>
+                                            <outlet property="commentUserName" destination="7BW-Ts-2kj" id="IVQ-oe-1wJ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -2128,8 +2181,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="etc-tL-NWL" firstAttribute="top" secondItem="1Fa-aS-6eB" secondAttribute="top" id="4rx-fo-kTM"/>
+                            <constraint firstAttribute="trailing" secondItem="etc-tL-NWL" secondAttribute="trailing" id="BDZ-0N-59g"/>
+                            <constraint firstItem="etc-tL-NWL" firstAttribute="leading" secondItem="1Fa-aS-6eB" secondAttribute="leading" id="BFm-DO-rrm"/>
+                            <constraint firstItem="etc-tL-NWL" firstAttribute="top" secondItem="1Fa-aS-6eB" secondAttribute="top" id="JuP-3e-dim"/>
                             <constraint firstAttribute="trailing" secondItem="etc-tL-NWL" secondAttribute="trailing" id="Ke9-Qi-Ugr"/>
                             <constraint firstItem="Yeo-ZY-2Sv" firstAttribute="top" secondItem="etc-tL-NWL" secondAttribute="bottom" id="YZ0-lH-627"/>
+                            <constraint firstItem="Yeo-ZY-2Sv" firstAttribute="top" secondItem="etc-tL-NWL" secondAttribute="bottom" id="f00-mR-Vrf"/>
                             <constraint firstItem="etc-tL-NWL" firstAttribute="leading" secondItem="1Fa-aS-6eB" secondAttribute="leading" id="jqX-eQ-2jb"/>
                         </constraints>
                     </view>

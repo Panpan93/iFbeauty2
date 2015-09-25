@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *deLabel;
 @property (strong, nonatomic) PFObject *item;
 @property (strong, nonatomic) PFObject *ownername;
+@property (strong, nonatomic) NSArray *objectsForShow;
 
 
 @end

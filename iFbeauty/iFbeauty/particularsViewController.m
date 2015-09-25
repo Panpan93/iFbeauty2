@@ -8,6 +8,7 @@
 
 #import "particularsViewController.h"
 #import "hairdressingTableViewCell.h"
+#import "readcommentTableViewCell.h"
 
 @interface particularsViewController ()
 - (IBAction)praiseAction:(UIButton *)sender forEvent:(UIEvent *)event;
@@ -19,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self requestData];
+
     PFFile *userphoto = _item[@"photot"];
     
     _userName.text =[NSString stringWithFormat:@"发帖人： %@", _ownername[@"secondname"]];
@@ -80,20 +83,73 @@
 }
 */
 
+
 - (IBAction)praiseAction:(UIButton *)sender forEvent:(UIEvent *)event {
 }
 
 - (IBAction)commentAction:(UIButton *)sender forEvent:(UIEvent *)event {
 }
 
+- (void)requestData {
+    
+    //PFQuery *query = [PFQuery queryWithClassName:@"Item"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"commentItem == %@",_item];
+    PFQuery *query2 = [PFQuery queryWithClassName:@"comment" predicate:predicate];
+    
+    [query2 includeKey:@"commentUser"];//关联查询
+    [query2 includeKey:@"commentItem"];//关联查询
+    [SVProgressHUD show];
+
+    [query2 findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
+        [SVProgressHUD dismiss];
+
+        if (!error) {
+            _objectsForShow = returnedObjects;
+            NSLog(@"_objectsForShow = %@", _objectsForShow);
+            [_tableView reloadData];
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    readcommentTableViewCell *cell = [self tableView:_tableView cellForRowAtIndexPath:indexPath];
+//    return cell.frame.size.height;
+//    
+//    
+//
+//}
+//
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return _objectsForShow.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"particularsCell" forIndexPath:indexPath];
-    cell.textLabel.text = @"A";
+    readcommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell" forIndexPath:indexPath];
+    
+    
+    PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
+    cell.commentUserDetail.text = [NSString stringWithFormat:@"%@", object[@"commentdetail"]];
+    
+    PFObject *activity = object[@"commentUser"];
+    
+    cell.commentUserName.text =[NSString stringWithFormat:@" %@   评论", activity[@"secondname"]];
+    NSLog(@"%@",activity);
+    PFFile *photo = activity[@"photo"];
+    [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:photoData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.commentUserImage.image = image;
+            });
+        }
+    }];
+    
     return cell;
+    
 }
 
 @end

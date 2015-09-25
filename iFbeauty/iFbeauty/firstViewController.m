@@ -156,29 +156,38 @@
 //取消选择行
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
+    particularsViewController *pvc = [Utilities getStoryboardInstanceByIdentity:@"particulars"];
+    PFObject *par = object[@"owner"];
+    pvc.ownername = par;
+    pvc.item = object;
+    pvc.hidesBottomBarWhenPushed = YES;//把切换按钮隐藏掉
+    [self.navigationController pushViewController:pvc animated:YES];
+
 }
 
 
 
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
-     if ([segue.identifier isEqualToString:@"particulars"]) {
-         PFObject *object = [_objectsForShow objectAtIndex:[_tableView indexPathForSelectedRow].row];//获得当前tablview选中行的数据
-         particularsViewController *miVC = segue.destinationViewController;//目的地视图控制器
-         PFObject *par = object[@"owner"];
-         miVC.item = object;
-         miVC.ownername = par;
-         miVC.hidesBottomBarWhenPushed = YES;//把切换按钮隐藏掉
-         //
-     }
-
- }
-
+// #pragma mark - Navigation
+// 
+// // In a storyboard-based application, you will often want to do a little preparation before navigation
+// - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+// // Get the new view controller using [segue destinationViewController].
+// // Pass the selected object to the new view controller.
+//     if ([segue.identifier isEqualToString:@"particulars"]) {
+//         PFObject *object = [_objectsForShow objectAtIndex:[_tableView indexPathForSelectedRow].row];//获得当前tablview选中行的数据
+//         particularsViewController *miVC = segue.destinationViewController;//目的地视图控制器
+//         PFObject *par = object[@"owner"];
+//         miVC.item = object;
+//         miVC.ownername = par;
+//         miVC.hidesBottomBarWhenPushed = YES;//把切换按钮隐藏掉
+//         //
+//     }
+//
+// }
+//
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

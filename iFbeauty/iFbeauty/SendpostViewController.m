@@ -21,7 +21,8 @@
     // Do any additional setup after loading the view from its nib.
     _pickerarray=@[@"关于美容",@"关于美发",@"关于美体",@"关于搭配"];
     _sexarray = @[@"关于男士",@"关于女士"];
-    
+    self.navigationItem.title = [NSString stringWithFormat:@"发帖"];
+
     self.picker.delegate=self;//设置代理
     self.picker.dataSource=self;//设置数据源
 

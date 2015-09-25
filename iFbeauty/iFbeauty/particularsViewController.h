@@ -20,6 +20,9 @@
 @property (strong, nonatomic) PFObject *item;
 @property (strong, nonatomic) PFObject *ownername;
 @property (strong, nonatomic) NSArray *objectsForShow;
+@property (weak, nonatomic) IBOutlet UIView *lineView;
+@property (weak, nonatomic) IBOutlet UIView *lineView2;
+
 
 
 @end

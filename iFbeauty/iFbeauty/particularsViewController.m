@@ -11,8 +11,13 @@
 #import "readcommentTableViewCell.h"
 
 @interface particularsViewController ()
-- (IBAction)praiseAction:(UIButton *)sender forEvent:(UIEvent *)event;
-- (IBAction)commentAction:(UIButton *)sender forEvent:(UIEvent *)event;
+
+
+- (IBAction)praiseAction:(UIBarButtonItem *)sender;
+- (IBAction)collectAction:(UIBarButtonItem *)sender;
+- (IBAction)commentAction:(UIBarButtonItem *)sender;
+
+
 
 @end
 
@@ -51,9 +56,11 @@
         _header.frame = rect;
         _tableView.tableHeaderView.frame = rect;
         _particularsIV.hidden = YES;
+        _lineView.hidden = YES;
+        _lineView2.hidden = NO;
     } else {
         CGRect rect2 = _header.frame;
-        rect2.size.height = _deLabel.frame.origin.y + contentLabelSize.height + 440;
+        rect2.size.height = _deLabel.frame.origin.y + contentLabelSize.height + 450;
         _header.frame = rect2;
         _tableView.tableHeaderView.frame = rect2;
         [userphoto getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
@@ -65,7 +72,12 @@
             }
         }];
         _particularsIV.hidden = NO;
+        _lineView.hidden = NO;
+        _lineView2.hidden = YES;
     }
+    
+    _tableView.tableFooterView=[[UIView alloc]init];//不显示多余的分隔符
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,11 +96,23 @@
 */
 
 
-- (IBAction)praiseAction:(UIButton *)sender forEvent:(UIEvent *)event {
-}
 
+//点击评论
 - (IBAction)commentAction:(UIButton *)sender forEvent:(UIEvent *)event {
 }
+
+
+//点击赞
+- (IBAction)praiseAction:(UIBarButtonItem *)sender {
+}
+
+//点击收藏
+- (IBAction)collectAction:(UIBarButtonItem *)sender {
+}
+
+- (IBAction)commentAction:(UIBarButtonItem *)sender {
+}
+
 
 - (void)requestData {
     
@@ -113,15 +137,21 @@
     }];
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    readcommentTableViewCell *cell = [self tableView:_tableView cellForRowAtIndexPath:indexPath];
-//    return cell.frame.size.height;
-//    
-//    
-//
-//}
-//
+/****根据评论的内容更改行高****/
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //   UITableViewCell *cell = [self tableView:_tableView cellForRowAtIndexPath:indexPath];
+    readcommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell"];
+    
+    PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
+    
+    CGSize maxSize = CGSizeMake(UI_SCREEN_W - 40, 1000);
+    CGSize contentLabelSize = [object[@"commentdetail"] boundingRectWithSize:maxSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]} context:nil].size;
+    NSLog(@"origin = %f", cell.commentUserDetail.frame.origin.y);
+    NSLog(@"height = %f", contentLabelSize.height);
+    NSLog(@"totalHeight = %f", cell.commentUserDetail.frame.origin.y + contentLabelSize.height + 20);
+    return cell.commentUserDetail.frame.origin.y + contentLabelSize.height + 21;
+}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _objectsForShow.count;
@@ -136,7 +166,7 @@
     
     PFObject *activity = object[@"commentUser"];
     
-    cell.commentUserName.text =[NSString stringWithFormat:@" %@   评论", activity[@"secondname"]];
+    cell.commentUserName.text =[NSString stringWithFormat:@" %@  ", activity[@"secondname"]];
     NSLog(@"%@",activity);
     PFFile *photo = activity[@"photo"];
     [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {

@@ -38,7 +38,8 @@
     layer.borderColor = [[UIColor whiteColor]CGColor];
     layer.borderWidth = 1;//边框宽度
     layer.masksToBounds = YES;//图片填充边框
-    
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tupian1.jpg"]];
+
     [self read];
   }
 

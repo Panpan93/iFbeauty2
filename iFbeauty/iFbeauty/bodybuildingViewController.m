@@ -20,6 +20,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self requestData];
+    self.navigationItem.title = [NSString stringWithFormat:@"美体"];
+    _bodybuildingTV.tableFooterView=[[UIView alloc]init];//不显示多余的分隔符
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,6 +82,23 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [_objectsForShow count];
 }
+
+/****根据评论的内容更改行高****/
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //   UITableViewCell *cell = [self tableView:_tableView cellForRowAtIndexPath:indexPath];
+    bodybuildingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"bodybuildingCell"];
+    
+    PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
+    
+    CGSize maxSize = CGSizeMake(UI_SCREEN_W - 40, 1000);
+    CGSize contentLabelSize = [object[@"title"] boundingRectWithSize:maxSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:cell.userTitle.font} context:nil].size;
+    NSLog(@"origin = %f", cell.userTitle.frame.origin.y);
+    NSLog(@"height = %f", contentLabelSize.height);
+    NSLog(@"totalHeight = %f", cell.userTitle.frame.origin.y + contentLabelSize.height + 20);
+    return cell.userTitle.frame.origin.y + contentLabelSize.height + 35;
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     bodybuildingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"bodybuildingCell" forIndexPath:indexPath];//复用Cell

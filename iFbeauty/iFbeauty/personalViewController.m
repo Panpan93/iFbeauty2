@@ -32,6 +32,7 @@
     _savebutton.hidden = YES;
     [self requestData];
     [self creatbutton];
+    _headerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tupian1.jpg"]];
 }
 
 

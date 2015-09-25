@@ -34,6 +34,9 @@
     [self requestData];
     [self uiConfiguration];
     
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tupian1.jpg"]];
+
+    
     [self.navigationController.navigationBar setTranslucent:NO];
     // 定时器 循环
     [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(runTimePage) userInfo:nil repeats:YES];
@@ -127,7 +130,7 @@
     [self turnPage];
 }
 
-
+//点击发帖按钮
 - (IBAction)send:(UIBarButtonItem *)sender {
     
     SendpostViewController *denglu = [self.storyboard instantiateViewControllerWithIdentifier:@"send"];
@@ -225,7 +228,7 @@
 }
 
 
-
+//美容按钮
 - (IBAction)mrButton:(UIButton *)sender forEvent:(UIEvent *)event {
     hairdressingViewController *meir = [self.storyboard instantiateViewControllerWithIdentifier:@"meirong"];
     meir.hidesBottomBarWhenPushed = YES;
@@ -233,6 +236,7 @@
 
 }
 
+//美发按钮
 - (IBAction)mfButton:(UIButton *)sender forEvent:(UIEvent *)event {
     meifaViewController *meif = [self.storyboard instantiateViewControllerWithIdentifier:@"meifa"];
     meif.hidesBottomBarWhenPushed = YES;
@@ -240,12 +244,14 @@
 
 }
 
+//美体按钮
 - (IBAction)mtButton:(UIButton *)sender forEvent:(UIEvent *)event {
     bodybuildingViewController *meif = [self.storyboard instantiateViewControllerWithIdentifier:@"bodybuilding"];
     meif.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:meif animated:YES];
 }
 
+//搭配按钮
 - (IBAction)dpButton:(UIButton *)sender forEvent:(UIEvent *)event {
     matchViewController *meif = [self.storyboard instantiateViewControllerWithIdentifier:@"match"];
     meif.hidesBottomBarWhenPushed = YES;

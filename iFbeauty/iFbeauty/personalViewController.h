@@ -34,5 +34,6 @@
 //@property (strong, nonatomic) NSString *age;
 @property (strong, nonatomic) NSString *address;
 @property (strong, nonatomic) NSString *secongemail;
+@property (weak, nonatomic) IBOutlet UIView *headerView;
 
 @end

@@ -19,6 +19,7 @@
     [super viewDidLoad];
     [self readData];
     
+    
 }
 -(void)readData
 {

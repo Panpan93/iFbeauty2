@@ -15,8 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *commentUserDetail;
 
 
-//给用户介绍赋值并且实现自动换行
--(void)setIntroductionText:(NSString*)text;
-//初始化cell类
--(id)initWithReuseIdentifier:(NSString*)reuseIdentifier;
+////给用户介绍赋值并且实现自动换行
+//-(void)setIntroductionText:(NSString*)text;
+////初始化cell类
+//-(id)initWithReuseIdentifier:(NSString*)reuseIdentifier;
 @end

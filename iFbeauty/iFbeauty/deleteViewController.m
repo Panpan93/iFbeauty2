@@ -125,11 +125,62 @@
     
     return cell;
 
+}
+
+- (IBAction)deleteButtenItem:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];//点击退出返回首页
     
     
-    return cell;
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您的帖子将彻底删除，您确定要删除吗？" message:nil delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+
+{
+    
+    if (buttonIndex == 1) {
+        [self shanchu];
+        NSLog(@"YES");
+    } else {
+        NSLog(@"no");
+    }
+}
+
+- (void) shanchu {
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"commentItem == %@",_item];
+    PFQuery *query2 = [PFQuery queryWithClassName:@"comment" predicate:predicate];
+    
+    [query2 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            for (PFObject *comm in objects) {
+                [comm deleteInBackground];
+            }
+        }
+    }];
+    
+    [_item deleteInBackground];
+    
+    
+    [SVProgressHUD show];
+    //判断上传成功
+    [_item saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)/**/ {
+        [SVProgressHUD dismiss];
+        if (succeeded) {
+            [[NSNotificationCenter defaultCenter] performSelectorOnMainThread:@selector(postNotification:) withObject:[NSNotification notificationWithName:@"refreshMine" object:self] waitUntilDone:YES];//通过通知去刷新列表。自动刷新，
+            [self.navigationController popViewControllerAnimated:YES];//刷新页面
+            NSLog(@"1");
+            
+        } else {
+            [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+        }
+    }];
+    
     
 }
+
 
 /*
 #pragma mark - Navigation
@@ -141,7 +192,4 @@
 }
 */
 
-- (IBAction)deleteButtenItem:(id)sender {
-    
-}
 @end

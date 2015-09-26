@@ -18,9 +18,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self readData];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestData) name:@"refreshHome" object:nil];
+
     
     
 }
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];//视图出现之前做的事情
+    [self readData];
+    
+}
+
+
+
 -(void)readData
 {
     PFUser *currentUser = [PFUser currentUser];

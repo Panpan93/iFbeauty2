@@ -120,7 +120,49 @@
 - (IBAction)collectAction:(UIBarButtonItem *)sender {
 }
 
-- (IBAction)commentAction:(UIBarButtonItem *)sender {
+- (IBAction)commentAction:(UIBarButtonItem *)sender { UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请发表您的评论" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    
+    [alert show];
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+
+{
+    NSString *buttonTitle = [alertView buttonTitleAtIndex:buttonIndex];
+    if ([buttonTitle isEqualToString:@"确定"]){
+        UITextField *textField = [alertView textFieldAtIndex:0];
+        NSString *formatter = textField.text;
+        
+        
+        
+        //创建一个item
+        PFObject *item = [PFObject objectWithClassName:@"comment"];
+        item[@"commentdetail"] = formatter;
+        
+        item[@"commentItem"] = _item;
+        item[@"commentUser"] = _ownername;
+        
+        if ([textField.text isEqualToString:@""]) {
+            [Utilities popUpAlertViewWithMsg:@"请填写全部信息" andTitle:nil];
+            return;//终止该方法，下面的代码不会被执行
+        }
+        [self performSelector:@selector(delayHappen:) withObject:item afterDelay:0.5];
+    }
+}
+
+- (void)delayHappen:(PFObject *)item {
+    [SVProgressHUD show];
+    //判断上传成功
+    [item saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)/*如果成功的插入数据库*/ {
+        if (succeeded) {
+            [self requestData];
+        } else {
+            [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+            [SVProgressHUD dismiss];
+        }
+    }];
 }
 
 

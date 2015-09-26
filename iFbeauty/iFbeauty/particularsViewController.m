@@ -104,6 +104,16 @@
 
 //点击赞
 - (IBAction)praiseAction:(UIBarButtonItem *)sender {
+    [self praiseData];
+    
+}
+-(void)praiseData
+{
+    
+    [_item incrementKey:@"praise"];
+    
+    [_item saveInBackground];
+    
 }
 
 //点击收藏

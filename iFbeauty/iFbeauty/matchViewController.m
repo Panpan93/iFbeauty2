@@ -136,7 +136,7 @@
 - (void) initializeData
 {
     loadCount = 1;//页码为1，从第一页开始
-    perPage = 3;//每页显示3个数据
+    perPage = 5;//每页显示3个数据
     loadingMore = NO;
     [self urlAction];
 }

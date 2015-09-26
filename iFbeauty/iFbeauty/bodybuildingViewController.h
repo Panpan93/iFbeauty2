@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface bodybuildingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
-@property (strong, nonatomic) NSArray *objectsForShow;
+{
+    BOOL loadingMore;
+    NSInteger loadCount;
+    NSInteger perPage;
+    NSInteger totalPage;
+}
+
+@property (strong, nonatomic) NSMutableArray *objectsForShow;
+@property (strong, nonatomic) UIActivityIndicatorView *aiv;
+@property (strong, nonatomic) UIActivityIndicatorView *tableFooterAI;
 @property (weak, nonatomic) IBOutlet UITableView *bodybuildingTV;
 @end

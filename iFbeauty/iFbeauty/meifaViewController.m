@@ -142,18 +142,6 @@
     _aiv = [Utilities getCoverOnView:self.view];
     [self initializeData];
     
-    //    [SVProgressHUD show];
-    
-    //    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
-    //        [SVProgressHUD dismiss];
-    //        if (!error) {
-    //            _objectsForShow = returnedObjects;
-    ////            NSLog(@"%@", _objectsForShow);
-    //            [_matchTV reloadData];
-    //        } else {
-    ////            NSLog(@"Error: %@ %@", error, [error userInfo]);
-    //        }
-    //    }];
 }
 
 
@@ -162,14 +150,14 @@
 - (void) initializeData
 {
     loadCount = 1;//页码为1，从第一页开始
-    perPage = 3;//每页显示3个数据
+    perPage = 5;//每页显示3个数据
     loadingMore = NO;
     [self urlAction];
 }
 - (void) urlAction
 {
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"typetei == '关于搭配'"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"typetei == '关于美发'"];
     PFQuery *query = [PFQuery queryWithClassName:@"Item" predicate:predicate];
     
     [query includeKey:@"owner"];//关联查询

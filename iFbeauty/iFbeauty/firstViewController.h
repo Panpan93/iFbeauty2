@@ -9,11 +9,23 @@
 #import <UIKit/UIKit.h>
 
 @interface firstViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
-@property (strong, nonatomic) NSArray *objectsForShow;
+{
+        BOOL loadingMore;
+        NSInteger loadCount;
+        NSInteger perPage;
+        NSInteger totalPage;
+}
+
+
+@property (strong, nonatomic) NSMutableArray *objectsForShow;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (strong,nonatomic) NSMutableArray * slideImages;
+
+@property (strong, nonatomic) UIActivityIndicatorView *aiv;
+
+@property (strong, nonatomic) UIActivityIndicatorView *tableFooterAI;
 
 @end

@@ -54,8 +54,6 @@
     [_slideImages addObject:@"lunbo4.jpg"];
     [_slideImages addObject:@"lunbo5.jpg"];
     
-    //[_pageControl setCurrentPageIndicatorTintColor:[UIColor redColor]];
-    //[_pageControl setPageIndicatorTintColor:[UIColor blackColor]];
     _pageControl.numberOfPages = [self.slideImages count];
     _pageControl.currentPage = 0;
     [_pageControl addTarget:self action:@selector(turnPage) forControlEvents:UIControlEventValueChanged]; // 触摸mypagecontrol触发change这个方法事件
@@ -139,23 +137,6 @@
 }
 
 
-- (void)requestData {
-    PFQuery *query = [PFQuery queryWithClassName:@"Item"];
-    [query includeKey:@"owner"];//关联查询
-      UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
-            [aiv stopAnimating];
-        if (!error) {
-            _objectsForShow = returnedObjects;
-//            NSLog(@"%@", _objectsForShow);
-            [_tableView reloadData];
-        } else {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
-}
-
 //取消选择行
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -168,7 +149,56 @@
     pvc.item = object;
     pvc.hidesBottomBarWhenPushed = YES;//把切换按钮隐藏掉
     [self.navigationController pushViewController:pvc animated:YES];
+    
+}
 
+
+
+
+- (void)requestData {
+    _aiv = [Utilities getCoverOnView:self.view];
+    [self initializeData];
+}
+
+//下拉刷新：刷新器+初始数据（第一页数据）
+- (void) initializeData
+{
+    loadCount = 1;//页码为1，从第一页开始
+    perPage = 3;//每页显示3个数据
+    loadingMore = NO;
+    [self urlAction];
+}
+- (void) urlAction
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Item"];
+    [query includeKey:@"owner"];//关联查询
+    [query setLimit:perPage];
+    [query setSkip:(perPage * (loadCount - 1))];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
+        [_aiv stopAnimating];
+        if (!error) {
+            NSLog(@"objects = %@", objects);
+            if (objects.count == 0) {
+                NSLog(@"NO");
+                loadCount --;
+                [self performSelector:@selector(beforeLoadEnd) withObject:nil afterDelay:0.25];//过0.25秒执行终止操作
+            } else {
+                if (loadCount == 1) {
+                    _objectsForShow = nil;
+                    _objectsForShow = [NSMutableArray new];//上拉翻页，新的数据续在第一页的数据之下。若下拉刷新，清空第一二页的内容，然后重新载入第一页的内容
+                }
+                for (PFObject *obj in objects) {
+                    [_objectsForShow addObject:obj];
+                }
+                NSLog(@"_objectsForShow = %@", _objectsForShow);
+                [_tableView reloadData];
+                [self loadDataEnd];
+            }
+        } else {
+            [self loadDataEnd];
+            NSLog(@"%@", [error description]);
+        }
+    }];
 }
 
 
@@ -191,6 +221,68 @@
 //
 // }
 //
+
+
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (scrollView.contentSize.height > scrollView.frame.size.height) {
+        if (!loadingMore && scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height))/**当scrollView的y轴显示位置高度内容大于scrollView的显示高度-scrollView的本身高度**/ {
+            [self loadDataBegin];
+        }
+    } else {
+        if (!loadingMore && scrollView.contentOffset.y > 0)/**内容高度大于scrollView本身的高度，执行刷新**/ {
+            [self loadDataBegin];
+        }
+    }
+}
+
+- (void)loadDataBegin {
+    //这个方法是让上拉时，正在加载时再次上拉时阻断
+    if (loadingMore == NO) /**没有在加载**/{
+        loadingMore = YES;
+        [self createTableFooter];
+        _tableFooterAI = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake((UI_SCREEN_W - 86.0f) / 2 - 30.0f, 10.0f, 20.0f, 20.0f)];//创建一个菊花
+        [_tableFooterAI setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+        [self.tableView.tableFooterView addSubview:_tableFooterAI];
+        [_tableFooterAI startAnimating];
+        [self loadDataing];
+    }
+}
+
+- (void)loadDataing {
+    loadCount ++;
+    [self urlAction];
+}
+
+- (void)beforeLoadEnd {
+    UILabel *label = (UILabel *)[self.tableView.tableFooterView viewWithTag:9001];
+    [label setText:@"当前已无更多数据"];
+    [_tableFooterAI stopAnimating];
+    _tableFooterAI = nil;
+    [self performSelector:@selector(loadDataEnd) withObject:nil afterDelay:0.25];//再过0.25秒执行loadDataEnd
+}
+
+- (void)loadDataEnd {
+    self.tableView.tableFooterView = [[UIView alloc] init];
+    loadingMore = NO;
+    
+}
+
+- (void)createTableFooter {
+    UIView *tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.bounds.size.width, 40.0f)];
+    UILabel *loadMoreText = [[UILabel alloc] initWithFrame:CGRectMake((UI_SCREEN_W - 86.0f) / 2, 0.0f, 116.0f, 40.0f)];//UI_SCREEN_W 是屏幕的宽度  上拉刷新的Label  让文字和菊花都在正中间
+    loadMoreText.tag = 9001;//这个Label的标签是9001
+    [loadMoreText setFont:[UIFont systemFontOfSize:B_Font]];
+    [loadMoreText setText:@"上拉显示更多数据"];
+    loadMoreText.textColor = [UIColor grayColor];
+    [tableFooterView addSubview:loadMoreText];
+    self.tableView.tableFooterView = tableFooterView;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // Return the number of sections.
+    return 1;
+}
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

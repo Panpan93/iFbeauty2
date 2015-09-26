@@ -97,11 +97,6 @@
 
 
 
-//点击评论
-- (IBAction)commentAction:(UIButton *)sender forEvent:(UIEvent *)event {
-}
-
-
 //点击赞
 - (IBAction)praiseAction:(UIBarButtonItem *)sender {
     [self praiseData];
@@ -120,7 +115,9 @@
 - (IBAction)collectAction:(UIBarButtonItem *)sender {
 }
 
-- (IBAction)commentAction:(UIBarButtonItem *)sender { UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请发表您的评论" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+//点击评论
+- (IBAction)commentAction:(UIBarButtonItem *)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请发表您的评论" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     
     [alert show];

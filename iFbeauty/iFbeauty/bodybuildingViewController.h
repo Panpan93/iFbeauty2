@@ -19,5 +19,6 @@
 @property (strong, nonatomic) NSMutableArray *objectsForShow;
 @property (strong, nonatomic) UIActivityIndicatorView *aiv;
 @property (strong, nonatomic) UIActivityIndicatorView *tableFooterAI;
+
 @property (weak, nonatomic) IBOutlet UITableView *bodybuildingTV;
 @end

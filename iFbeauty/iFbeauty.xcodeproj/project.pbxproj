@@ -35,6 +35,7 @@
 		21F4E73F1BB909B900859372 /* 16.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F4E73E1BB909B900859372 /* 16.png */; };
 		21F4E7411BB90DE400859372 /* 登录背景3.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F4E7401BB90DE400859372 /* 登录背景3.png */; };
 		21F4E7431BB916B400859372 /* 18.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F4E7421BB916B400859372 /* 18.png */; };
+		21F4E7461BB954EB00859372 /* collectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F4E7451BB954EB00859372 /* collectionViewController.m */; };
 		751ED4CB1BAFC972000AF80B /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751ED4C91BAFC972000AF80B /* NewsViewController.m */; };
 		751ED4CC1BAFC972000AF80B /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 751ED4CA1BAFC972000AF80B /* NewsViewController.xib */; };
 		752542A31BB4D47B002F9F95 /* postViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752542A21BB4D47B002F9F95 /* postViewController.m */; };
@@ -146,6 +147,8 @@
 		21F4E73E1BB909B900859372 /* 16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 16.png; sourceTree = "<group>"; };
 		21F4E7401BB90DE400859372 /* 登录背景3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "登录背景3.png"; sourceTree = "<group>"; };
 		21F4E7421BB916B400859372 /* 18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18.png; sourceTree = "<group>"; };
+		21F4E7441BB954EB00859372 /* collectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = collectionViewController.h; sourceTree = "<group>"; };
+		21F4E7451BB954EB00859372 /* collectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = collectionViewController.m; sourceTree = "<group>"; };
 		751ED4C81BAFC972000AF80B /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		751ED4C91BAFC972000AF80B /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		751ED4CA1BAFC972000AF80B /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
@@ -357,6 +360,8 @@
 				752BCF901BB5339800E295A3 /* deleteViewController.m */,
 				752BCF921BB5373300E295A3 /* deleteTableViewCell.h */,
 				752BCF931BB5373300E295A3 /* deleteTableViewCell.m */,
+				21F4E7441BB954EB00859372 /* collectionViewController.h */,
+				21F4E7451BB954EB00859372 /* collectionViewController.m */,
 			);
 			name = Mine;
 			path = iFbeauty;
@@ -672,6 +677,7 @@
 				7573374B1BACF7DE00DD08E1 /* AppDelegate.m in Sources */,
 				75D8B3301BAD448B007DE2C2 /* secondViewController.m in Sources */,
 				218ACD771BB5170B00BE79C7 /* readcommentTableViewCell.m in Sources */,
+				21F4E7461BB954EB00859372 /* collectionViewController.m in Sources */,
 				75D8B32E1BAD448B007DE2C2 /* firstViewController.m in Sources */,
 				757AA0531BAEA61C00AB2C2C /* MineViewController.m in Sources */,
 				214C1B831BAE87AB005823D2 /* SVIndefiniteAnimatedView.m in Sources */,

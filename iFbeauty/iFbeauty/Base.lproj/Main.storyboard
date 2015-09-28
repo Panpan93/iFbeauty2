@@ -2608,6 +2608,60 @@
             </objects>
             <point key="canvasLocation" x="1248" y="2447"/>
         </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="Y0e-lO-4z3">
+            <objects>
+                <viewController storyboardIdentifier="collec" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tFd-kY-5oy" customClass="collectionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XZD-9t-Uqn"/>
+                        <viewControllerLayoutGuide type="bottom" id="bZY-Qu-nZp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="03M-kO-3Jj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ltp-QD-CHc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="collection" textLabel="pCD-UB-kLY" style="IBUITableViewCellStyleDefault" id="tiN-LR-Qsw">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tiN-LR-Qsw" id="0wc-2f-3gB">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pCD-UB-kLY">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="tFd-kY-5oy" id="a2O-Nw-jEB"/>
+                                    <outlet property="delegate" destination="tFd-kY-5oy" id="Cnp-qA-c4v"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ltp-QD-CHc" secondAttribute="trailing" id="7Z3-k0-iSn"/>
+                            <constraint firstItem="bZY-Qu-nZp" firstAttribute="top" secondItem="ltp-QD-CHc" secondAttribute="bottom" id="FWn-mF-7yh"/>
+                            <constraint firstItem="ltp-QD-CHc" firstAttribute="top" secondItem="03M-kO-3Jj" secondAttribute="top" id="XP9-pP-UJz"/>
+                            <constraint firstItem="ltp-QD-CHc" firstAttribute="leading" secondItem="03M-kO-3Jj" secondAttribute="leading" id="ftX-c1-cQs"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="collectionTable" destination="ltp-QD-CHc" id="E1s-2R-Lq0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GNB-88-d2D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1210.5" y="3191.5"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="p7J-oW-gfa">
             <objects>

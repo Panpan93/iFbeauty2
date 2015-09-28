@@ -13,6 +13,7 @@
 #import "shoppingViewController.h"
 #import "postViewController.h"
 #import "changePWViewController.h"
+#import "collectionViewController.h"
 
 
 @interface MineViewController ()
@@ -121,6 +122,19 @@
             [self.navigationController pushViewController:news animated:YES];
 
         }
+    if (indexPath.row==2) {
+//        collectionViewController *collection = [[collectionViewController alloc] init];
+//        collection.title = @"我的收藏";
+//        [collection setHidesBottomBarWhenPushed:YES];
+//        [self.navigationController pushViewController:collection animated:YES];
+        collectionViewController *collection = [self.storyboard instantiateViewControllerWithIdentifier:@"collec"];
+        collection.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:collection animated:YES];
+        
+
+        
+    }
+
     if (indexPath.row==3) {
         shoppingViewController *shop = [[shoppingViewController alloc] init];
         shop.title = @"京东商城";

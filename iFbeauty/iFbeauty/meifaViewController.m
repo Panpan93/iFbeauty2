@@ -21,6 +21,8 @@
     // Do any additional setup after loading the view.
     [self requestData];
     [self uiConfiguration];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
+
     self.navigationItem.title = [NSString stringWithFormat:@"美发"];
     _meifaTV.tableFooterView=[[UIView alloc]init];//不显示多余的分隔符
 }

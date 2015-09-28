@@ -20,7 +20,11 @@
     [self requestData];
     [self uiConfiguration];
     
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
+
+    
     PFFile *userphoto = _item[@"photot"];
+    
     
     //_userName.text =[NSString stringWithFormat:@"发帖人： %@", _ownername[@"secondname"]];
     // NSLog(@"用户名%@",_userName.text);

@@ -17,7 +17,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="背景123.png" translatesAutoresizingMaskIntoConstraints="NO" id="QTY-yq-EGy">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="18.png" translatesAutoresizingMaskIntoConstraints="NO" id="QTY-yq-EGy">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
             </subviews>
@@ -37,6 +37,6 @@
         </view>
     </objects>
     <resources>
-        <image name="背景123.png" width="350" height="435"/>
+        <image name="18.png" width="387" height="500"/>
     </resources>
 </document>

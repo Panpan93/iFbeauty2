@@ -129,7 +129,13 @@
                             <constraint firstItem="pJg-zb-PJb" firstAttribute="centerX" secondItem="FWC-t8-cg3" secondAttribute="centerX" id="w9P-5r-sHv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="登录" id="VS8-wB-GcX"/>
+                    <navigationItem key="navigationItem" title="登录" id="VS8-wB-GcX">
+                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="P5y-KK-B3h">
+                            <connections>
+                                <action selector="backAction:" destination="vXZ-lx-hvc" id="FfH-lv-I2Y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="dengluButton" destination="m2T-gn-nMp" id="oNf-K8-ahO"/>
@@ -140,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.5" y="3245.5"/>
+            <point key="canvasLocation" x="-280.5" y="3236.5"/>
         </scene>
         <!--注册-->
         <scene sceneID="HMT-BV-hbw">
@@ -273,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AXL-TF-GXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="503.5" y="3245.5"/>
+            <point key="canvasLocation" x="235.5" y="3211.5"/>
         </scene>
         <!--消息-->
         <scene sceneID="b1A-ei-yRs">
@@ -2613,22 +2619,23 @@
             <point key="canvasLocation" x="1248" y="2447"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Qes-cm-s4B">
+        <scene sceneID="p7J-oW-gfa">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hPa-Ng-B26" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tlL-DW-gmo" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AeE-8n-bAS">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w1p-eD-N3l">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Oo1-7y-1Lb"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="xHT-ZM-8iB"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IEl-Xl-Lcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pNE-Qr-Q4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-760" y="3245"/>
+            <point key="canvasLocation" x="-746" y="3237"/>
         </scene>
     </scenes>
     <resources>

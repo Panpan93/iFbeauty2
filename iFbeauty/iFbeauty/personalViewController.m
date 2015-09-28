@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
     CALayer *layer = [_baocunButton layer];
     layer.cornerRadius = 40;//角的弧度
     layer.borderColor = [[UIColor redColor]CGColor];

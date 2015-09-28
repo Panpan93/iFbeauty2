@@ -25,6 +25,8 @@
     [_webview loadRequest:request];
     
 //    [self loadToolBar];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
+
 
 }
 #pragma UIWebViewDelegate  协议

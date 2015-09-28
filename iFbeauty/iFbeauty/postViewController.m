@@ -19,6 +19,7 @@
     [super viewDidLoad];
     [self readData];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestData) name:@"refreshHome" object:nil];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
 
     
     

@@ -26,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self requestData];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
+
 
     PFFile *userphoto = _item[@"photot"];
     
@@ -134,9 +136,33 @@
 }
 
 //点击收藏
-- (IBAction)collectAction:(UIBarButtonItem *)sender {
+- (IBAction)collectAction:(UIBarButtonItem *)sender {  [self collectData];
+    
 }
-
+-(void)collectData
+{
+    
+    PFObject *collect = [PFObject objectWithClassName:@"collection"];
+    
+    collect[@"shoucangitem"] = _item;
+    collect[@"shoucanguser"] = _ownername;
+    collect[@"shoucang"]=@"收藏";
+    [collect saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        
+        if (succeeded){
+            NSLog(@"Object Uploaded!");
+        }
+        else{
+            NSLog(@"error=%@",error);
+        }
+        
+    }];
+    NSLog(@" 收藏==  %@",collect[@"zan"]);
+    _shoucangItem.title=@"已收藏";
+    
+    _shoucangItem.enabled=  NO;
+    
+}
 //点击评论
 - (IBAction)commentAction:(UIBarButtonItem *)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请发表您的评论" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];

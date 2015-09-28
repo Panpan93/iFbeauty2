@@ -40,6 +40,8 @@
     layer.borderWidth = 1;//边框宽度
     layer.masksToBounds = YES;//图片填充边框
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tupian1.jpg"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
+
 
     [self read];
   }
@@ -233,23 +235,23 @@
 #pragma   登录
 
 - (IBAction)logIn:(UIBarButtonItem *)sender {
-//      ViewController *denglu = [self.storyboard instantiateViewControllerWithIdentifier:@"denglu"];
-//    if (!hidden) {
-//        //初始化导航控制器
-//    UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:denglu];
-//    //动画效果
-//    nc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-//    //导航条隐藏掉
-//    nc.navigationBarHidden = NO;
-//    //类似那个箭头 跳转到第二个界面
-//    [self presentViewController:nc animated:YES completion:nil];
-//          _buttonItem.enabled=YES;
-//    
-//    }
+      ViewController *denglu = [self.storyboard instantiateViewControllerWithIdentifier:@"denglu"];
+    if (!hidden) {
+        //初始化导航控制器
+    UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:denglu];
+    //动画效果
+    nc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    //导航条隐藏掉
+    nc.navigationBarHidden = NO;
+    //类似那个箭头 跳转到第二个界面
+    [self presentViewController:nc animated:YES completion:nil];
+          _buttonItem.enabled=YES;
     
-    ViewController *meif = [self.storyboard instantiateViewControllerWithIdentifier:@"denglu"];
-    meif.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:meif animated:YES];
+    }
+    
+//    ViewController *meif = [self.storyboard instantiateViewControllerWithIdentifier:@"denglu"];
+//    meif.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:meif animated:YES];
 
 }
 #pragma   退出

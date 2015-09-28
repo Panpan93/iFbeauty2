@@ -130,16 +130,20 @@
 //        change.title = @"修改密码";
 //        [change setHidesBottomBarWhenPushed:YES];
 //        [self.navigationController pushViewController:change animated:YES];
+//        changePWViewController *change = [self.storyboard instantiateViewControllerWithIdentifier:@"change"];
+//        
+//        //初始化导航控制器
+//        UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:change];
+//        //动画效果
+//        nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+//        //导航条隐藏掉
+//        nc.navigationBarHidden = YES;
+//        //类似那个箭头 跳转到第二个界面
+//        [self presentViewController:nc animated:YES completion:nil];
         changePWViewController *change = [self.storyboard instantiateViewControllerWithIdentifier:@"change"];
-        
-        //初始化导航控制器
-        UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:change];
-        //动画效果
-        nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        //导航条隐藏掉
-        nc.navigationBarHidden = YES;
-        //类似那个箭头 跳转到第二个界面
-        [self presentViewController:nc animated:YES completion:nil];
+        change.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:change animated:YES];
+
 
     }
 

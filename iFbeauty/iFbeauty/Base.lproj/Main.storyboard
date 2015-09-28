@@ -497,7 +497,7 @@
                                     <constraint firstAttribute="height" constant="40" id="qsT-7A-Hpp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="wpz-Wy-tpE" id="5Vn-bR-mze"/>
                                 </connections>
@@ -508,7 +508,7 @@
                                     <constraint firstAttribute="height" constant="40" id="jd4-d8-O6m"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="wpz-Wy-tpE" id="Z16-Tq-L9D"/>
                                 </connections>
@@ -519,7 +519,7 @@
                                     <constraint firstAttribute="height" constant="40" id="T8f-mJ-aaX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="wpz-Wy-tpE" id="Se0-Jg-XVR"/>
                                 </connections>
@@ -542,17 +542,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWf-PY-BLf">
-                                <rect key="frame" x="48" y="360" width="279" height="36"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="确认修改">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="Confirmchange:forEvent:" destination="wpz-Wy-tpE" eventType="touchUpInside" id="646-8A-aaL"/>
-                                </connections>
-                            </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3D6-gB-zZK">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -566,6 +555,17 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWf-PY-BLf">
+                                <rect key="frame" x="48" y="360" width="279" height="36"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="确认修改">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Confirmchange:forEvent:" destination="wpz-Wy-tpE" eventType="touchUpInside" id="646-8A-aaL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -595,6 +595,7 @@
                         <outlet property="newpassword" destination="L4E-Ca-Etj" id="GYh-d7-Ukv"/>
                         <outlet property="newpassword1" destination="r9T-Z3-AyD" id="LVI-zT-Nfi"/>
                         <outlet property="oldpassword" destination="fHH-J3-cvJ" id="sCt-tZ-bZB"/>
+                        <outlet property="saveButton" destination="TWf-PY-BLf" id="MSL-Mp-ULG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4x-Vd-5yG" userLabel="First Responder" sceneMemberID="firstResponder"/>

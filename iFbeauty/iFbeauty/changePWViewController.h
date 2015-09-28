@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *oldpassword;
 @property (weak, nonatomic) IBOutlet UITextField *newpassword;
 @property (weak, nonatomic) IBOutlet UITextField *newpassword1;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
 
 @end

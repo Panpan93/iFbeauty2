@@ -18,7 +18,48 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
+
    [Utilities getUserDefaults:@"passWord"];//提取原密码
+    
+    _oldpassword.clearButtonMode = UITextFieldViewModeAlways;
+    _oldpassword.borderStyle = UITextBorderStyleNone;
+    _oldpassword.layer.borderColor = [[UIColor redColor] CGColor];
+    _oldpassword.layer.borderWidth = 2.0f;
+    _oldpassword.layer.masksToBounds = YES;
+    _oldpassword.layer.cornerRadius = 3;
+    _oldpassword.borderStyle = UITextBorderStyleNone;
+
+    
+    
+    _newpassword.clearButtonMode = UITextFieldViewModeAlways;
+    _newpassword.borderStyle = UITextBorderStyleNone;
+    _newpassword.layer.borderColor = [[UIColor redColor] CGColor];
+    _newpassword.layer.borderWidth = 2.0f;
+    _newpassword.layer.masksToBounds = YES;
+    _newpassword.layer.cornerRadius = 3;
+    _newpassword.borderStyle = UITextBorderStyleNone;
+
+    
+    _newpassword1.clearButtonMode = UITextFieldViewModeAlways;
+    _newpassword1.borderStyle = UITextBorderStyleNone;
+    _newpassword1.layer.borderColor = [[UIColor redColor] CGColor];
+    _newpassword1.layer.borderWidth = 2.0f;
+    _newpassword1.layer.masksToBounds = YES;
+    _newpassword1.layer.cornerRadius = 3;
+    _newpassword1.borderStyle = UITextBorderStyleNone;
+    
+    
+    _saveButton.layer.borderColor = [[UIColor purpleColor] CGColor];
+    CALayer *layer = [_saveButton layer];
+    layer.cornerRadius = 40;//角的弧度
+    layer.borderColor = [[UIColor whiteColor]CGColor];
+    layer.borderWidth = 1;//边框宽度
+    layer.masksToBounds = YES;//图片填充边框
+    
+    
+
 }
 
 - (void)didReceiveMemoryWarning {

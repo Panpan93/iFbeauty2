@@ -9,6 +9,20 @@
 #import <UIKit/UIKit.h>
 
 @interface deleteViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
+{
+    BOOL loadingMore;
+    NSInteger loadCount;
+    NSInteger perPage;
+    NSInteger totalPage;
+}
+
+@property (strong, nonatomic) NSMutableArray *objectsForShow;
+@property (strong, nonatomic) UIActivityIndicatorView *aiv;
+@property (strong, nonatomic) UIActivityIndicatorView *tableFooterAI;
+
+
+
 @property (weak, nonatomic) IBOutlet UITableView *deleteTV;
 
 @property (weak, nonatomic) IBOutlet UILabel *titlelabel;
@@ -22,6 +36,6 @@
 - (IBAction)deleteButtenItem:(id)sender;
 @property (strong, nonatomic) PFObject *item;
 @property (strong, nonatomic) PFObject *ownername;
-@property (strong, nonatomic) NSArray *objectsForShow;
+//@property (strong, nonatomic) NSArray *objectsForShow;
 
 @end

@@ -12,6 +12,7 @@
 #import "personalViewController.h"
 #import "shoppingViewController.h"
 #import "postViewController.h"
+#import "changePWViewController.h"
 
 
 @interface MineViewController ()
@@ -28,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     hidden=NO;
-    _objectforshow=[[NSMutableArray alloc]initWithObjects:@"个人信息",@"时尚芭莎",@"收藏的帖子",@"购物",@"设置", nil];
+    _objectforshow=[[NSMutableArray alloc]initWithObjects:@"个人信息",@"时尚芭莎",@"收藏的帖子",@"购物",@"修改密码", nil];
 //    _tableIV.delegate=self;
 //    _tableIV.dataSource=self;
     _tableIV.tableFooterView=[[UIView alloc]init];//不显示多余的分隔符
@@ -124,6 +125,24 @@
         [shop setHidesBottomBarWhenPushed:YES];
         [self.navigationController pushViewController:shop animated:YES];
     }
+    if (indexPath.row==4) {
+//        changePWViewController *change = [[changePWViewController alloc] init];
+//        change.title = @"修改密码";
+//        [change setHidesBottomBarWhenPushed:YES];
+//        [self.navigationController pushViewController:change animated:YES];
+        changePWViewController *change = [self.storyboard instantiateViewControllerWithIdentifier:@"change"];
+        
+        //初始化导航控制器
+        UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:change];
+        //动画效果
+        nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        //导航条隐藏掉
+        nc.navigationBarHidden = YES;
+        //类似那个箭头 跳转到第二个界面
+        [self presentViewController:nc animated:YES completion:nil];
+
+    }
+
 }
 
 

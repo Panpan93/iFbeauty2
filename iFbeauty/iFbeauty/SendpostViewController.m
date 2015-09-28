@@ -37,7 +37,7 @@
     NSString *title = _titleTF.text;
     NSString *detail = _detailTV.text;//得到用户手动输入的东西
     NSString *type=[NSString stringWithFormat:@"%@",[_pickerarray objectAtIndex:[self.picker selectedRowInComponent:0]]] ;
-    NSString *msg=[NSString stringWithFormat:@"%@",[_sexarray objectAtIndex:[self.picker selectedRowInComponent:1]]] ;
+    NSString *msg=[NSString stringWithFormat:@"%@",[_sexarray objectAtIndex:[self.picker selectedRowInComponent:0]]] ;
     //判断照片的情况
     if (_imageView.image == nil) {
         [Utilities popUpAlertViewWithMsg:@"请选择一张照片" andTitle:nil];

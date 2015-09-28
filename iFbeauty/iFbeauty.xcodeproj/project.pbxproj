@@ -20,13 +20,18 @@
 		218ACD871BB574DB00BE79C7 /* 未标题-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 218ACD861BB574DB00BE79C7 /* 未标题-1.png */; };
 		21A658101BAFFECC00685F6A /* SendpostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6580F1BAFFECC00685F6A /* SendpostViewController.m */; };
 		21B58BF41BB17C4800EB1E51 /* lunbo1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21B58BEF1BB17C4800EB1E51 /* lunbo1.jpg */; };
-		21B58BF51BB17C4800EB1E51 /* lunbo4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21B58BF01BB17C4800EB1E51 /* lunbo4.jpg */; };
 		21B58BF61BB17C4800EB1E51 /* lunbo5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21B58BF11BB17C4800EB1E51 /* lunbo5.jpg */; };
-		21B58BF71BB17C4800EB1E51 /* luobo2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21B58BF21BB17C4800EB1E51 /* luobo2.jpg */; };
-		21B58BF81BB17C4800EB1E51 /* luobo3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21B58BF31BB17C4800EB1E51 /* luobo3.jpg */; };
 		21D8FC401BB24CA8004DFC35 /* hairdressingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D8FC3D1BB24CA8004DFC35 /* hairdressingTableViewCell.m */; };
 		21D8FC411BB24CA8004DFC35 /* hairdressingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D8FC3F1BB24CA8004DFC35 /* hairdressingViewController.m */; };
 		21E5AF851BB404CE001C7974 /* particularsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5AF841BB404CE001C7974 /* particularsViewController.m */; };
+		21F4E72E1BB8D28800859372 /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F4E72A1BB8D28800859372 /* 11.png */; };
+		21F4E72F1BB8D28800859372 /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F4E72B1BB8D28800859372 /* 12.png */; };
+		21F4E7301BB8D28800859372 /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F4E72C1BB8D28800859372 /* 13.png */; };
+		21F4E7311BB8D28800859372 /* 15.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F4E72D1BB8D28800859372 /* 15.png */; };
+		21F4E7351BB8D5FB00859372 /* 背景123.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F4E7341BB8D5FB00859372 /* 背景123.png */; };
+		21F4E7371BB8D75F00859372 /* lunbo4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21F4E7361BB8D75F00859372 /* lunbo4.jpg */; };
+		21F4E7391BB8D7F500859372 /* lunbo3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21F4E7381BB8D7F500859372 /* lunbo3.jpg */; };
+		21F4E73D1BB8D91D00859372 /* lunbo2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21F4E73C1BB8D91D00859372 /* lunbo2.jpg */; };
 		751ED4CB1BAFC972000AF80B /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751ED4C91BAFC972000AF80B /* NewsViewController.m */; };
 		751ED4CC1BAFC972000AF80B /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 751ED4CA1BAFC972000AF80B /* NewsViewController.xib */; };
 		752542A31BB4D47B002F9F95 /* postViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752542A21BB4D47B002F9F95 /* postViewController.m */; };
@@ -120,16 +125,21 @@
 		21A6580E1BAFFECC00685F6A /* SendpostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendpostViewController.h; path = iFbeauty/SendpostViewController.h; sourceTree = "<group>"; };
 		21A6580F1BAFFECC00685F6A /* SendpostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendpostViewController.m; path = iFbeauty/SendpostViewController.m; sourceTree = "<group>"; };
 		21B58BEF1BB17C4800EB1E51 /* lunbo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lunbo1.jpg; sourceTree = "<group>"; };
-		21B58BF01BB17C4800EB1E51 /* lunbo4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lunbo4.jpg; sourceTree = "<group>"; };
 		21B58BF11BB17C4800EB1E51 /* lunbo5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lunbo5.jpg; sourceTree = "<group>"; };
-		21B58BF21BB17C4800EB1E51 /* luobo2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = luobo2.jpg; sourceTree = "<group>"; };
-		21B58BF31BB17C4800EB1E51 /* luobo3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = luobo3.jpg; sourceTree = "<group>"; };
 		21D8FC3C1BB24CA8004DFC35 /* hairdressingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hairdressingTableViewCell.h; path = iFbeauty/hairdressingTableViewCell.h; sourceTree = "<group>"; };
 		21D8FC3D1BB24CA8004DFC35 /* hairdressingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = hairdressingTableViewCell.m; path = iFbeauty/hairdressingTableViewCell.m; sourceTree = "<group>"; };
 		21D8FC3E1BB24CA8004DFC35 /* hairdressingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hairdressingViewController.h; path = iFbeauty/hairdressingViewController.h; sourceTree = "<group>"; };
 		21D8FC3F1BB24CA8004DFC35 /* hairdressingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = hairdressingViewController.m; path = iFbeauty/hairdressingViewController.m; sourceTree = "<group>"; };
 		21E5AF831BB404CE001C7974 /* particularsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = particularsViewController.h; path = iFbeauty/particularsViewController.h; sourceTree = "<group>"; };
 		21E5AF841BB404CE001C7974 /* particularsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = particularsViewController.m; path = iFbeauty/particularsViewController.m; sourceTree = "<group>"; };
+		21F4E72A1BB8D28800859372 /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11.png; sourceTree = "<group>"; };
+		21F4E72B1BB8D28800859372 /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
+		21F4E72C1BB8D28800859372 /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13.png; sourceTree = "<group>"; };
+		21F4E72D1BB8D28800859372 /* 15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 15.png; sourceTree = "<group>"; };
+		21F4E7341BB8D5FB00859372 /* 背景123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "背景123.png"; sourceTree = "<group>"; };
+		21F4E7361BB8D75F00859372 /* lunbo4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lunbo4.jpg; sourceTree = "<group>"; };
+		21F4E7381BB8D7F500859372 /* lunbo3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lunbo3.jpg; sourceTree = "<group>"; };
+		21F4E73C1BB8D91D00859372 /* lunbo2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lunbo2.jpg; sourceTree = "<group>"; };
 		751ED4C81BAFC972000AF80B /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		751ED4C91BAFC972000AF80B /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		751ED4CA1BAFC972000AF80B /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
@@ -266,16 +276,21 @@
 			isa = PBXGroup;
 			children = (
 				21B58BEF1BB17C4800EB1E51 /* lunbo1.jpg */,
-				21B58BF01BB17C4800EB1E51 /* lunbo4.jpg */,
 				21B58BF11BB17C4800EB1E51 /* lunbo5.jpg */,
-				21B58BF21BB17C4800EB1E51 /* luobo2.jpg */,
-				21B58BF31BB17C4800EB1E51 /* luobo3.jpg */,
+				21F4E7381BB8D7F500859372 /* lunbo3.jpg */,
+				21F4E73C1BB8D91D00859372 /* lunbo2.jpg */,
 				218ACD7A1BB5678700BE79C7 /* 登录背景.png */,
 				218ACD7B1BB5678700BE79C7 /* tupian1.jpg */,
 				218ACD7C1BB5678700BE79C7 /* tupian2.jpg */,
+				21F4E7361BB8D75F00859372 /* lunbo4.jpg */,
 				218ACD821BB573E400BE79C7 /* 1.png */,
 				218ACD841BB573F000BE79C7 /* 未标题-3.png */,
 				218ACD861BB574DB00BE79C7 /* 未标题-1.png */,
+				21F4E72A1BB8D28800859372 /* 11.png */,
+				21F4E72B1BB8D28800859372 /* 12.png */,
+				21F4E72C1BB8D28800859372 /* 13.png */,
+				21F4E72D1BB8D28800859372 /* 15.png */,
+				21F4E7341BB8D5FB00859372 /* 背景123.png */,
 			);
 			name = image;
 			sourceTree = "<group>";
@@ -589,23 +604,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21F4E7311BB8D28800859372 /* 15.png in Resources */,
+				21F4E73D1BB8D91D00859372 /* lunbo2.jpg in Resources */,
 				21B58BF41BB17C4800EB1E51 /* lunbo1.jpg in Resources */,
 				757337511BACF7DF00DD08E1 /* Main.storyboard in Resources */,
 				218ACD7D1BB5678700BE79C7 /* 登录背景.png in Resources */,
 				75AE1AB31BB3C1E700CE4111 /* shoppingViewController.xib in Resources */,
-				21B58BF51BB17C4800EB1E51 /* lunbo4.jpg in Resources */,
+				21F4E7351BB8D5FB00859372 /* 背景123.png in Resources */,
+				21F4E7301BB8D28800859372 /* 13.png in Resources */,
 				218ACD851BB573F000BE79C7 /* 未标题-3.png in Resources */,
 				757337561BACF7DF00DD08E1 /* LaunchScreen.xib in Resources */,
 				757337531BACF7DF00DD08E1 /* Images.xcassets in Resources */,
+				21F4E7391BB8D7F500859372 /* lunbo3.jpg in Resources */,
 				218ACD7F1BB5678700BE79C7 /* tupian2.jpg in Resources */,
 				214C1B851BAE8832005823D2 /* SVProgressHUD.bundle in Resources */,
 				218ACD831BB573E400BE79C7 /* 1.png in Resources */,
+				21F4E7371BB8D75F00859372 /* lunbo4.jpg in Resources */,
 				21B58BF61BB17C4800EB1E51 /* lunbo5.jpg in Resources */,
 				751ED4CC1BAFC972000AF80B /* NewsViewController.xib in Resources */,
+				21F4E72E1BB8D28800859372 /* 11.png in Resources */,
 				218ACD7E1BB5678700BE79C7 /* tupian1.jpg in Resources */,
 				218ACD871BB574DB00BE79C7 /* 未标题-1.png in Resources */,
-				21B58BF71BB17C4800EB1E51 /* luobo2.jpg in Resources */,
-				21B58BF81BB17C4800EB1E51 /* luobo3.jpg in Resources */,
+				21F4E72F1BB8D28800859372 /* 12.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

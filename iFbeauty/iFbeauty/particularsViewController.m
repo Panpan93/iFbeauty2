@@ -26,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self requestData];
+    [self praiseData];
+    [self collectData];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
 
 
@@ -101,66 +103,95 @@
 
 //点击赞
 - (IBAction)praiseAction:(UIBarButtonItem *)sender {
-    [self praiseData];
+    if ([_zanItem.title isEqualToString:@"赞"]) {
+        PFObject *praise = [PFObject objectWithClassName:@"praise"];
+        
+        praise[@"praiseitem"] = _item;
+        praise[@"praiseuser"] = _ownername;
+        praise[@"zan"]=@"赞";
+        [praise saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            
+            if (succeeded){
+                NSLog(@"Object Uploaded!");
+                [self praiseData];
+            }
+            else{
+                NSLog(@"error=%@",error);
+            }
+            
+        }];
+        NSLog(@" zan==  %@",praise[@"zan"]);
+    }
+
     
 }
 -(void)praiseData
 {
     
-    PFObject *praise = [PFObject objectWithClassName:@"praise"];
-    //    NSString *zan=@"赞";
-    
-    
-    praise[@"praiseitem"] = _item;
-    praise[@"praiseuser"] = _ownername;
-    praise[@"zan"]=@"赞";
-    [praise saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        
-        if (succeeded){
-            NSLog(@"Object Uploaded!");
+    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"praiseitem == %@ AND praiseuser == %@", _item, _ownername];
+    PFQuery *query3 = [PFQuery queryWithClassName:@"praise" predicate:predicate3];
+    [query3 countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+        if (!error) {
+            NSLog(@"%d", number);
+            if (number == 0) {
+                _zanItem.title=@"赞";
+                _zanItem.enabled=YES;
+                
+            } else {
+                _zanItem.title=@"已赞";
+                _zanItem.enabled=NO;
+            }
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
-        else{
-            NSLog(@"error=%@",error);
-        }
-        
     }];
-    NSLog(@" zan==  %@",praise[@"zan"]);
-    _zanItem.title=@"已赞";
-    
-    _zanItem.enabled=  NO;
-    
-    [_item incrementKey:@"praise"];
-    
-    [_item saveInBackground];
-    
 }
 
 //点击收藏
-- (IBAction)collectAction:(UIBarButtonItem *)sender {  [self collectData];
+- (IBAction)collectAction:(UIBarButtonItem *)sender {
+    if ([_shoucangItem.title isEqualToString:@"收藏"]) {
+        PFObject *praise = [PFObject objectWithClassName:@"collection"];
+        
+        praise[@"shoucangitem"] = _item;
+        praise[@"shoucanguser"] = _ownername;
+        praise[@"shoucang"]=@"收藏";
+        [praise saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            
+            if (succeeded){
+                NSLog(@"Object Uploaded!");
+                [self collectData];
+            }
+            else{
+                NSLog(@"error=%@",error);
+            }
+            
+        }];
+        NSLog(@" 收藏==  %@",praise[@"shoucang"]);
+    }
+
     
 }
 -(void)collectData
 {
     
-    PFObject *collect = [PFObject objectWithClassName:@"collection"];
+    //PFObject *praise = [PFObject objectWithClassName:@"praise"];
+    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"shoucangitem == %@ AND shoucanguser == %@",_item,_ownername];
+    PFQuery *query3 = [PFQuery queryWithClassName:@"collection" predicate:predicate3];
     
-    collect[@"shoucangitem"] = _item;
-    collect[@"shoucanguser"] = _ownername;
-    collect[@"shoucang"]=@"收藏";
-    [collect saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        
-        if (succeeded){
-            NSLog(@"Object Uploaded!");
+    //   PFObject *object = [PFObject objectWithClassName:@"praise" dictionary:predicate3];
+    
+    [query3 countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+        if (!error) {
+            if (number == 0) {
+                _shoucangItem.title=@"收藏";
+                _shoucangItem.enabled=YES;
+                
+            } else {
+                _shoucangItem.title=@"已收藏";
+                _shoucangItem.enabled=NO;
+            }
         }
-        else{
-            NSLog(@"error=%@",error);
-        }
-        
     }];
-    NSLog(@" 收藏==  %@",collect[@"zan"]);
-    _shoucangItem.title=@"已收藏";
-    
-    _shoucangItem.enabled=  NO;
     
 }
 //点击评论

@@ -137,7 +137,7 @@
 - (void) urlAction
 {
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"typetei == '关于美体'"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"typetei == '关于美容'"];
     PFQuery *query = [PFQuery queryWithClassName:@"Item" predicate:predicate];
     
     [query includeKey:@"owner"];//关联查询

@@ -49,6 +49,33 @@
         }
     }];
     
+    //赞的数量
+    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"praiseitem == %@", _item];
+    PFQuery *query3 = [PFQuery queryWithClassName:@"praise" predicate:predicate3];
+    [query3 countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
+        if (!error) {
+            NSString* s = [NSString stringWithFormat:@"%d", count];
+            _zanLabel.text = s;
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
+    //评论的数量
+    NSPredicate *predicate4 = [NSPredicate predicateWithFormat:@"commentItem == %@", _item];
+    PFQuery *query4 = [PFQuery queryWithClassName:@"comment" predicate:predicate4];
+    [query4 countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
+        if (!error) {
+            NSString* s = [NSString stringWithFormat:@"%d", count];
+            _pinglunLabel.text = s;
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
+
+
+    
     NSLog(@"y = %f", _deLabel.frame.origin.y);
     CGSize maxSize = CGSizeMake(UI_SCREEN_W - 40, 1000);
     CGSize contentLabelSize = [_deLabel.text boundingRectWithSize:maxSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:_deLabel.font} context:nil].size;
@@ -81,6 +108,9 @@
     }
     
     _tableView.tableFooterView=[[UIView alloc]init];//不显示多余的分隔符
+    
+    
+    
 
 }
 

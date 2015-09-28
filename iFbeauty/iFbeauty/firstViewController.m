@@ -173,6 +173,7 @@
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Item"];
     [query includeKey:@"owner"];//关联查询
+    [query orderByDescending:@"createdAt"];
     [query setLimit:perPage];
     [query setSkip:(perPage * (loadCount - 1))];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){

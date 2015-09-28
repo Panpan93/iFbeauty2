@@ -105,6 +105,28 @@
 -(void)praiseData
 {
     
+    PFObject *praise = [PFObject objectWithClassName:@"praise"];
+    //    NSString *zan=@"赞";
+    
+    
+    praise[@"praiseitem"] = _item;
+    praise[@"praiseuser"] = _ownername;
+    praise[@"zan"]=@"赞";
+    [praise saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        
+        if (succeeded){
+            NSLog(@"Object Uploaded!");
+        }
+        else{
+            NSLog(@"error=%@",error);
+        }
+        
+    }];
+    NSLog(@" zan==  %@",praise[@"zan"]);
+    _zanItem.title=@"已赞";
+    
+    _zanItem.enabled=  NO;
+    
     [_item incrementKey:@"praise"];
     
     [_item saveInBackground];

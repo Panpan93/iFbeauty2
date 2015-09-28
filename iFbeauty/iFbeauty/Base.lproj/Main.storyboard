@@ -2602,11 +2602,15 @@
                         <outlet property="lineView" destination="Qaa-m3-VUW" id="bEp-xg-f4G"/>
                         <outlet property="lineView2" destination="Sic-gD-H32" id="Nuv-hL-LBC"/>
                         <outlet property="particularsIV" destination="kvt-f1-dmW" id="F4w-Dk-VTA"/>
+                        <outlet property="pinglunLabel" destination="lgc-qn-GMb" id="5Hq-6V-Hwr"/>
+                        <outlet property="shoucangItem" destination="AAw-wo-mTN" id="aUA-vS-lii"/>
                         <outlet property="tableView" destination="etc-tL-NWL" id="o1B-It-1gb"/>
                         <outlet property="userDate" destination="Wc2-RQ-DrL" id="9Cb-qI-vFI"/>
                         <outlet property="userImage" destination="8NA-A0-rQV" id="q0l-MS-FW2"/>
                         <outlet property="userName" destination="b5b-t1-k3o" id="gJF-40-WaF"/>
                         <outlet property="userTitle" destination="BrN-se-4pj" id="25f-2O-nd3"/>
+                        <outlet property="zanItem" destination="uHa-Ka-URz" id="dw0-ed-VJN"/>
+                        <outlet property="zanLabel" destination="WhK-IU-5hg" id="S2b-z0-jsz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4UO-u6-dPh" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -23,6 +23,10 @@
 @property (weak, nonatomic) IBOutlet UIView *lineView;
 @property (weak, nonatomic) IBOutlet UIView *lineView2;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *zanItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *shoucangItem;
+@property (weak, nonatomic) IBOutlet UILabel *zanLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pinglunLabel;
 
 
 @end

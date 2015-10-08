@@ -67,6 +67,33 @@
         }];
         _particularsIV.hidden = NO;
     }
+    
+    
+    //赞的数量
+    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"praiseitem == %@", _item];
+    PFQuery *query3 = [PFQuery queryWithClassName:@"praise" predicate:predicate3];
+    [query3 countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
+        if (!error) {
+            NSString* s = [NSString stringWithFormat:@"%d", count];
+            _like.text = s;
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
+    //评论的数量
+    NSPredicate *predicate4 = [NSPredicate predicateWithFormat:@"commentItem == %@", _item];
+    PFQuery *query4 = [PFQuery queryWithClassName:@"comment" predicate:predicate4];
+    [query4 countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
+        if (!error) {
+            NSString* s = [NSString stringWithFormat:@"%d", count];
+            _commen.text = s;
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {

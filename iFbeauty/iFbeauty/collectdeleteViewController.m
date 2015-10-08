@@ -27,15 +27,31 @@
     
     _titlelabel.text = [NSString stringWithFormat:@"%@", activity[@"title"]];;
     
+    
+    //发帖时间
     NSDate *createdAt = activity.createdAt;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
     NSString *strDate = [dateFormatter stringFromDate:createdAt];
     _userdate.text = [NSString stringWithFormat:@"%@",strDate];
     
-    PFObject *activity2 = _item[@"shoucangitem.owner"];
-    NSLog(@"  activity2 == %@",activity2);
-    _username.text = [NSString stringWithFormat:@"%@", activity2[@"username"]];;
+    //发帖人
+    PFObject *ownerUser = activity[@"owner"];
+    NSLog(@"  ownerUser == %@",ownerUser);
+    _username.text = [NSString stringWithFormat:@"发贴人： %@", ownerUser[@"secondname"]];
+    
+    //发帖人头像
+    
+    PFFile *photo = ownerUser[@"photo"];
+    [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:photoData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                _userimage.image = image;
+            });
+        }
+    }];
+    
 
 
     
@@ -50,13 +66,13 @@
         CGRect rect = _header.frame;
         rect.size.height = _deLabel.frame.origin.y + contentLabelSize.height + 20;
         _header.frame = rect;
-        _deleteTV.tableHeaderView.frame = rect;
+        _deleteTV.tableHeaderView = _header;
         _particularsIV.hidden = YES;
     } else {
         CGRect rect2 = _header.frame;
         rect2.size.height = _deLabel.frame.origin.y + contentLabelSize.height + 460;
         _header.frame = rect2;
-        _deleteTV.tableHeaderView.frame = rect2;
+        _deleteTV.tableHeaderView = _header;
         [userphoto getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
             if (!error) {
                 UIImage *image = [UIImage imageWithData:photoData];
@@ -70,7 +86,7 @@
     
     
     //赞的数量
-    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"praiseitem == %@", _item];
+    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"praiseitem == %@", activity];
     PFQuery *query3 = [PFQuery queryWithClassName:@"praise" predicate:predicate3];
     [query3 countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
         if (!error) {
@@ -82,7 +98,7 @@
     }];
     
     //评论的数量
-    NSPredicate *predicate4 = [NSPredicate predicateWithFormat:@"commentItem == %@", _item];
+    NSPredicate *predicate4 = [NSPredicate predicateWithFormat:@"commentItem == %@", activity];
     PFQuery *query4 = [PFQuery queryWithClassName:@"comment" predicate:predicate4];
     [query4 countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
         if (!error) {
@@ -252,12 +268,11 @@
 }
 - (void) urlAction
 {
-    
-    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"shoucangitem == %@", _item];
-    PFQuery *query = [PFQuery queryWithClassName:@"Item" predicate:predicate3];
+
+    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"commentItem == %@",_item[@"shoucangitem"] ];
+    PFQuery *query = [PFQuery queryWithClassName:@"collection" predicate:predicate3];
     
     [query includeKey:@"owner"];//关联查询
-//    [query includeKey:@"commentItem"];//关联查询
     
     [query setLimit:perPage];
     [query setSkip:(perPage * (loadCount - 1))];

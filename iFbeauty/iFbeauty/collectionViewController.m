@@ -35,7 +35,7 @@
     
     [collection includeKey:@"shoucanguser"];//关联查询
     [collection includeKey:@"shoucangitem"];//关联查询
-    
+    [collection includeKey:@"shoucangitem.owner"];//关联查询
     
     NSLog(@"collection == %@ ",collection);
     

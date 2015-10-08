@@ -337,8 +337,8 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
 
         SVProgressHUDRingThickness = 2;
         SVProgressHUDCornerRadius = 14;
-        SVProgressHUDForegroundColor = [UIColor blackColor];
-        SVProgressHUDBackgroundColor = [UIColor whiteColor];
+        SVProgressHUDForegroundColor = [UIColor whiteColor];
+        SVProgressHUDBackgroundColor = [UIColor blackColor];
         
         if([UIFont respondsToSelector:@selector(preferredFontForTextStyle:)]){
             SVProgressHUDFont = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
@@ -369,10 +369,10 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
 }
 
 - (void)updateHUDFrame{
-    CGFloat hudWidth = 100.0f;
-    CGFloat hudHeight = 100.0f;
-    CGFloat stringHeightBuffer = 20.0f;
-    CGFloat stringAndContentHeightBuffer = 80.0f;
+    CGFloat hudWidth = UI_SCREEN_W;
+    CGFloat hudHeight = UI_SCREEN_H;
+    CGFloat stringHeightBuffer = 100.0f;
+    CGFloat stringAndContentHeightBuffer = 120.0f;
     CGRect labelRect = CGRectZero;
     
     // Check if an image or progress ring is displayed
@@ -477,7 +477,7 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
     }
     switch (self.maskType){
         case SVProgressHUDMaskTypeBlack:{
-            self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+            self.backgroundColor = [UIColor colorWithWhite:0 alpha:1];
             break;
         }
             
@@ -1075,7 +1075,7 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
 
 - (UIColor*)foregroundColorForStyle{
     if(self.style == SVProgressHUDStyleLight){
-        return [UIColor blackColor];
+        return [UIColor whiteColor];
     } else if(self.style == SVProgressHUDStyleDark){
         return [UIColor whiteColor];
     } else{
@@ -1085,9 +1085,9 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
 
 - (UIColor*)backgroundColorForStyle{
     if(self.style == SVProgressHUDStyleLight){
-        return [UIColor whiteColor];
+        return [UIColor colorWithRed: 159/255.0 green:159/255.0 blue:159/255.0 alpha:0.4];
     } else if(self.style == SVProgressHUDStyleDark){
-        return [UIColor blackColor];
+        return [UIColor whiteColor];
     } else{
         return SVProgressHUDBackgroundColor;
     }

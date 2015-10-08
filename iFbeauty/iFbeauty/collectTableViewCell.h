@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface collectTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIView *head;
 @property (weak, nonatomic) IBOutlet UIImageView *userImage;
 @property (weak, nonatomic) IBOutlet UILabel *commentName;
 @property (weak, nonatomic) IBOutlet UILabel *commentUserDetail;

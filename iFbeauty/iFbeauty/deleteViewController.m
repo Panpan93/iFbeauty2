@@ -20,27 +20,10 @@
     [self requestData];
     [self uiConfiguration];
     
+    _header.clipsToBounds = YES;
+    
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
 
-    
-    PFFile *userphoto = _item[@"photot"];
-    
-    
-    //_userName.text =[NSString stringWithFormat:@"发帖人： %@", _ownername[@"secondname"]];
-    // NSLog(@"用户名%@",_userName.text);
-    
-    
-    _titlelabel.text = _item[@"title"];
-    _deLabel.text =[NSString stringWithFormat:@"%@", _item[@"detail"]];
-    //PFFile *photo = _ownername[@"photo"];
-    //    [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
-    //        if (!error) {
-    //            UIImage *image = [UIImage imageWithData:photoData];
-    //            dispatch_async(dispatch_get_main_queue(), ^{
-    //                _userImage.image = image;
-    //            });
-    //        }
-    //    }];
     
     //赞的数量
     NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"praiseitem == %@", _item];
@@ -66,25 +49,30 @@
         }
     }];
     
-
+    PFFile *photoimage = _item[@"photot"];
+    
+    _titlelabel.text = _item[@"title"];
+    _deLabel.text =[NSString stringWithFormat:@"%@", _item[@"detail"]];
     
     NSLog(@"y = %f", _deLabel.frame.origin.y);
     CGSize maxSize = CGSizeMake(UI_SCREEN_W - 40, 1000);
     CGSize contentLabelSize = [_deLabel.text boundingRectWithSize:maxSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:_deLabel.font} context:nil].size;
     NSLog(@"height = %f", contentLabelSize.height);
-    if (userphoto == nil) {
+    if (photoimage == nil) {
+        NSLog(@"IN1");
         _particularsIV.image = nil;
         CGRect rect = _header.frame;
         rect.size.height = _deLabel.frame.origin.y + contentLabelSize.height + 20;
         _header.frame = rect;
-        _deleteTV.tableHeaderView.frame = rect;
+        _deleteTV.tableHeaderView = _header;
         _particularsIV.hidden = YES;
     } else {
+        NSLog(@"IN2");
         CGRect rect2 = _header.frame;
-        rect2.size.height = _deLabel.frame.origin.y + contentLabelSize.height + 460;
+        rect2.size.height = _deLabel.frame.origin.y + contentLabelSize.height + 450;
         _header.frame = rect2;
-        _deleteTV.tableHeaderView.frame = rect2;
-        [userphoto getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+        _deleteTV.tableHeaderView = _header;
+        [photoimage getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
             if (!error) {
                 UIImage *image = [UIImage imageWithData:photoData];
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -141,6 +129,21 @@
     
     return cell;
     
+}
+
+/****根据评论的内容更改行高****/
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //   UITableViewCell *cell = [self tableView:_tableView cellForRowAtIndexPath:indexPath];
+    deleteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell"];
+    
+    PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
+    
+    CGSize maxSize = CGSizeMake(UI_SCREEN_W - 40, 1000);
+    CGSize contentLabelSize = [object[@"commentdetail"] boundingRectWithSize:maxSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]} context:nil].size;
+    NSLog(@"origin = %f", cell.commentUserDetail.frame.origin.y);
+    NSLog(@"height2 = %f", contentLabelSize.height);
+    NSLog(@"totalHeight = %f", cell.commentUserDetail.frame.origin.y + contentLabelSize.height + 20);
+    return cell.commentUserDetail.frame.origin.y + contentLabelSize.height + 21;
 }
 
 

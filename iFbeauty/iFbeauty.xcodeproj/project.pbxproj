@@ -18,6 +18,8 @@
 		218ACD831BB573E400BE79C7 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 218ACD821BB573E400BE79C7 /* 1.png */; };
 		218ACD851BB573F000BE79C7 /* 未标题-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 218ACD841BB573F000BE79C7 /* 未标题-3.png */; };
 		218ACD871BB574DB00BE79C7 /* 未标题-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 218ACD861BB574DB00BE79C7 /* 未标题-1.png */; };
+		218F2B101BC609CD00589734 /* collectdeleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F2B0F1BC609CD00589734 /* collectdeleteViewController.m */; };
+		218F2B131BC60A1D00589734 /* collectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F2B121BC60A1D00589734 /* collectTableViewCell.m */; };
 		21A658101BAFFECC00685F6A /* SendpostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6580F1BAFFECC00685F6A /* SendpostViewController.m */; };
 		21B58BF41BB17C4800EB1E51 /* lunbo1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21B58BEF1BB17C4800EB1E51 /* lunbo1.jpg */; };
 		21B58BF61BB17C4800EB1E51 /* lunbo5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21B58BF11BB17C4800EB1E51 /* lunbo5.jpg */; };
@@ -126,6 +128,10 @@
 		218ACD821BB573E400BE79C7 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		218ACD841BB573F000BE79C7 /* 未标题-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "未标题-3.png"; sourceTree = "<group>"; };
 		218ACD861BB574DB00BE79C7 /* 未标题-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "未标题-1.png"; sourceTree = "<group>"; };
+		218F2B0E1BC609CD00589734 /* collectdeleteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = collectdeleteViewController.h; sourceTree = "<group>"; };
+		218F2B0F1BC609CD00589734 /* collectdeleteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = collectdeleteViewController.m; sourceTree = "<group>"; };
+		218F2B111BC60A1D00589734 /* collectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = collectTableViewCell.h; sourceTree = "<group>"; };
+		218F2B121BC60A1D00589734 /* collectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = collectTableViewCell.m; sourceTree = "<group>"; };
 		21A6580E1BAFFECC00685F6A /* SendpostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendpostViewController.h; path = iFbeauty/SendpostViewController.h; sourceTree = "<group>"; };
 		21A6580F1BAFFECC00685F6A /* SendpostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendpostViewController.m; path = iFbeauty/SendpostViewController.m; sourceTree = "<group>"; };
 		21B58BEF1BB17C4800EB1E51 /* lunbo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lunbo1.jpg; sourceTree = "<group>"; };
@@ -362,6 +368,10 @@
 				752BCF931BB5373300E295A3 /* deleteTableViewCell.m */,
 				21F4E7441BB954EB00859372 /* collectionViewController.h */,
 				21F4E7451BB954EB00859372 /* collectionViewController.m */,
+				218F2B0E1BC609CD00589734 /* collectdeleteViewController.h */,
+				218F2B0F1BC609CD00589734 /* collectdeleteViewController.m */,
+				218F2B111BC60A1D00589734 /* collectTableViewCell.h */,
+				218F2B121BC60A1D00589734 /* collectTableViewCell.m */,
 			);
 			name = Mine;
 			path = iFbeauty;
@@ -664,7 +674,9 @@
 				752BCF911BB5339800E295A3 /* deleteViewController.m in Sources */,
 				756379891BB14FA0002F5350 /* personalTableViewCell.m in Sources */,
 				7573374E1BACF7DF00DD08E1 /* ViewController.m in Sources */,
+				218F2B101BC609CD00589734 /* collectdeleteViewController.m in Sources */,
 				75D8B3321BAD448B007DE2C2 /* TabViewController.m in Sources */,
+				218F2B131BC60A1D00589734 /* collectTableViewCell.m in Sources */,
 				758A64031BB2849D00889B90 /* matchViewController.m in Sources */,
 				758A64051BB2849D00889B90 /* meifaViewController.m in Sources */,
 				758A63F81BB2827C00889B90 /* bodybuildingTableViewCell.m in Sources */,

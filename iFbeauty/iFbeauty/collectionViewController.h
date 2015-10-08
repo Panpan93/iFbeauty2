@@ -11,8 +11,8 @@
 @interface collectionViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *collectionTable;
 @property(strong,nonatomic)NSArray *collectionArray;
-@property (strong, nonatomic) PFObject *item;
-@property (strong, nonatomic) PFObject *ownername;
+//@property (strong, nonatomic) PFObject *item;
+//@property (strong, nonatomic) PFObject *ownername;
 
 
 @end

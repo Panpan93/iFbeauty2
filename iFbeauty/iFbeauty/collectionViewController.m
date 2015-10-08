@@ -7,6 +7,7 @@
 //
 
 #import "collectionViewController.h"
+#import "collectdeleteViewController.h"
 
 @interface collectionViewController ()
 
@@ -24,21 +25,28 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 -(void)collectionData
 {
-
+    
     PFUser *currentUser = [PFUser currentUser];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"shoucangitem==%@",currentUser];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"shoucanguser == %@",currentUser];
     PFQuery *collection = [PFQuery queryWithClassName:@"collection" predicate:predicate];
+    
+    [collection includeKey:@"shoucanguser"];//关联查询
+    [collection includeKey:@"shoucangitem"];//关联查询
+    
+    
     NSLog(@"collection == %@ ",collection);
-    [collection includeKey:@"shoucangitem"];
+    
     
     UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [collection findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
         [aiv stopAnimating];
         if (!error) {
             _collectionArray = returnedObjects;
-            NSLog(@"%@", _collectionArray);
+            NSLog(@"_collectionArray == %@", _collectionArray);
+
             [_collectionTable reloadData];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -48,6 +56,21 @@
     
 }
 
+//选择行
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    PFObject *object = [_collectionArray objectAtIndex:indexPath.row];
+    collectdeleteViewController *pvc = [Utilities getStoryboardInstanceByIdentity:@"collect"];
+    PFObject *par = object[@"owner"];
+    pvc.ownername = par;
+    pvc.item = object;
+    pvc.hidesBottomBarWhenPushed = YES;//把切换按钮隐藏掉
+    [self.navigationController pushViewController:pvc animated:YES];
+    
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [_collectionArray count];
@@ -72,20 +95,6 @@
     
     return cell;
 }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    PFObject *object = [_postArray objectAtIndex:indexPath.row];
-//    deleteViewController *pvc = [Utilities getStoryboardInstanceByIdentity:@"delete"];
-//    PFObject *par = object[@"owner"];
-//    pvc.ownername = par;
-//    pvc.item = object;
-//    pvc.hidesBottomBarWhenPushed = YES;//把切换按钮隐藏掉
-//    [self.navigationController pushViewController:pvc animated:YES];
-    
-}
-
 
 
 /*

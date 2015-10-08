@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KiI-A1-N48">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KiI-A1-N48">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1817,7 +1817,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gVO-hU-NQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17.5" y="592.5"/>
+            <point key="canvasLocation" x="0.5" y="592.5"/>
         </scene>
         <!--Meifa View Controller-->
         <scene sceneID="jv7-aN-CF6">
@@ -1966,12 +1966,14 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="meifaSegment" destination="yTL-yh-Rt3" id="ufL-RM-dZO"/>
                         <outlet property="meifaTV" destination="cjx-Hh-T5M" id="2WB-eY-U1H"/>
+                        <outlet property="xingbieSegment" destination="CHW-LO-nNn" id="eiM-tu-QyD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3so-gP-qRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="439.5" y="592.5"/>
+            <point key="canvasLocation" x="406.5" y="592.5"/>
         </scene>
         <!--Bodybuilding View Controller-->
         <scene sceneID="GUX-qx-M3e">
@@ -2121,6 +2123,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="bodybuildingTV" destination="1jz-KL-ROM" id="pBj-tg-0sR"/>
+                        <outlet property="meitiSegment" destination="r9o-xh-dxV" id="fZB-GG-N7g"/>
+                        <outlet property="xingbieSegment" destination="SXw-td-GJY" id="ofJ-ER-LWM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwN-iV-ubd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2145,14 +2149,6 @@
                                 <segments>
                                     <segment title="最热"/>
                                     <segment title="最新"/>
-                                </segments>
-                            </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PR7-bQ-CGU">
-                                <rect key="frame" x="147" y="71" width="81" height="29"/>
-                                <color key="backgroundColor" red="1" green="0.74313213889999996" blue="0.97409484550000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <segments>
-                                    <segment title="男士"/>
-                                    <segment title="女士"/>
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="156" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bCn-dp-9cO">
@@ -2258,6 +2254,14 @@
                                     <outlet property="delegate" destination="OHS-Se-2JD" id="Zxp-pp-hMi"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PR7-bQ-CGU">
+                                <rect key="frame" x="147" y="71" width="81" height="29"/>
+                                <color key="backgroundColor" red="1" green="0.74313213889999996" blue="0.97409484550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <segments>
+                                    <segment title="男士"/>
+                                    <segment title="女士"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -2274,7 +2278,9 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="dapeiSegment" destination="ZfH-gs-XdJ" id="hxF-3i-wC3"/>
                         <outlet property="matchTV" destination="bCn-dp-9cO" id="Tsc-Pi-h4E"/>
+                        <outlet property="xingbieSegment" destination="PR7-bQ-CGU" id="NoE-is-D55"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2V-P7-ocM" userLabel="First Responder" sceneMemberID="firstResponder"/>

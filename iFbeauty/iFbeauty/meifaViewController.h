@@ -21,5 +21,7 @@
 @property (strong, nonatomic) UIActivityIndicatorView *tableFooterAI;
 
 @property (weak, nonatomic) IBOutlet UITableView *meifaTV;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *meifaSegment;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *xingbieSegment;
 
 @end

@@ -20,5 +20,7 @@
 @property (strong, nonatomic) UIActivityIndicatorView *aiv;
 @property (strong, nonatomic) UIActivityIndicatorView *tableFooterAI;
 @property (weak, nonatomic) IBOutlet UITableView *hairdressingTV;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *hairdSegmrnd;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *xingbieSegment;
 
 @end

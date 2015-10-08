@@ -138,7 +138,7 @@
 }
 
 
-//取消选择行
+//选择行
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
@@ -173,8 +173,8 @@
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Item"];
     [query includeKey:@"owner"];//关联查询
-    [query orderByDescending:@"createdAt"];
-    [query setLimit:perPage];
+  //  [query orderByDescending:@"createdAt"];
+    [query setLimit:perPage];//限定每页显示多少行
     [query setSkip:(perPage * (loadCount - 1))];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
         [_aiv stopAnimating];
@@ -288,7 +288,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [_objectsForShow count];
+    return 8;
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -303,7 +303,7 @@
     
     PFObject *activity = object[@"owner"];
       
-    cell.nameLabel.text =[NSString stringWithFormat:@"发帖人： %@", activity[@"username"]];
+    cell.nameLabel.text =[NSString stringWithFormat:@"发帖人： %@", activity[@"secondname"]];
     NSLog(@"%@",activity);
     PFFile *photo = object[@"photot"];
     if (photo == NULL) {

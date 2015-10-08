@@ -49,6 +49,13 @@
         }
     }];
     
+    NSDate *createdAt = _item.createdAt;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSString *strDate = [dateFormatter stringFromDate:createdAt];
+    _userDate.text = [NSString stringWithFormat:@"%@",strDate];
+
+    
     //赞的数量
     NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"praiseitem == %@", _item];
     PFQuery *query3 = [PFQuery queryWithClassName:@"praise" predicate:predicate3];
@@ -152,6 +159,10 @@
         }];
         NSLog(@" zan==  %@",praise[@"zan"]);
     }
+    [_item incrementKey:@"praise"];
+    
+    [_item saveInBackground];
+    
 
     
 }
@@ -175,7 +186,7 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
-}
+  }
 
 //点击收藏
 - (IBAction)collectAction:(UIBarButtonItem *)sender {
@@ -335,6 +346,14 @@
             });
         }
     }];
+    
+    //显示发帖时间
+    NSDate *createdAt = object.createdAt;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSString *strDate = [dateFormatter stringFromDate:createdAt];
+    cell.commentUserDate.text = [NSString stringWithFormat:@"%@",strDate];
+
     
     return cell;
     

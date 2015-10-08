@@ -104,6 +104,15 @@
         }
     }];
     
+    
+    //显示发帖时间
+    NSDate *createdAt = object.createdAt;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSString *strDate = [dateFormatter stringFromDate:createdAt];
+    cell.commentUserDate.text = [NSString stringWithFormat:@"%@",strDate];
+
+    
     return cell;
     
 }

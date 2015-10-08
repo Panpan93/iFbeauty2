@@ -37,12 +37,12 @@
 -(void)readData
 {
     PFUser *currentUser = [PFUser currentUser];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"owner == %@", currentUser];// 查询owner字段为当前用户的所有商品
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"owner == %@", currentUser];// 查询owner字段为当前用户的所有
     PFQuery *query = [PFQuery queryWithClassName:@"Item" predicate:predicate];
     
-    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+//    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
-        [aiv stopAnimating];
+//        [aiv stopAnimating];
         if (!error) {
             _postArray = returnedObjects;
             NSLog(@"%@", _postArray);

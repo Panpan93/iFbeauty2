@@ -107,6 +107,14 @@
         }
     }];
     
+    //显示发帖时间
+    NSDate *createdAt = object.createdAt;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSString *strDate = [dateFormatter stringFromDate:createdAt];
+    cell.userDate.text = [NSString stringWithFormat:@"%@",strDate];
+
+    
     return cell;
 }
 //
@@ -130,6 +138,8 @@
 //    }];
 //}
 //
+
+
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

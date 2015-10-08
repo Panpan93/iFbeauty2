@@ -44,6 +44,20 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
 
 
+    //帖子的数量
+    PFUser *currentUser = [PFUser currentUser];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"owner == %@", currentUser];// 查询owner字段为当前用户的所有商品
+    PFQuery *query = [PFQuery queryWithClassName:@"Item" predicate:predicate];
+    [query countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
+        if (!error) {
+            NSString* post = [NSString stringWithFormat:@"%d", count];
+            _post.text = post;
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
+    
     [self read];
   }
 

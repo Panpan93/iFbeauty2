@@ -15,5 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *userTitle;
 @property (weak, nonatomic) IBOutlet UILabel *Top;
 @property (weak, nonatomic) IBOutlet UILabel *CommentLB;
+@property (weak, nonatomic) IBOutlet UILabel *zanLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pinglunLabel;
 
 @end

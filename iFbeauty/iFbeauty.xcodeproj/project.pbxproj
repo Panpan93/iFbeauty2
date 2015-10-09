@@ -20,6 +20,8 @@
 		218ACD871BB574DB00BE79C7 /* 未标题-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 218ACD861BB574DB00BE79C7 /* 未标题-1.png */; };
 		218F2B101BC609CD00589734 /* collectdeleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F2B0F1BC609CD00589734 /* collectdeleteViewController.m */; };
 		218F2B131BC60A1D00589734 /* collectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F2B121BC60A1D00589734 /* collectTableViewCell.m */; };
+		218F2B161BC6906500589734 /* guanzhuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F2B151BC6906500589734 /* guanzhuTableViewCell.m */; };
+		218F2B191BC6908A00589734 /* guanzhuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F2B181BC6908A00589734 /* guanzhuViewController.m */; };
 		21A658101BAFFECC00685F6A /* SendpostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6580F1BAFFECC00685F6A /* SendpostViewController.m */; };
 		21B58BF41BB17C4800EB1E51 /* lunbo1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21B58BEF1BB17C4800EB1E51 /* lunbo1.jpg */; };
 		21B58BF61BB17C4800EB1E51 /* lunbo5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21B58BF11BB17C4800EB1E51 /* lunbo5.jpg */; };
@@ -132,6 +134,10 @@
 		218F2B0F1BC609CD00589734 /* collectdeleteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = collectdeleteViewController.m; sourceTree = "<group>"; };
 		218F2B111BC60A1D00589734 /* collectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = collectTableViewCell.h; sourceTree = "<group>"; };
 		218F2B121BC60A1D00589734 /* collectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = collectTableViewCell.m; sourceTree = "<group>"; };
+		218F2B141BC6906500589734 /* guanzhuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = guanzhuTableViewCell.h; path = iFbeauty/guanzhuTableViewCell.h; sourceTree = "<group>"; };
+		218F2B151BC6906500589734 /* guanzhuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = guanzhuTableViewCell.m; path = iFbeauty/guanzhuTableViewCell.m; sourceTree = "<group>"; };
+		218F2B171BC6908A00589734 /* guanzhuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = guanzhuViewController.h; path = iFbeauty/guanzhuViewController.h; sourceTree = "<group>"; };
+		218F2B181BC6908A00589734 /* guanzhuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = guanzhuViewController.m; path = iFbeauty/guanzhuViewController.m; sourceTree = "<group>"; };
 		21A6580E1BAFFECC00685F6A /* SendpostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendpostViewController.h; path = iFbeauty/SendpostViewController.h; sourceTree = "<group>"; };
 		21A6580F1BAFFECC00685F6A /* SendpostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendpostViewController.m; path = iFbeauty/SendpostViewController.m; sourceTree = "<group>"; };
 		21B58BEF1BB17C4800EB1E51 /* lunbo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lunbo1.jpg; sourceTree = "<group>"; };
@@ -343,6 +349,10 @@
 				21E5AF841BB404CE001C7974 /* particularsViewController.m */,
 				218ACD751BB5170B00BE79C7 /* readcommentTableViewCell.h */,
 				218ACD761BB5170B00BE79C7 /* readcommentTableViewCell.m */,
+				218F2B141BC6906500589734 /* guanzhuTableViewCell.h */,
+				218F2B151BC6906500589734 /* guanzhuTableViewCell.m */,
+				218F2B171BC6908A00589734 /* guanzhuViewController.h */,
+				218F2B181BC6908A00589734 /* guanzhuViewController.m */,
 			);
 			name = read;
 			sourceTree = "<group>";
@@ -698,6 +708,7 @@
 				21E5AF851BB404CE001C7974 /* particularsViewController.m in Sources */,
 				21A658101BAFFECC00685F6A /* SendpostViewController.m in Sources */,
 				758A63F91BB2827C00889B90 /* bodybuildingViewController.m in Sources */,
+				218F2B161BC6906500589734 /* guanzhuTableViewCell.m in Sources */,
 				75D8B2F01BAD0CD8007DE2C2 /* BBLaunchAdMonitor.m in Sources */,
 				75D8B2F31BAD0CD8007DE2C2 /* ECSlidingInteractiveTransition.m in Sources */,
 				75D8B2F21BAD0CD8007DE2C2 /* ECSlidingAnimationController.m in Sources */,
@@ -707,6 +718,7 @@
 				757337481BACF7DE00DD08E1 /* main.m in Sources */,
 				756379861BB12AA0002F5350 /* messageTableViewCell.m in Sources */,
 				75D8B2F11BAD0CD8007DE2C2 /* ECPercentDrivenInteractiveTransition.m in Sources */,
+				218F2B191BC6908A00589734 /* guanzhuViewController.m in Sources */,
 				758A64041BB2849D00889B90 /* meifaTableViewCell.m in Sources */,
 				214C1B821BAE87AB005823D2 /* SVProgressHUD.m in Sources */,
 				75D8B2F61BAD0CD8007DE2C2 /* UIViewController+ECSlidingViewController.m in Sources */,

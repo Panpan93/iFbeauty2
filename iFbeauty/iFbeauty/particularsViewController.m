@@ -16,6 +16,7 @@
 - (IBAction)praiseAction:(UIBarButtonItem *)sender;
 - (IBAction)collectAction:(UIBarButtonItem *)sender;
 - (IBAction)commentAction:(UIBarButtonItem *)sender;
+- (IBAction)ConcernAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
 
 
@@ -141,10 +142,12 @@
 //点击赞
 - (IBAction)praiseAction:(UIBarButtonItem *)sender {
     if ([_zanItem.title isEqualToString:@"赞"]) {
+        PFUser *current=[PFUser currentUser];
+
         PFObject *praise = [PFObject objectWithClassName:@"praise"];
         
         praise[@"praiseitem"] = _item;
-        praise[@"praiseuser"] = _ownername;
+        praise[@"praiseuser"] = current;
         praise[@"zan"]=@"赞";
         [praise saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             
@@ -168,8 +171,9 @@
 }
 -(void)praiseData
 {
-    
-    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"praiseitem == %@ AND praiseuser == %@", _item, _ownername];
+    PFUser *current=[PFUser currentUser];
+
+    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"praiseitem == %@ AND praiseuser == %@", _item, current];
     PFQuery *query3 = [PFQuery queryWithClassName:@"praise" predicate:predicate3];
     [query3 countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
         if (!error) {
@@ -191,10 +195,12 @@
 //点击收藏
 - (IBAction)collectAction:(UIBarButtonItem *)sender {
     if ([_shoucangItem.title isEqualToString:@"收藏"]) {
+        PFUser *current=[PFUser currentUser];
+
         PFObject *praise = [PFObject objectWithClassName:@"collection"];
         
         praise[@"shoucangitem"] = _item;
-        praise[@"shoucanguser"] = _ownername;
+        praise[@"shoucanguser"] = current;
         praise[@"shoucang"]=@"收藏";
         [praise saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             
@@ -216,7 +222,9 @@
 {
     
     //PFObject *praise = [PFObject objectWithClassName:@"praise"];
-    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"shoucangitem == %@ AND shoucanguser == %@",_item,_ownername];
+    PFUser *current=[PFUser currentUser];
+
+    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"shoucangitem == %@ AND shoucanguser == %@",_item,current];
     PFQuery *query3 = [PFQuery queryWithClassName:@"collection" predicate:predicate3];
     
     //   PFObject *object = [PFObject objectWithClassName:@"praise" dictionary:predicate3];
@@ -241,6 +249,56 @@
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     
     [alert show];
+    
+}
+
+- (IBAction)ConcernAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    
+    if ([_Concern.titleLabel.text isEqualToString:@"关注"]) {
+        PFUser *current=[PFUser currentUser];
+        PFObject *focus = [PFObject objectWithClassName:@"Concern"];
+        //关注的人
+        focus[@"focus"] = _ownername;
+        //当前登陆的用户
+        focus[@"focusecond"] = current;
+        
+        [focus saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            
+            if (succeeded){
+                NSLog(@"Object Uploaded!");
+                [self focusData];
+            }
+            else{
+                NSLog(@"error=%@",error);
+            }
+        }];
+    }
+}
+-(void)focusData
+{
+    PFUser *current=[PFUser currentUser];
+
+    //PFObject *praise = [PFObject objectWithClassName:@"praise"];
+    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@" focus == %@ AND focusecond == %@",_ownername, current];
+    PFQuery *query3 = [PFQuery queryWithClassName:@"Concern" predicate:predicate3];
+    NSLog(@" query3  == %@ ",query3);
+    
+    [query3 countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+        if (!error) {
+            if (number == 0) {
+                _Concern.titleLabel.text=@"关注";
+                
+                _Concern.enabled=YES;
+                
+            } else {
+                _Concern.titleLabel.text=@"取消";
+                _Concern.enabled=YES;
+                
+                
+            }
+        }
+    }];
+    
     
 }
 

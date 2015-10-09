@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *shoucangItem;
 @property (weak, nonatomic) IBOutlet UILabel *zanLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pinglunLabel;
+@property (weak, nonatomic) IBOutlet UIButton *Concern;
 
 
 @end

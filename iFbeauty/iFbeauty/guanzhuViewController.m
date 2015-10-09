@@ -7,6 +7,7 @@
 //
 
 #import "guanzhuViewController.h"
+#import "guanzhuTableViewCell.h"
 
 @interface guanzhuViewController ()
 
@@ -16,13 +17,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self readFocus];
+}
+-(void)readFocus
+{
+//  PFQuery *query= [PFQuery queryWithClassName:@"Concern"];
+//    [query findObjectsInBackgroundWithBlock:(int number, NSError *error)
+//     {}];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [_objectsForShow count];
+}
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    guanzhuTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"guanzhu" forIndexPath:indexPath];
+
+    return cell;
+}
+
 
 /*
 #pragma mark - Navigation

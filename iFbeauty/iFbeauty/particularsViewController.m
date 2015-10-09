@@ -29,6 +29,8 @@
     [self requestData];
     [self praiseData];
     [self collectData];
+    [self focusData];
+    [self quxiaoData];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
 
 
@@ -84,10 +86,10 @@
 
 
     
-    NSLog(@"y = %f", _deLabel.frame.origin.y);
+//    NSLog(@"y = %f", _deLabel.frame.origin.y);
     CGSize maxSize = CGSizeMake(UI_SCREEN_W - 40, 1000);
     CGSize contentLabelSize = [_deLabel.text boundingRectWithSize:maxSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:_deLabel.font} context:nil].size;
-    NSLog(@"height = %f", contentLabelSize.height);
+//    NSLog(@"height = %f", contentLabelSize.height);
     if (userphoto == nil) {
         _userImage.image = nil;
         CGRect rect = _header.frame;
@@ -160,7 +162,7 @@
             }
             
         }];
-        NSLog(@" zan==  %@",praise[@"zan"]);
+      
     }
     [_item incrementKey:@"praise"];
     
@@ -177,7 +179,7 @@
     PFQuery *query3 = [PFQuery queryWithClassName:@"praise" predicate:predicate3];
     [query3 countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
         if (!error) {
-            NSLog(@"%d", number);
+         
             if (number == 0) {
                 _zanItem.title=@"赞";
                 _zanItem.enabled=YES;
@@ -252,9 +254,11 @@
     
 }
 
+//点击添加关注
+
 - (IBAction)ConcernAction:(UIButton *)sender forEvent:(UIEvent *)event {
-    
-    if ([_Concern.titleLabel.text isEqualToString:@"关注"]) {
+
+    if ([_Concern.titleLabel.text isEqualToString:@"我要关注"]) {
         PFUser *current=[PFUser currentUser];
         PFObject *focus = [PFObject objectWithClassName:@"Concern"];
         //关注的人
@@ -272,13 +276,82 @@
                 NSLog(@"error=%@",error);
             }
         }];
+    } else {
+        if ([_Concern.titleLabel.text isEqualToString:@"取消关注"])
+        {
+           
+            [self quxiaoData];
+        }
+        
     }
 }
+-(void)quxiaoData
+{
+    PFUser *current=[PFUser currentUser];
+    
+    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@" focus == %@ AND focusecond == %@",_ownername, current];
+    PFQuery *query3 = [PFQuery queryWithClassName:@"Concern" predicate:predicate3];
+    NSLog(@" query3  == %@ ",query3);
+    
+    [query3 countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+        if (!error) {
+            if (!number == 0) {
+                PFUser *current=[PFUser currentUser];
+                
+                NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@" focus == %@ AND focusecond == %@",_ownername, current];
+                
+                PFQuery *query4 = [PFQuery queryWithClassName:@"Concern" predicate:predicate3];
+                
+                [query4 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                    if (!error) {
+                        for (PFObject *quxiao in objects) {
+                            [quxiao deleteInBackground];
+                        }
+                    }
+                }];
+                
+                [_ownername deleteInBackground];
+                
+
+                
+                
+//                [SVProgressHUD show];
+                
+                [_item saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)/**/ {
+//                    [SVProgressHUD dismiss];
+                    if (succeeded) {
+                       
+                        NSLog(@"1");
+                        
+                    } else {
+                        NSLog(@"error=%@",error);
+                    }
+                }];
+                
+
+                
+                
+                
+            } else {
+                
+              
+                
+            }
+        }
+        else{
+            NSLog(@"error=%@",error);
+        }
+        
+    }];
+    
+    
+
+}
+
 -(void)focusData
 {
     PFUser *current=[PFUser currentUser];
 
-    //PFObject *praise = [PFObject objectWithClassName:@"praise"];
     NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@" focus == %@ AND focusecond == %@",_ownername, current];
     PFQuery *query3 = [PFQuery queryWithClassName:@"Concern" predicate:predicate3];
     NSLog(@" query3  == %@ ",query3);
@@ -286,17 +359,21 @@
     [query3 countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
         if (!error) {
             if (number == 0) {
-                _Concern.titleLabel.text=@"关注";
                 
-                _Concern.enabled=YES;
+                _Concern.titleLabel.text=@"我要关注";
+                
+              
                 
             } else {
-                _Concern.titleLabel.text=@"取消";
-                _Concern.enabled=YES;
                 
+                _Concern.titleLabel.text=@"取消关注";
                 
             }
         }
+        else{
+            NSLog(@"error=%@",error);
+        }
+
     }];
     
     

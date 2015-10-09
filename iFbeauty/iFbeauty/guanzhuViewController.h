@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface guanzhuViewController : UIViewController
+@interface guanzhuViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *focusTable;
 @property (strong, nonatomic) NSMutableArray *objectsForShow;
 

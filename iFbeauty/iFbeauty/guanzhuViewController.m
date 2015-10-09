@@ -8,6 +8,7 @@
 
 #import "guanzhuViewController.h"
 #import "guanzhuTableViewCell.h"
+#import "focusPeopleViewController.h"
 
 @interface guanzhuViewController ()
 
@@ -87,6 +88,31 @@
     
     
     return cell;
+    
+}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    if ([segue.identifier isEqualToString:@"guanzhu"]) {
+//        
+//        PFObject *object = [_objectsForShow objectAtIndex:[_focusTable indexPathForSelectedRow].row];//获得当前tableview选中航的数据
+//        focusPeopleViewController *miVC = segue.destinationViewController;//目的地视图控制器
+//        PFObject *Buser = object[@"focus"];
+//        miVC.chuanru = Buser;
+//        miVC.hidesBottomBarWhenPushed = YES;
+//    }
+//}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
+    focusPeopleViewController *pvc = [Utilities getStoryboardInstanceByIdentity:@"focusPeople"];
+    PFObject *par = object[@"focus"];
+//    pvc.ownername = par;
+//    pvc.item = object;
+    pvc.chuanru = par;
+    pvc.hidesBottomBarWhenPushed = YES;//把切换按钮隐藏掉
+    [self.navigationController pushViewController:pvc animated:YES];
     
 }
 

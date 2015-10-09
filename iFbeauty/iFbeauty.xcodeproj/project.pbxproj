@@ -58,7 +58,8 @@
 		757AA04D1BAE803D00AB2C2C /* changePWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 757AA04C1BAE803D00AB2C2C /* changePWViewController.m */; };
 		757AA0501BAEA27600AB2C2C /* ChangemessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 757AA04F1BAEA27600AB2C2C /* ChangemessageViewController.m */; };
 		757AA0531BAEA61C00AB2C2C /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 757AA0521BAEA61C00AB2C2C /* MineViewController.m */; };
-		757B2A2D1BC7573B00FA3E95 /* secondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 757B2A2C1BC7573B00FA3E95 /* secondTableViewCell.m */; };
+		757B2A301BC760A700FA3E95 /* secondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 757B2A2F1BC760A700FA3E95 /* secondTableViewCell.m */; };
+		757B2A341BC765E000FA3E95 /* focusPeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 757B2A331BC765E000FA3E95 /* focusPeopleViewController.m */; };
 		758A63F81BB2827C00889B90 /* bodybuildingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 758A63F51BB2827C00889B90 /* bodybuildingTableViewCell.m */; };
 		758A63F91BB2827C00889B90 /* bodybuildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 758A63F71BB2827C00889B90 /* bodybuildingViewController.m */; };
 		758A64021BB2849D00889B90 /* matchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 758A63FB1BB2849D00889B90 /* matchTableViewCell.m */; };
@@ -196,8 +197,10 @@
 		757AA04F1BAEA27600AB2C2C /* ChangemessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangemessageViewController.m; path = iFbeauty/ChangemessageViewController.m; sourceTree = "<group>"; };
 		757AA0511BAEA61C00AB2C2C /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineViewController.h; path = iFbeauty/MineViewController.h; sourceTree = "<group>"; };
 		757AA0521BAEA61C00AB2C2C /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineViewController.m; path = iFbeauty/MineViewController.m; sourceTree = "<group>"; };
-		757B2A2B1BC7573B00FA3E95 /* secondTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondTableViewCell.h; sourceTree = "<group>"; };
-		757B2A2C1BC7573B00FA3E95 /* secondTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondTableViewCell.m; sourceTree = "<group>"; };
+		757B2A2E1BC760A700FA3E95 /* secondTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = secondTableViewCell.h; path = iFbeauty/secondTableViewCell.h; sourceTree = "<group>"; };
+		757B2A2F1BC760A700FA3E95 /* secondTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = secondTableViewCell.m; path = iFbeauty/secondTableViewCell.m; sourceTree = "<group>"; };
+		757B2A321BC765E000FA3E95 /* focusPeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = focusPeopleViewController.h; path = iFbeauty/focusPeopleViewController.h; sourceTree = "<group>"; };
+		757B2A331BC765E000FA3E95 /* focusPeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = focusPeopleViewController.m; path = iFbeauty/focusPeopleViewController.m; sourceTree = "<group>"; };
 		758A63F41BB2827C00889B90 /* bodybuildingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bodybuildingTableViewCell.h; path = iFbeauty/bodybuildingTableViewCell.h; sourceTree = "<group>"; };
 		758A63F51BB2827C00889B90 /* bodybuildingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = bodybuildingTableViewCell.m; path = iFbeauty/bodybuildingTableViewCell.m; sourceTree = "<group>"; };
 		758A63F61BB2827C00889B90 /* bodybuildingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bodybuildingViewController.h; path = iFbeauty/bodybuildingViewController.h; sourceTree = "<group>"; };
@@ -352,10 +355,6 @@
 				21E5AF841BB404CE001C7974 /* particularsViewController.m */,
 				218ACD751BB5170B00BE79C7 /* readcommentTableViewCell.h */,
 				218ACD761BB5170B00BE79C7 /* readcommentTableViewCell.m */,
-				218F2B141BC6906500589734 /* guanzhuTableViewCell.h */,
-				218F2B151BC6906500589734 /* guanzhuTableViewCell.m */,
-				218F2B171BC6908A00589734 /* guanzhuViewController.h */,
-				218F2B181BC6908A00589734 /* guanzhuViewController.m */,
 			);
 			name = read;
 			sourceTree = "<group>";
@@ -456,6 +455,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		757B2A311BC7655900FA3E95 /* focuspeople */ = {
+			isa = PBXGroup;
+			children = (
+				218F2B141BC6906500589734 /* guanzhuTableViewCell.h */,
+				218F2B151BC6906500589734 /* guanzhuTableViewCell.m */,
+				218F2B171BC6908A00589734 /* guanzhuViewController.h */,
+				218F2B181BC6908A00589734 /* guanzhuViewController.m */,
+				757B2A321BC765E000FA3E95 /* focusPeopleViewController.h */,
+				757B2A331BC765E000FA3E95 /* focusPeopleViewController.m */,
+			);
+			name = focuspeople;
+			sourceTree = "<group>";
+		};
 		75D8B2C91BAD004F007DE2C2 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +480,7 @@
 		75D8B2CA1BAD0069007DE2C2 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				757B2A311BC7655900FA3E95 /* focuspeople */,
 				21E5AF821BB40480001C7974 /* read */,
 				21D8FC3B1BB24C92004DFC35 /* home */,
 				21A6580A1BAFFE7700685F6A /* fatie */,
@@ -489,9 +502,9 @@
 				756379841BB12AA0002F5350 /* messageTableViewCell.h */,
 				756379851BB12AA0002F5350 /* messageTableViewCell.m */,
 				75D8B3241BAD448B007DE2C2 /* secondViewController.h */,
-				757B2A2B1BC7573B00FA3E95 /* secondTableViewCell.h */,
-				757B2A2C1BC7573B00FA3E95 /* secondTableViewCell.m */,
 				75D8B3251BAD448B007DE2C2 /* secondViewController.m */,
+				757B2A2E1BC760A700FA3E95 /* secondTableViewCell.h */,
+				757B2A2F1BC760A700FA3E95 /* secondTableViewCell.m */,
 				757AA0511BAEA61C00AB2C2C /* MineViewController.h */,
 				757AA0521BAEA61C00AB2C2C /* MineViewController.m */,
 			);
@@ -703,6 +716,7 @@
 				757AA04D1BAE803D00AB2C2C /* changePWViewController.m in Sources */,
 				7573374B1BACF7DE00DD08E1 /* AppDelegate.m in Sources */,
 				75D8B3301BAD448B007DE2C2 /* secondViewController.m in Sources */,
+				757B2A341BC765E000FA3E95 /* focusPeopleViewController.m in Sources */,
 				218ACD771BB5170B00BE79C7 /* readcommentTableViewCell.m in Sources */,
 				21F4E7461BB954EB00859372 /* collectionViewController.m in Sources */,
 				75D8B32E1BAD448B007DE2C2 /* firstViewController.m in Sources */,
@@ -732,7 +746,7 @@
 				757AA0501BAEA27600AB2C2C /* ChangemessageViewController.m in Sources */,
 				214C1B811BAE87AB005823D2 /* SVRadialGradientLayer.m in Sources */,
 				758A64021BB2849D00889B90 /* matchTableViewCell.m in Sources */,
-				757B2A2D1BC7573B00FA3E95 /* secondTableViewCell.m in Sources */,
+				757B2A301BC760A700FA3E95 /* secondTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

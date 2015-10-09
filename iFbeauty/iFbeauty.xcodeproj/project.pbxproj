@@ -22,6 +22,8 @@
 		218F2B131BC60A1D00589734 /* collectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F2B121BC60A1D00589734 /* collectTableViewCell.m */; };
 		218F2B161BC6906500589734 /* guanzhuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F2B151BC6906500589734 /* guanzhuTableViewCell.m */; };
 		218F2B191BC6908A00589734 /* guanzhuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F2B181BC6908A00589734 /* guanzhuViewController.m */; };
+		2194286B1BC7A52A0075128C /* fansViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2194286A1BC7A52A0075128C /* fansViewController.m */; };
+		2194286E1BC7A5570075128C /* fansTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2194286D1BC7A5570075128C /* fansTableViewCell.m */; };
 		21A658101BAFFECC00685F6A /* SendpostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6580F1BAFFECC00685F6A /* SendpostViewController.m */; };
 		21B58BF41BB17C4800EB1E51 /* lunbo1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21B58BEF1BB17C4800EB1E51 /* lunbo1.jpg */; };
 		21B58BF61BB17C4800EB1E51 /* lunbo5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21B58BF11BB17C4800EB1E51 /* lunbo5.jpg */; };
@@ -140,6 +142,10 @@
 		218F2B151BC6906500589734 /* guanzhuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = guanzhuTableViewCell.m; path = iFbeauty/guanzhuTableViewCell.m; sourceTree = "<group>"; };
 		218F2B171BC6908A00589734 /* guanzhuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = guanzhuViewController.h; path = iFbeauty/guanzhuViewController.h; sourceTree = "<group>"; };
 		218F2B181BC6908A00589734 /* guanzhuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = guanzhuViewController.m; path = iFbeauty/guanzhuViewController.m; sourceTree = "<group>"; };
+		219428691BC7A52A0075128C /* fansViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fansViewController.h; path = iFbeauty/fansViewController.h; sourceTree = "<group>"; };
+		2194286A1BC7A52A0075128C /* fansViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = fansViewController.m; path = iFbeauty/fansViewController.m; sourceTree = "<group>"; };
+		2194286C1BC7A5570075128C /* fansTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fansTableViewCell.h; path = iFbeauty/fansTableViewCell.h; sourceTree = "<group>"; };
+		2194286D1BC7A5570075128C /* fansTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = fansTableViewCell.m; path = iFbeauty/fansTableViewCell.m; sourceTree = "<group>"; };
 		21A6580E1BAFFECC00685F6A /* SendpostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendpostViewController.h; path = iFbeauty/SendpostViewController.h; sourceTree = "<group>"; };
 		21A6580F1BAFFECC00685F6A /* SendpostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendpostViewController.m; path = iFbeauty/SendpostViewController.m; sourceTree = "<group>"; };
 		21B58BEF1BB17C4800EB1E51 /* lunbo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lunbo1.jpg; sourceTree = "<group>"; };
@@ -464,6 +470,10 @@
 				218F2B181BC6908A00589734 /* guanzhuViewController.m */,
 				757B2A321BC765E000FA3E95 /* focusPeopleViewController.h */,
 				757B2A331BC765E000FA3E95 /* focusPeopleViewController.m */,
+				219428691BC7A52A0075128C /* fansViewController.h */,
+				2194286A1BC7A52A0075128C /* fansViewController.m */,
+				2194286C1BC7A5570075128C /* fansTableViewCell.h */,
+				2194286D1BC7A5570075128C /* fansTableViewCell.m */,
 			);
 			name = focuspeople;
 			sourceTree = "<group>";
@@ -733,9 +743,11 @@
 				75D8B2F21BAD0CD8007DE2C2 /* ECSlidingAnimationController.m in Sources */,
 				75D8B3331BAD448B007DE2C2 /* Utilities.m in Sources */,
 				75AE1AB21BB3C1E700CE4111 /* shoppingViewController.m in Sources */,
+				2194286E1BC7A5570075128C /* fansTableViewCell.m in Sources */,
 				752542A31BB4D47B002F9F95 /* postViewController.m in Sources */,
 				757337481BACF7DE00DD08E1 /* main.m in Sources */,
 				756379861BB12AA0002F5350 /* messageTableViewCell.m in Sources */,
+				2194286B1BC7A52A0075128C /* fansViewController.m in Sources */,
 				75D8B2F11BAD0CD8007DE2C2 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				218F2B191BC6908A00589734 /* guanzhuViewController.m in Sources */,
 				758A64041BB2849D00889B90 /* meifaTableViewCell.m in Sources */,

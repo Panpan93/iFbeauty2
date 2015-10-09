@@ -15,6 +15,7 @@
 #import "changePWViewController.h"
 #import "collectionViewController.h"
 #import "guanzhuViewController.h"
+#import "fansViewController.h"
 
 
 
@@ -72,6 +73,18 @@
         }
     }];
 
+
+    //粉丝的数量
+    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"focus == %@", currentUser];// 查询focusecond字段为当前用户的所有
+    PFQuery *query3 = [PFQuery queryWithClassName:@"Concern" predicate:predicate3];
+    [query3 countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
+        if (!error) {
+            NSString* focus = [NSString stringWithFormat:@"%d", count];
+            _fans.text = focus;
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 
     
     [self read];
@@ -225,6 +238,11 @@
 }
 
 - (IBAction)fans:(UIButton *)sender forEvent:(UIEvent *)event {
+    fansViewController *focus = [self.storyboard instantiateViewControllerWithIdentifier:@"fans"];
+    focus.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:focus animated:YES];
+
+    
 }
 #pragma   修改图片
 

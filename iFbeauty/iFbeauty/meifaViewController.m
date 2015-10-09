@@ -102,7 +102,7 @@
     
     PFObject *activity = object[@"owner"];
     
-    cell.userName.text =[NSString stringWithFormat:@"发帖人： %@", activity[@"username"]];
+    cell.userName.text =[NSString stringWithFormat:@"发帖人： %@", activity[@"secondname"]];
     NSLog(@"%@",activity);
     PFFile *photo = activity[@"photo"];
     [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {

@@ -381,15 +381,13 @@
         UITextField *textField = [alertView textFieldAtIndex:0];
         NSString *formatter = textField.text;
         
-        
-        
+        PFUser *user = [PFUser currentUser];
         //创建一个item
         PFObject *item = [PFObject objectWithClassName:@"comment"];
         item[@"commentdetail"] = formatter;
         
         item[@"commentItem"] = _item;
-        item[@"commentUser"] = _ownername;
-        
+        item[@"commentUser"] = user;
         if ([textField.text isEqualToString:@""]) {
             [Utilities popUpAlertViewWithMsg:@"请填写全部信息" andTitle:nil];
             return;//终止该方法，下面的代码不会被执行

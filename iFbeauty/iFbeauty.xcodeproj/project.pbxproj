@@ -58,6 +58,7 @@
 		757AA04D1BAE803D00AB2C2C /* changePWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 757AA04C1BAE803D00AB2C2C /* changePWViewController.m */; };
 		757AA0501BAEA27600AB2C2C /* ChangemessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 757AA04F1BAEA27600AB2C2C /* ChangemessageViewController.m */; };
 		757AA0531BAEA61C00AB2C2C /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 757AA0521BAEA61C00AB2C2C /* MineViewController.m */; };
+		757B2A2D1BC7573B00FA3E95 /* secondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 757B2A2C1BC7573B00FA3E95 /* secondTableViewCell.m */; };
 		758A63F81BB2827C00889B90 /* bodybuildingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 758A63F51BB2827C00889B90 /* bodybuildingTableViewCell.m */; };
 		758A63F91BB2827C00889B90 /* bodybuildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 758A63F71BB2827C00889B90 /* bodybuildingViewController.m */; };
 		758A64021BB2849D00889B90 /* matchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 758A63FB1BB2849D00889B90 /* matchTableViewCell.m */; };
@@ -195,6 +196,8 @@
 		757AA04F1BAEA27600AB2C2C /* ChangemessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangemessageViewController.m; path = iFbeauty/ChangemessageViewController.m; sourceTree = "<group>"; };
 		757AA0511BAEA61C00AB2C2C /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineViewController.h; path = iFbeauty/MineViewController.h; sourceTree = "<group>"; };
 		757AA0521BAEA61C00AB2C2C /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineViewController.m; path = iFbeauty/MineViewController.m; sourceTree = "<group>"; };
+		757B2A2B1BC7573B00FA3E95 /* secondTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondTableViewCell.h; sourceTree = "<group>"; };
+		757B2A2C1BC7573B00FA3E95 /* secondTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondTableViewCell.m; sourceTree = "<group>"; };
 		758A63F41BB2827C00889B90 /* bodybuildingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bodybuildingTableViewCell.h; path = iFbeauty/bodybuildingTableViewCell.h; sourceTree = "<group>"; };
 		758A63F51BB2827C00889B90 /* bodybuildingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = bodybuildingTableViewCell.m; path = iFbeauty/bodybuildingTableViewCell.m; sourceTree = "<group>"; };
 		758A63F61BB2827C00889B90 /* bodybuildingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bodybuildingViewController.h; path = iFbeauty/bodybuildingViewController.h; sourceTree = "<group>"; };
@@ -486,6 +489,8 @@
 				756379841BB12AA0002F5350 /* messageTableViewCell.h */,
 				756379851BB12AA0002F5350 /* messageTableViewCell.m */,
 				75D8B3241BAD448B007DE2C2 /* secondViewController.h */,
+				757B2A2B1BC7573B00FA3E95 /* secondTableViewCell.h */,
+				757B2A2C1BC7573B00FA3E95 /* secondTableViewCell.m */,
 				75D8B3251BAD448B007DE2C2 /* secondViewController.m */,
 				757AA0511BAEA61C00AB2C2C /* MineViewController.h */,
 				757AA0521BAEA61C00AB2C2C /* MineViewController.m */,
@@ -727,6 +732,7 @@
 				757AA0501BAEA27600AB2C2C /* ChangemessageViewController.m in Sources */,
 				214C1B811BAE87AB005823D2 /* SVRadialGradientLayer.m in Sources */,
 				758A64021BB2849D00889B90 /* matchTableViewCell.m in Sources */,
+				757B2A2D1BC7573B00FA3E95 /* secondTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "focusPeopleViewController.h"
+#import "readPostViewController.h"
 
 @interface focusPeopleViewController ()
 - (IBAction)guanzhu:(UIButton *)sender forEvent:(UIEvent *)event;
@@ -162,5 +163,17 @@
     
 }
 - (IBAction)chakan:(UIButton *)sender forEvent:(UIEvent *)event {
+    
+    readPostViewController *read = [self.storyboard instantiateViewControllerWithIdentifier:@"read"];
+    NSString *name=_zhanghao.text;
+//        PFObject *par = name[@"focus"];
+    
+        read.chuanru = name;
+
+    read.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:read animated:YES];
+    
+
+    
 }
 @end

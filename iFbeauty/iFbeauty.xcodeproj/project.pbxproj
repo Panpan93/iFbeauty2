@@ -62,6 +62,7 @@
 		757AA0531BAEA61C00AB2C2C /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 757AA0521BAEA61C00AB2C2C /* MineViewController.m */; };
 		757B2A301BC760A700FA3E95 /* secondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 757B2A2F1BC760A700FA3E95 /* secondTableViewCell.m */; };
 		757B2A341BC765E000FA3E95 /* focusPeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 757B2A331BC765E000FA3E95 /* focusPeopleViewController.m */; };
+		757B2A3C1BC7AE9400FA3E95 /* readPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 757B2A3B1BC7AE9400FA3E95 /* readPostViewController.m */; };
 		758A63F81BB2827C00889B90 /* bodybuildingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 758A63F51BB2827C00889B90 /* bodybuildingTableViewCell.m */; };
 		758A63F91BB2827C00889B90 /* bodybuildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 758A63F71BB2827C00889B90 /* bodybuildingViewController.m */; };
 		758A64021BB2849D00889B90 /* matchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 758A63FB1BB2849D00889B90 /* matchTableViewCell.m */; };
@@ -207,6 +208,8 @@
 		757B2A2F1BC760A700FA3E95 /* secondTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = secondTableViewCell.m; path = iFbeauty/secondTableViewCell.m; sourceTree = "<group>"; };
 		757B2A321BC765E000FA3E95 /* focusPeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = focusPeopleViewController.h; path = iFbeauty/focusPeopleViewController.h; sourceTree = "<group>"; };
 		757B2A331BC765E000FA3E95 /* focusPeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = focusPeopleViewController.m; path = iFbeauty/focusPeopleViewController.m; sourceTree = "<group>"; };
+		757B2A3A1BC7AE9400FA3E95 /* readPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = readPostViewController.h; path = iFbeauty/readPostViewController.h; sourceTree = "<group>"; };
+		757B2A3B1BC7AE9400FA3E95 /* readPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = readPostViewController.m; path = iFbeauty/readPostViewController.m; sourceTree = "<group>"; };
 		758A63F41BB2827C00889B90 /* bodybuildingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bodybuildingTableViewCell.h; path = iFbeauty/bodybuildingTableViewCell.h; sourceTree = "<group>"; };
 		758A63F51BB2827C00889B90 /* bodybuildingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = bodybuildingTableViewCell.m; path = iFbeauty/bodybuildingTableViewCell.m; sourceTree = "<group>"; };
 		758A63F61BB2827C00889B90 /* bodybuildingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bodybuildingViewController.h; path = iFbeauty/bodybuildingViewController.h; sourceTree = "<group>"; };
@@ -474,6 +477,8 @@
 				2194286A1BC7A52A0075128C /* fansViewController.m */,
 				2194286C1BC7A5570075128C /* fansTableViewCell.h */,
 				2194286D1BC7A5570075128C /* fansTableViewCell.m */,
+				757B2A3A1BC7AE9400FA3E95 /* readPostViewController.h */,
+				757B2A3B1BC7AE9400FA3E95 /* readPostViewController.m */,
 			);
 			name = focuspeople;
 			sourceTree = "<group>";
@@ -748,6 +753,7 @@
 				757337481BACF7DE00DD08E1 /* main.m in Sources */,
 				756379861BB12AA0002F5350 /* messageTableViewCell.m in Sources */,
 				2194286B1BC7A52A0075128C /* fansViewController.m in Sources */,
+				757B2A3C1BC7AE9400FA3E95 /* readPostViewController.m in Sources */,
 				75D8B2F11BAD0CD8007DE2C2 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				218F2B191BC6908A00589734 /* guanzhuViewController.m in Sources */,
 				758A64041BB2849D00889B90 /* meifaTableViewCell.m in Sources */,

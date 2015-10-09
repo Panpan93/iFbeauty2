@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface guanzhuTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIView *focusImage;
 @property (weak, nonatomic) IBOutlet UILabel *focusName;
+@property (weak, nonatomic) IBOutlet UIImageView *userimage;
 
 @property (weak, nonatomic) IBOutlet UILabel *focusXinxi;
 @end

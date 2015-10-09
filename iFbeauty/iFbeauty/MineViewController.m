@@ -14,6 +14,8 @@
 #import "postViewController.h"
 #import "changePWViewController.h"
 #import "collectionViewController.h"
+#import "guanzhuViewController.h"
+
 
 
 @interface MineViewController ()
@@ -56,6 +58,20 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+    
+    
+    //关注的数量
+    NSPredicate *predicate2 = [NSPredicate predicateWithFormat:@"focusecond == %@", currentUser];// 查询focusecond字段为当前用户的所有
+    PFQuery *query2 = [PFQuery queryWithClassName:@"Concern" predicate:predicate2];
+    [query2 countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
+        if (!error) {
+            NSString* focus = [NSString stringWithFormat:@"%d", count];
+            _focus.text = focus;
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
 
     
     [self read];
@@ -200,8 +216,14 @@
 
     
 }
+
+#pragma 关注的人
 - (IBAction)focus:(UIButton *)sender forEvent:(UIEvent *)event {
+    guanzhuViewController *focus = [self.storyboard instantiateViewControllerWithIdentifier:@"focus"];
+    focus.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:focus animated:YES];
 }
+
 - (IBAction)fans:(UIButton *)sender forEvent:(UIEvent *)event {
 }
 #pragma   修改图片

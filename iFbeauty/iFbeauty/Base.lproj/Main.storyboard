@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KiI-A1-N48">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KiI-A1-N48">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1383,7 +1383,7 @@
         <!--Guanzhu View Controller-->
         <scene sceneID="Jt9-9c-7zt">
             <objects>
-                <viewController id="Yse-JL-Csb" customClass="guanzhuViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="focus" id="Yse-JL-Csb" customClass="guanzhuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ltb-K2-5Jb"/>
                         <viewControllerLayoutGuide type="bottom" id="bGa-4C-0d5"/>
@@ -1433,9 +1433,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="focusImage" destination="pIr-oM-MzG" id="ldc-L6-1kE"/>
                                             <outlet property="focusName" destination="UVD-jZ-fGw" id="fms-Nd-WwV"/>
                                             <outlet property="focusXinxi" destination="bPg-MW-Hyy" id="p35-2v-FfP"/>
+                                            <outlet property="userimage" destination="CvY-PO-1r9" id="LIZ-Kv-y3j"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

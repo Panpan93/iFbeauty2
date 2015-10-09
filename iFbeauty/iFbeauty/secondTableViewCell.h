@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *pinglun;
 @property (weak, nonatomic) IBOutlet UILabel *tiezi;
+@property (weak, nonatomic) IBOutlet UILabel *commentdate;
 
 @end

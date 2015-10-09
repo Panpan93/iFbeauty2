@@ -8,7 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface secondViewController : UIViewController
+@interface secondViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+{
+    BOOL loadingMore;
+    NSInteger loadCount;
+    NSInteger perPage;
+    NSInteger totalPage;
+}
+
+@property (strong, nonatomic) NSArray *objectsForShow;
+@property (strong, nonatomic) UIActivityIndicatorView *aiv;
+@property (strong, nonatomic) UIActivityIndicatorView *tableFooterAI;
+
 @property (weak, nonatomic) IBOutlet UITableView *secondTable;
+//@property (strong, nonatomic) NSArray *objectsForShow;
 
 @end

@@ -24,6 +24,8 @@
 		218F2B191BC6908A00589734 /* guanzhuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F2B181BC6908A00589734 /* guanzhuViewController.m */; };
 		2194286B1BC7A52A0075128C /* fansViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2194286A1BC7A52A0075128C /* fansViewController.m */; };
 		2194286E1BC7A5570075128C /* fansTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2194286D1BC7A5570075128C /* fansTableViewCell.m */; };
+		2194287A1BC7D5E00075128C /* commentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 219428771BC7D5E00075128C /* commentTableViewCell.m */; };
+		2194287B1BC7D5E00075128C /* commentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219428791BC7D5E00075128C /* commentViewController.m */; };
 		21A658101BAFFECC00685F6A /* SendpostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6580F1BAFFECC00685F6A /* SendpostViewController.m */; };
 		21B58BF41BB17C4800EB1E51 /* lunbo1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21B58BEF1BB17C4800EB1E51 /* lunbo1.jpg */; };
 		21B58BF61BB17C4800EB1E51 /* lunbo5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21B58BF11BB17C4800EB1E51 /* lunbo5.jpg */; };
@@ -147,6 +149,10 @@
 		2194286A1BC7A52A0075128C /* fansViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = fansViewController.m; path = iFbeauty/fansViewController.m; sourceTree = "<group>"; };
 		2194286C1BC7A5570075128C /* fansTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fansTableViewCell.h; path = iFbeauty/fansTableViewCell.h; sourceTree = "<group>"; };
 		2194286D1BC7A5570075128C /* fansTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = fansTableViewCell.m; path = iFbeauty/fansTableViewCell.m; sourceTree = "<group>"; };
+		219428761BC7D5E00075128C /* commentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commentTableViewCell.h; sourceTree = "<group>"; };
+		219428771BC7D5E00075128C /* commentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = commentTableViewCell.m; sourceTree = "<group>"; };
+		219428781BC7D5E00075128C /* commentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commentViewController.h; sourceTree = "<group>"; };
+		219428791BC7D5E00075128C /* commentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = commentViewController.m; sourceTree = "<group>"; };
 		21A6580E1BAFFECC00685F6A /* SendpostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendpostViewController.h; path = iFbeauty/SendpostViewController.h; sourceTree = "<group>"; };
 		21A6580F1BAFFECC00685F6A /* SendpostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendpostViewController.m; path = iFbeauty/SendpostViewController.m; sourceTree = "<group>"; };
 		21B58BEF1BB17C4800EB1E51 /* lunbo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lunbo1.jpg; sourceTree = "<group>"; };
@@ -297,6 +303,18 @@
 				214C1B801BAE87AB005823D2 /* SVIndefiniteAnimatedView.m */,
 			);
 			name = "指示器";
+			sourceTree = "<group>";
+		};
+		2194286F1BC7CCCF0075128C /* second */ = {
+			isa = PBXGroup;
+			children = (
+				219428761BC7D5E00075128C /* commentTableViewCell.h */,
+				219428771BC7D5E00075128C /* commentTableViewCell.m */,
+				219428781BC7D5E00075128C /* commentViewController.h */,
+				219428791BC7D5E00075128C /* commentViewController.m */,
+			);
+			name = second;
+			path = iFbeauty;
 			sourceTree = "<group>";
 		};
 		21A6580A1BAFFE7700685F6A /* fatie */ = {
@@ -500,6 +518,7 @@
 				21D8FC3B1BB24C92004DFC35 /* home */,
 				21A6580A1BAFFE7700685F6A /* fatie */,
 				751ED4C71BAFC8AC000AF80B /* Mine */,
+				2194286F1BC7CCCF0075128C /* second */,
 				757AA04E1BAEA27600AB2C2C /* ChangemessageViewController.h */,
 				757AA04F1BAEA27600AB2C2C /* ChangemessageViewController.m */,
 				7573374C1BACF7DF00DD08E1 /* ViewController.h */,
@@ -719,7 +738,9 @@
 				7573374E1BACF7DF00DD08E1 /* ViewController.m in Sources */,
 				218F2B101BC609CD00589734 /* collectdeleteViewController.m in Sources */,
 				75D8B3321BAD448B007DE2C2 /* TabViewController.m in Sources */,
+				2194287A1BC7D5E00075128C /* commentTableViewCell.m in Sources */,
 				218F2B131BC60A1D00589734 /* collectTableViewCell.m in Sources */,
+				2194287B1BC7D5E00075128C /* commentViewController.m in Sources */,
 				758A64031BB2849D00889B90 /* matchViewController.m in Sources */,
 				758A64051BB2849D00889B90 /* meifaViewController.m in Sources */,
 				758A63F81BB2827C00889B90 /* bodybuildingTableViewCell.m in Sources */,

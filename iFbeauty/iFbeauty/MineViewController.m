@@ -44,7 +44,7 @@
     layer.borderWidth = 1;//边框宽度
     layer.masksToBounds = YES;//图片填充边框
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tupian1.jpg"]];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background6"]];
 
 
     //帖子的数量

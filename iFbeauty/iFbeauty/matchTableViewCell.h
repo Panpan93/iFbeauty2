@@ -14,4 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *userDate;
 @property (weak, nonatomic) IBOutlet UILabel *userTitle;
 
+@property (weak, nonatomic) IBOutlet UILabel *zanLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pinglunLabel;
+
 @end

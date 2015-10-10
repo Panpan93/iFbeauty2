@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self requestData];
+    [self praiseData];
+    [self collectData];
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
     
@@ -245,11 +247,118 @@
 }
 */
 
+
+//点击实现赞
 - (IBAction)zanAction:(UIBarButtonItem *)sender {
+    if ([_zanItem.title isEqualToString:@"赞"]) {
+        PFUser *current=[PFUser currentUser];
+        
+        PFObject *praise = [PFObject objectWithClassName:@"praise"];
+        
+        praise[@"praiseitem"] = _item;
+        praise[@"praiseuser"] = current;
+        praise[@"zan"]=@"赞";
+        [praise saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            
+            if (succeeded){
+                NSLog(@"Object Uploaded!");
+                [self praiseData];
+            }
+            else{
+                NSLog(@"error=%@",error);
+            }
+            
+        }];
+        
+    }
+    [_item incrementKey:@"praise"];
+    
+    [_item saveInBackground];
+    
+    
+    
+}
+-(void)praiseData
+{
+    PFUser *current=[PFUser currentUser];
+    
+    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"praiseitem == %@ AND praiseuser == %@", _item, current];
+    PFQuery *query3 = [PFQuery queryWithClassName:@"praise" predicate:predicate3];
+    [query3 countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+        if (!error) {
+            
+            if (number == 0) {
+                _zanItem.title=@"赞";
+                _zanItem.enabled=YES;
+                
+            } else {
+                _zanItem.title=@"已赞";
+                _zanItem.enabled=NO;
+            }
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
 
+//点击进行收藏
 - (IBAction)shoucangAction:(UIBarButtonItem *)sender {
+    if ([_shoucangItem.title isEqualToString:@"收藏"]) {
+        PFUser *current=[PFUser currentUser];
+        
+        PFObject *praise = [PFObject objectWithClassName:@"collection"];
+        
+        praise[@"shoucangitem"] = _item;
+        praise[@"shoucanguser"] = current;
+        praise[@"shoucang"]=@"收藏";
+        [praise saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            
+            if (succeeded){
+                NSLog(@"Object Uploaded!");
+                [self collectData];
+            }
+            else{
+                NSLog(@"error=%@",error);
+            }
+            
+        }];
+        NSLog(@" 收藏==  %@",praise[@"shoucang"]);
+    }
+    
+    
 }
+-(void)collectData
+{
+    
+    //PFObject *praise = [PFObject objectWithClassName:@"praise"];
+    PFUser *current=[PFUser currentUser];
+    
+    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"shoucangitem == %@ AND shoucanguser == %@",_item,current];
+    PFQuery *query3 = [PFQuery queryWithClassName:@"collection" predicate:predicate3];
+    
+    //   PFObject *object = [PFObject objectWithClassName:@"praise" dictionary:predicate3];
+    
+    [query3 countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+        if (!error) {
+            if (number == 0) {
+                _shoucangItem.title=@"收藏";
+                _shoucangItem.enabled=YES;
+                
+            } else {
+                _shoucangItem.title=@"已收藏";
+                _shoucangItem.enabled=NO;
+            }
+        }
+    }];
+    
+}
+//进行评论
 - (IBAction)commentAction:(UIBarButtonItem *)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请发表您的评论" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    
+    [alert show];
+
 }
+
 @end

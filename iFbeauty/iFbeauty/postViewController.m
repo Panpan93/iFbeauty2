@@ -74,7 +74,9 @@
         }
 
     cell.textLabel.text = [NSString stringWithFormat:@"%@", object[@"title"]];
-    
+    //自动换行，
+    cell.textLabel.numberOfLines = 0;
+
 
     return cell;
 }

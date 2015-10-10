@@ -126,13 +126,32 @@
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
 // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
+
+/****根据评论的内容更改行高****/
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //   UITableViewCell *cell = [self tableView:_tableView cellForRowAtIndexPath:indexPath];
+    collectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"collectCell"];
+    
+    PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
+    
+    CGSize maxSize = CGSizeMake(UI_SCREEN_W - 40, 1000);
+    CGSize contentLabelSize = [object[@"commentdetail"] boundingRectWithSize:maxSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]} context:nil].size;
+    NSLog(@"origin = %f", cell.commentUserDetail.frame.origin.y);
+    NSLog(@"height = %f", contentLabelSize.height);
+    NSLog(@"totalHeight = %f", cell.commentUserDetail.frame.origin.y + contentLabelSize.height + 20);
+    return cell.commentUserDetail.frame.origin.y + contentLabelSize.height + 21;
+}
+
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     collectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"collectCell" forIndexPath:indexPath];
     
-    PFObject *activity = _item[@"shoucangitem"];
-    
     PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
-    cell.commentUserDetail.text = [NSString stringWithFormat:@"%@", activity[@"commentdetail"]];
+    
+    PFObject *activity = object[@"commentUser"];
+    
+    cell.commentUserDetail.text = [NSString stringWithFormat:@"%@", object[@"commentdetail"]];
     
 //    PFObject *activity = object[@"commentUser"];
     
@@ -212,7 +231,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];//点击退出返回首页
     
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您的帖子将彻底删除，您确定要删除吗？" message:nil delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您收藏的帖子将彻底删除，您确定要删除吗？" message:nil delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
     [alert show];
 }
 
@@ -270,9 +289,9 @@
 {
 
     NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"commentItem == %@",_item[@"shoucangitem"] ];
-    PFQuery *query = [PFQuery queryWithClassName:@"collection" predicate:predicate3];
+    PFQuery *query = [PFQuery queryWithClassName:@"comment" predicate:predicate3];
     
-    [query includeKey:@"owner"];//关联查询
+    [query includeKey:@"commentUser"];//关联查询
     
     [query setLimit:perPage];
     [query setSkip:(perPage * (loadCount - 1))];

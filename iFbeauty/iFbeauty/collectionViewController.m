@@ -18,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self collectionData];
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,16 +59,17 @@
     
 }
 
-//选择行
+//跳转页面
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     PFObject *object = [_collectionArray objectAtIndex:indexPath.row];
     collectdeleteViewController *pvc = [Utilities getStoryboardInstanceByIdentity:@"collect"];
+    
     PFObject *par = object[@"owner"];
     pvc.ownername = par;
+    
     pvc.item = object;
     pvc.hidesBottomBarWhenPushed = YES;//把切换按钮隐藏掉
     [self.navigationController pushViewController:pvc animated:YES];
@@ -90,9 +94,15 @@
     }
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@", activity[@"title"]];
+    //自动换行，
+    cell.textLabel.numberOfLines = 0;
+  //  cell.textLabel.textColor =[UIColor blueColor];
+    //Cell中的小箭头
+   // cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
     NSLog(@"cell == %@",cell.textLabel.text);
     
-    
+
     return cell;
 }
 

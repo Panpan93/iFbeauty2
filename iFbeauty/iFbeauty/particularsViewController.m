@@ -313,22 +313,6 @@
                 [_ownername deleteInBackground];
                 
 
-//                [SVProgressHUD show];
-                
-//                [_ownername saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)/**/ {
-////                    [SVProgressHUD dismiss];
-//                    if (succeeded) {
-//                       
-//                        NSLog(@"1");
-//                        
-//                    } else {
-//                        NSLog(@"error=%@",error);
-//                    }
-//                }];
-//         
-//            } else {
-//                
-              
                 
             }
         }

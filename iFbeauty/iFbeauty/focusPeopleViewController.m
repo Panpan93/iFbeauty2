@@ -19,8 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self quxiaoData];
-    [self focusData];
+    //[self quxiaoData];
+    //[self focusData];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tupian1.jpg"]];
     
 
@@ -63,6 +63,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+//关注
 
 - (IBAction)guanzhu:(UIButton *)sender forEvent:(UIEvent *)event {
     
@@ -123,57 +126,24 @@
 
 
 -(void)quxiaoData {
-    PFUser *current=[PFUser currentUser];
-    
-    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@" focus == %@ AND focusecond == %@",_chuanru[@"username"], current];
-    NSLog(@"_chuanru == %@",_chuanru[@"username"]);
-    PFQuery *query3 = [PFQuery queryWithClassName:@"Concern" predicate:predicate3];
-    NSLog(@" query3  == %@ ",query3);
-    
-    [query3 countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
-        if (!error) {
-            if (!number == 0) {
-                PFUser *current=[PFUser currentUser];
-                
-                NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@" focus == %@ AND focusecond == %@",_chuanru[@"username"], current];
-                
-                PFQuery *query4 = [PFQuery queryWithClassName:@"Concern" predicate:predicate3];
-                
-                [query4 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                    if (!error) {
-                        for (PFObject *quxiao in objects) {
-                            [quxiao deleteInBackground];
-                        }
-                    }
-                }];
-                
-                [_chuanru[@"username"] deleteInBackground];
-                
-            } else {
-                
-                
-                
-            }
+    [_obj deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            [Utilities popUpAlertViewWithMsg:@"S" andTitle:nil];
+            [self.navigationController popViewControllerAnimated:YES];
         }
-        else{
-            NSLog(@"error=%@",error);
-        }
-        
     }];
-    
 }
+
 - (IBAction)chakan:(UIButton *)sender forEvent:(UIEvent *)event {
     
     readPostViewController *read = [self.storyboard instantiateViewControllerWithIdentifier:@"read"];
-    NSString *name=_zhanghao.text;
-//        PFObject *par = name[@"focus"];
+//    NSString *name=_zhanghao.text;
+//    PFObject *par = name[@"focus"];
     
-        read.chuanru = name;
+    read.chuanru = _chuanru;
 
     read.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:read animated:YES];
-    
-
     
 }
 @end

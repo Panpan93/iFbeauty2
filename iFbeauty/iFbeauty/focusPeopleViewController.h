@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dizhi;
 
 @property (weak, nonatomic) IBOutlet UILabel *youxiang;
+@property (strong, nonatomic) PFObject *obj;
 @property (strong, nonatomic) PFObject *chuanru;
 
 @end

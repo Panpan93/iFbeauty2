@@ -8,6 +8,7 @@
 
 #import "fansViewController.h"
 #import "fansTableViewCell.h"
+#import "focusPeopleViewController.h"
 
 @interface fansViewController ()
 
@@ -89,6 +90,23 @@
     return cell;
     
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
+    focusPeopleViewController *pvc = [Utilities getStoryboardInstanceByIdentity:@"focusPeople"];
+    PFObject *par = object[@"focusecond"];
+    //    pvc.ownername = par;
+    //    pvc.item = object;
+    pvc.chuanru = par;
+    pvc.obj = object;
+    pvc.hidesBottomBarWhenPushed = YES;//把切换按钮隐藏掉
+    [self.navigationController pushViewController:pvc animated:YES];
+    
+}
+
+
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 //    if ([segue.identifier isEqualToString:@"guanzhu"]) {
 //

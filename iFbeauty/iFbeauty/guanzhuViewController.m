@@ -18,12 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self requestData];
+    //[self requestData];
     // [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestData) name:@"refreshHome" object:nil];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
-    
-    
-    
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -32,8 +29,6 @@
     [self requestData];
     
 }
-
-
 
 - (void)requestData {
     
@@ -111,6 +106,7 @@
 //    pvc.ownername = par;
 //    pvc.item = object;
     pvc.chuanru = par;
+    pvc.obj = object;
     pvc.hidesBottomBarWhenPushed = YES;//把切换按钮隐藏掉
     [self.navigationController pushViewController:pvc animated:YES];
     

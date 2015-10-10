@@ -10,9 +10,9 @@
 
 @interface readPostViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *readTable;
-@property(strong,nonatomic)NSMutableArray *objectShow;
+@property(strong,nonatomic)NSArray *objectShow;
+
 @property (strong, nonatomic) PFObject *chuanru;
-@property (weak, nonatomic) IBOutlet UILabel *duqu;
 
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "readPostViewController.h"
+#import "postDetailViewController.h"
 
 @interface readPostViewController ()
 
@@ -22,21 +23,27 @@
 }
 -(void)readData
 {
-     PFUser *currentUser = [PFUser currentUser];
-    NSPredicate *predicate=[NSPredicate predicateWithFormat:@" focus == %@ AND focusenced ==%@",_chuanru,currentUser];
-    PFQuery *query=[PFQuery queryWithClassName:@"Concern"predicate:predicate];
-   
     
-    //    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"owner == %@ ",_chuanru];
+    
+    PFQuery *query=[PFQuery queryWithClassName:@"Item"predicate:predicate];
+    
+    [query includeKey:@"owner"];//关联查询
+        
+    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
-        //        [aiv stopAnimating];
+        [aiv stopAnimating];
         if (!error) {
-          
+            
+            _objectShow = returnedObjects;
+            NSLog(@"读取 = %@", _objectShow);
+            [_readTable reloadData];
+            
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,11 +61,30 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"readcell" forIndexPath:indexPath];
+    PFObject *object = [_objectShow objectAtIndex:indexPath.row];
+    
+    //PFObject *activity = object[@"owner"];
+    
+    cell.textLabel.text =[NSString stringWithFormat:@"%@", object[@"title"]];
 //    cell.textLabel.text=_chuanru;
     
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    PFObject *object = [_objectShow objectAtIndex:indexPath.row];
+    postDetailViewController *pvc = [Utilities getStoryboardInstanceByIdentity:@"postdetail"];
+  PFObject *par = object[@"owner"];
+     pvc.chuanru = par;
+//    pvc.chuanru = _chuanru;
+    pvc.item = object;
+    pvc.hidesBottomBarWhenPushed = YES;//把切换按钮隐藏掉
+    [self.navigationController pushViewController:pvc animated:YES];
+    
+}
 
 /*
 #pragma mark - Navigation

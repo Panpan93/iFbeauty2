@@ -25,7 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *commentItem;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property(strong,nonatomic)NSArray * objectArray;
-@property (strong, nonatomic) PFObject *chuanru;
+@property (strong, nonatomic) PFObject *xinxi;
 @property (strong, nonatomic) PFObject *item;
 
 @end

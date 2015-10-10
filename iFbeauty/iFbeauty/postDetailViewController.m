@@ -27,16 +27,13 @@
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
     
-    
-    PFFile *userphoto = _chuanru[@"photo"];
-    
-    _name1.text =[NSString stringWithFormat:@"发帖人： %@", _chuanru[@"secondname"]];
+    _name1.text =[NSString stringWithFormat:@"发帖人： %@", _xinxi[@"secondname"]];
     NSLog(@"用户名%@",_name1.text);
     
     
     _postTitle.text = _item[@"title"];
     _postdetail.text =[NSString stringWithFormat:@"%@", _item[@"detail"]];
-    PFFile *photo = _item[@"photo"];
+    PFFile *photo = _xinxi[@"photo"];
     [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
         if (!error) {
             UIImage *image = [UIImage imageWithData:photoData];
@@ -78,14 +75,14 @@
     }];
     
     
-    
+    PFFile *postphoto = _item[@"photot"];
+
     
     //    NSLog(@"y = %f", _deLabel.frame.origin.y);
     CGSize maxSize = CGSizeMake(UI_SCREEN_W - 40, 1000);
     CGSize contentLabelSize = [_postdetail.text boundingRectWithSize:maxSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:_postdetail.font} context:nil].size;
     //    NSLog(@"height = %f", contentLabelSize.height);
-    if (userphoto == nil) {
-        _image1.image = nil;
+    if (postphoto == nil) {
         CGRect rect = _header.frame;
         rect.size.height = _postdetail.frame.origin.y + contentLabelSize.height + 20;
         _header.frame = rect;
@@ -98,7 +95,7 @@
         rect2.size.height = _postdetail.frame.origin.y + contentLabelSize.height + 450;
         _header.frame = rect2;
         _tableview.tableHeaderView.frame = rect2;
-        [userphoto getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+        [postphoto getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
             if (!error) {
                 UIImage *image = [UIImage imageWithData:photoData];
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -212,7 +209,7 @@
     
     PFObject *activity = object[@"commentUser"];
     
-    cell.commentText.text =[NSString stringWithFormat:@" %@  ", activity[@"secondname"]];
+    cell.name2.text =[NSString stringWithFormat:@" %@  ", activity[@"secondname"]];
     NSLog(@"%@",activity);
     PFFile *photo = activity[@"photo"];
     [photo getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
@@ -229,7 +226,7 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
     NSString *strDate = [dateFormatter stringFromDate:createdAt];
-    cell.commentText.text = [NSString stringWithFormat:@"%@",strDate];
+    cell.shijian3.text = [NSString stringWithFormat:@"%@",strDate];
     
     
     return cell;

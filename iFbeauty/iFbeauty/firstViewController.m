@@ -132,9 +132,45 @@
 //点击发帖按钮
 - (IBAction)send:(UIBarButtonItem *)sender {
     
+    PFUser *user = [PFUser currentUser];
+    
+    if (!user) {
+        
+        UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"您还没有登录，请登录" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"登录", nil];
+        alert2.alertViewStyle = UIAlertViewStyleDefault;
+        [alert2 show];
+        alert2.tag = 200;
+        return;
+        
+    }
+
+    
     SendpostViewController *denglu = [self.storyboard instantiateViewControllerWithIdentifier:@"send"];
     denglu.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:denglu animated:YES];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+
+{
+    
+    if (alertView.tag == 200) {
+        NSString *buttonTitle = [alertView buttonTitleAtIndex:buttonIndex];
+        
+        if ([buttonTitle isEqualToString:@"登录"]) {
+            
+            ViewController *denglu = [self.storyboard instantiateViewControllerWithIdentifier:@"denglu"];
+            //初始化导航控制器
+            UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:denglu];
+            //动画效果
+            nc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+            //导航条隐藏掉
+            nc.navigationBarHidden = NO;
+            //类似那个箭头 跳转到第二个界面
+            [self presentViewController:nc animated:YES completion:nil];
+            
+        }
+    }
 }
 
 

@@ -66,6 +66,7 @@
     //PFObject *activity = object[@"owner"];
     
     cell.textLabel.text =[NSString stringWithFormat:@"%@", object[@"title"]];
+    cell.textLabel.numberOfLines = 0;
 //    cell.textLabel.text=_chuanru;
     
     return cell;
@@ -78,7 +79,7 @@
     PFObject *object = [_objectShow objectAtIndex:indexPath.row];
     postDetailViewController *pvc = [Utilities getStoryboardInstanceByIdentity:@"postdetail"];
   PFObject *par = object[@"owner"];
-     pvc.chuanru = par;
+     pvc.xinxi = par;
 //    pvc.chuanru = _chuanru;
     pvc.item = object;
     pvc.hidesBottomBarWhenPushed = YES;//把切换按钮隐藏掉

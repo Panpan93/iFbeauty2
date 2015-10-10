@@ -9,6 +9,7 @@
 #import "particularsViewController.h"
 #import "hairdressingTableViewCell.h"
 #import "readcommentTableViewCell.h"
+#import "ViewController.h"
 
 @interface particularsViewController ()
 
@@ -143,6 +144,19 @@
 
 //点击赞
 - (IBAction)praiseAction:(UIBarButtonItem *)sender {
+    
+    PFUser *user = [PFUser currentUser];
+    
+    if (!user) {
+        
+        UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"您还没有登录，请登录" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"登录", nil];
+        alert2.alertViewStyle = UIAlertViewStyleDefault;
+        [alert2 show];
+        alert2.tag = 200;
+        return;
+        
+    }
+    
     if ([_zanItem.title isEqualToString:@"赞"]) {
         PFUser *current=[PFUser currentUser];
 
@@ -196,6 +210,19 @@
 
 //点击收藏
 - (IBAction)collectAction:(UIBarButtonItem *)sender {
+    
+    PFUser *user = [PFUser currentUser];
+    
+    if (!user) {
+        
+        UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"您还没有登录，请登录" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"登录", nil];
+        alert2.alertViewStyle = UIAlertViewStyleDefault;
+        [alert2 show];
+        alert2.tag = 200;
+        return;
+        
+    }
+
     if ([_shoucangItem.title isEqualToString:@"收藏"]) {
         PFUser *current=[PFUser currentUser];
 
@@ -247,10 +274,81 @@
 }
 //点击评论
 - (IBAction)commentAction:(UIBarButtonItem *)sender {
+    
+    PFUser *user = [PFUser currentUser];
+    
+    if (!user) {
+        //  [Utilities popUpAlertViewWithMsg:@"您还没有登录，请登录" andTitle:nil];
+        
+        // return;
+        
+        UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"您还没有登录，请登录" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"登录", nil];
+        alert2.alertViewStyle = UIAlertViewStyleDefault;
+        [alert2 show];
+        alert2.tag = 200;
+        return;
+        
+        
+    }
+
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请发表您的评论" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     
     [alert show];
+    alert.tag = 100;
+
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+
+{
+    if (alertView.tag == 200) {
+        NSString *buttonTitle = [alertView buttonTitleAtIndex:buttonIndex];
+        
+        if ([buttonTitle isEqualToString:@"登录"]) {
+            
+            ViewController *denglu = [self.storyboard instantiateViewControllerWithIdentifier:@"denglu"];
+            //初始化导航控制器
+            UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:denglu];
+            //动画效果
+            nc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+            //导航条隐藏掉
+            nc.navigationBarHidden = NO;
+            //类似那个箭头 跳转到第二个界面
+            [self presentViewController:nc animated:YES completion:nil];
+            
+            
+            
+            
+        }
+        
+    }
+    
+    
+    
+    if (alertView.tag == 100) {
+        NSString *buttonTitle = [alertView buttonTitleAtIndex:buttonIndex];
+        if ([buttonTitle isEqualToString:@"确定"]){
+            UITextField *textField = [alertView textFieldAtIndex:0];
+            NSString *formatter = textField.text;
+            
+            PFUser *user = [PFUser currentUser];
+            //创建一个item
+            PFObject *item = [PFObject objectWithClassName:@"comment"];
+            item[@"commentdetail"] = formatter;
+            
+            item[@"commentItem"] = _item;
+            item[@"commentUser"] = user;
+            if ([textField.text isEqualToString:@""]) {
+                [Utilities popUpAlertViewWithMsg:@"请填写全部信息" andTitle:nil];
+                return;//终止该方法，下面的代码不会被执行
+            }
+            
+            [self performSelector:@selector(delayHappen:) withObject:item afterDelay:0.5];
+        }
+        
+    }
     
 }
 
@@ -357,28 +455,6 @@
     
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-
-{
-    NSString *buttonTitle = [alertView buttonTitleAtIndex:buttonIndex];
-    if ([buttonTitle isEqualToString:@"确定"]){
-        UITextField *textField = [alertView textFieldAtIndex:0];
-        NSString *formatter = textField.text;
-        
-        PFUser *user = [PFUser currentUser];
-        //创建一个item
-        PFObject *item = [PFObject objectWithClassName:@"comment"];
-        item[@"commentdetail"] = formatter;
-        
-        item[@"commentItem"] = _item;
-        item[@"commentUser"] = user;
-        if ([textField.text isEqualToString:@""]) {
-            [Utilities popUpAlertViewWithMsg:@"请填写全部信息" andTitle:nil];
-            return;//终止该方法，下面的代码不会被执行
-        }
-        [self performSelector:@selector(delayHappen:) withObject:item afterDelay:0.5];
-    }
-}
 
 - (void)delayHappen:(PFObject *)item {
     [SVProgressHUD show];

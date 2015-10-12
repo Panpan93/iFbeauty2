@@ -31,8 +31,7 @@
     [self praiseData];
     [self collectData];
     [self focusData];
-    [self quxiaoData];
-     _tableView.tableFooterView=[[UIView alloc]init];
+//    [self quxiaoData];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
 
 
@@ -145,9 +144,13 @@
         praise[@"zan"]=@"赞";
         [praise saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             
+            [SVProgressHUD show];
             if (succeeded){
                 NSLog(@"Object Uploaded!");
                 [self praiseData];
+                [SVProgressHUD dismiss];
+                [Utilities popUpAlertViewWithMsg:@"点赞成功！" andTitle:nil];
+
             }
             else{
                 NSLog(@"error=%@",error);
@@ -211,7 +214,11 @@
         praise[@"shoucang"]=@"收藏";
         [praise saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             
+            [SVProgressHUD show];
             if (succeeded){
+                [SVProgressHUD dismiss];
+                [Utilities popUpAlertViewWithMsg:@"收藏成功！" andTitle:nil];
+
                 NSLog(@"Object Uploaded!");
                 [self collectData];
             }
@@ -334,6 +341,20 @@
 
 - (IBAction)ConcernAction:(UIButton *)sender forEvent:(UIEvent *)event {
 
+    PFUser *user = [PFUser currentUser];
+    
+    if (!user) {
+        
+        UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"您还没有登录，请登录" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"登录", nil];
+        alert2.alertViewStyle = UIAlertViewStyleDefault;
+        [alert2 show];
+        alert2.tag = 200;
+        return;
+        
+    }
+    
+
+    
     if ([_Concern.titleLabel.text isEqualToString:@"我要关注"]) {
         PFUser *current=[PFUser currentUser];
         PFObject *focus = [PFObject objectWithClassName:@"Concern"];
@@ -343,8 +364,10 @@
         focus[@"focusecond"] = current;
         
         [focus saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            
+            [SVProgressHUD show];
             if (succeeded){
+                [SVProgressHUD dismiss];
+                [Utilities popUpAlertViewWithMsg:@"关注成功！" andTitle:nil];
                 NSLog(@"Object Uploaded!");
                 [self focusData];
             }
@@ -355,7 +378,9 @@
     } else {
         if ([_Concern.titleLabel.text isEqualToString:@"取消关注"])
         {
-           
+           [SVProgressHUD dismiss];
+            [Utilities popUpAlertViewWithMsg:@"取消关注成功！" andTitle:nil];
+
             [self quxiaoData];
         }
         
@@ -386,7 +411,7 @@
                     }
                 }];
                 
-                [_ownername deleteInBackground];
+//                [_ownername deleteInBackground];
                 
 
                 

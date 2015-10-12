@@ -22,7 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background1"]];
+     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
+
     
     [self uiView];
     if (![[Utilities getUserDefaults:@"uName"] isKindOfClass:[NSNull class]]) {
@@ -64,17 +66,17 @@
     _usernameTF.clearButtonMode = UITextFieldViewModeAlways;
     _passwordTF.clearButtonMode = UITextFieldViewModeAlways;
     _passwordTF.borderStyle = UITextBorderStyleNone;
-    _passwordTF.layer.borderColor = [[UIColor whiteColor] CGColor];
+    _passwordTF.layer.borderColor = [[UIColor clearColor] CGColor];
     _passwordTF.layer.borderWidth = 2.0f;
     _passwordTF.layer.masksToBounds = YES;
     _passwordTF.layer.cornerRadius = 3;
     _usernameTF.borderStyle = UITextBorderStyleNone;
-    _usernameTF.layer.borderColor = [[UIColor whiteColor] CGColor];
+    _usernameTF.layer.borderColor = [[UIColor clearColor] CGColor];
     _usernameTF.layer.borderWidth = 2.0f;
     _usernameTF.layer.masksToBounds = YES;
     _usernameTF.layer.cornerRadius = 3;
     
-    _passwordTF.layer.borderColor = [[UIColor whiteColor] CGColor];
+  //  _passwordTF.layer.borderColor = [[UIColor whiteColor] CGColor];
     CALayer *layer = [_dengluButton layer];
     layer.cornerRadius = 40;//角的弧度
     layer.borderColor = [[UIColor whiteColor]CGColor];

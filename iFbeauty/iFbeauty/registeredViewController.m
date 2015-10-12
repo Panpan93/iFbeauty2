@@ -22,7 +22,7 @@
     layer.borderColor = [[UIColor whiteColor]CGColor];
     layer.borderWidth = 1;//边框宽度
     layer.masksToBounds = YES;//图片填充边框
-     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background1"]];
+     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,6 +51,9 @@
 */
 
 - (IBAction)registeredBN:(UIButton *)sender forEvent:(UIEvent *)event {
+    
+    PFUser *currentUser = [PFUser currentUser];
+
     NSString *username = _usernameTF.text;
     NSString *email = _emealTF.text;
     NSString *password = _passwordTF.text;
@@ -69,15 +72,15 @@
     user.username = username;
     user.password = password;
     user.email = email;
-        
-   UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    
+    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     //把创建的用户插入数据库
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         [aiv stopAnimating];//菊花停止转动
         if (!error) {
             [[storageMgr singletonStorageMgr] addKeyAndValue:@"signUp" And:@1];
             [self.navigationController popViewControllerAnimated:YES];
-          
+            
         } else if (error.code == 202) {
             [Utilities popUpAlertViewWithMsg:@"该用户名已被使用，请尝试其它名称" andTitle:nil];
         } else if (error.code == 203) {
@@ -87,7 +90,7 @@
         }else if (error.code == 100) {
             [Utilities popUpAlertViewWithMsg:@"网络不给力，请稍后再试" andTitle:nil];
         } else {
-             
+            
             [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
         }
     }];

@@ -24,7 +24,6 @@
     [self requestData];
     [self praiseData];
     [self collectData];
-     _tableview.tableFooterView=[[UIView alloc]init];
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
     

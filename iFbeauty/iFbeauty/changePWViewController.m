@@ -7,6 +7,7 @@
 //
 
 #import "changePWViewController.h"
+#import "ViewController.h"
 
 @interface changePWViewController ()
 - (IBAction)Confirmchange:(UIButton *)sender forEvent:(UIEvent *)event;//修改密码
@@ -97,7 +98,13 @@
                     //  [Utilities setUserDefaults:@"password" content:_newpasswordTF.text];
                     
                     [Utilities setUserDefaults:@"passWord" content:_newpassword.text];
-                    [Utilities popUpAlertViewWithMsg:@"成功修改！" andTitle:nil];
+//                    [Utilities popUpAlertViewWithMsg:@"成功修改！" andTitle:nil];
+
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您的密码已修改，请重新登录！" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"YES", nil];
+                    [alert show];
+                    [self.navigationController popViewControllerAnimated:YES];
+
+                    
                     
                     [PFUser logOut];//退出Parse
                     [aiv stopAnimating];
@@ -131,6 +138,22 @@
     
 
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+
+{
+    ViewController *denglu = [self.storyboard instantiateViewControllerWithIdentifier:@"denglu"];
+    //初始化导航控制器
+    UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:denglu];
+    //动画效果
+    nc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    //导航条隐藏掉
+    nc.navigationBarHidden = NO;
+    //类似那个箭头 跳转到第二个界面
+    [self presentViewController:nc animated:YES completion:nil];
+}
+
+
 - (IBAction)fanhui:(UIBarButtonItem *)sender {
      [self dismissViewControllerAnimated:YES completion:nil];//返回上一级页面
     

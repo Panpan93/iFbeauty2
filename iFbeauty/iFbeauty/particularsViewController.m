@@ -32,7 +32,8 @@
     [self collectData];
     [self focusData];
     [self quxiaoData];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background6"]];
+     _tableView.tableFooterView=[[UIView alloc]init];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
 
 
     PFFile *userphoto = _item[@"photot"];

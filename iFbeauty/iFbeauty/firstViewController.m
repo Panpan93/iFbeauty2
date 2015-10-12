@@ -429,4 +429,9 @@
 - (void)endRefreshing:(UIRefreshControl *)rc {
     [rc endRefreshing];//闭合
 }
+//-(void)delloc
+//{
+//    [_tableView dealloc];
+//    
+//}
 @end

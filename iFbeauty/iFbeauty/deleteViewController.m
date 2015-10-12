@@ -19,10 +19,11 @@
     [super viewDidLoad];  // Do any additional setup after loading the view.
     [self requestData];
     [self uiConfiguration];
+     _deleteTV.tableFooterView=[[UIView alloc]init];
     
     _header.clipsToBounds = YES;
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
 
     
     //赞的数量

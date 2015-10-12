@@ -24,8 +24,9 @@
     [self requestData];
     [self praiseData];
     [self collectData];
+     _tableview.tableFooterView=[[UIView alloc]init];
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
     
     _name1.text =[NSString stringWithFormat:@"发帖人： %@", _xinxi[@"secondname"]];
     NSLog(@"用户名%@",_name1.text);

@@ -19,6 +19,9 @@
     _webview.multipleTouchEnabled = YES;//启用多个触摸
     _webview.userInteractionEnabled = YES;//交互
     /*载入百度首页*/
+    [SVProgressHUD show];
+
+    
     [self.view insertSubview:self.webview atIndex:0];
     NSURL *url = [NSURL URLWithString:@"http://www.yoka.com"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -37,6 +40,8 @@
 }
 -(void)webViewDidFinishLoad:(UIWebView *)webView// 访问完成，停止加载时，就不再转
 {
+    [SVProgressHUD dismiss];
+
     [[UIApplication sharedApplication ]setNetworkActivityIndicatorVisible:NO];
     
 }

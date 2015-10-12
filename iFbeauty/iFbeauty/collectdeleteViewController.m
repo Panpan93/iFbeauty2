@@ -20,7 +20,8 @@
     [super viewDidLoad];  // Do any additional setup after loading the view.
     [self requestData];
     [self uiConfiguration];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
+     _deleteTV.tableFooterView=[[UIView alloc]init];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
     
     PFObject *activity = _item[@"shoucangitem"];
     PFFile *userphoto = activity[@"photot"];

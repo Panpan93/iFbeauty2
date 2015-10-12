@@ -16,7 +16,10 @@
 @implementation readPostViewController
 
 - (void)viewDidLoad {
+     _readTable.tableFooterView=[[UIView alloc]init];
 //    _duqu.text=_chuanru;
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
+
     [super viewDidLoad];
    
     [self readData];

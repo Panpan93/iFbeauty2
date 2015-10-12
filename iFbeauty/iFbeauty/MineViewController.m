@@ -10,7 +10,6 @@
 #import "NewsViewController.h"
 #import "ViewController.h"
 #import "personalViewController.h"
-#import "shoppingViewController.h"
 #import "postViewController.h"
 #import "changePWViewController.h"
 #import "collectionViewController.h"
@@ -33,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     hidden=NO;
-    _objectforshow=[[NSMutableArray alloc]initWithObjects:@"个人信息",@"时尚芭莎",@"收藏的帖子",@"购物",@"修改密码", nil];
+    _objectforshow=[[NSMutableArray alloc]initWithObjects:@"个人信息",@"时尚芭莎",@"收藏的帖子",@"修改密码", nil];
 //    _tableIV.delegate=self;
 //    _tableIV.dataSource=self;
     _tableIV.tableFooterView=[[UIView alloc]init];//不显示多余的分隔符
@@ -44,7 +43,7 @@
     layer.borderWidth = 1;//边框宽度
     layer.masksToBounds = YES;//图片填充边框
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tupian1.jpg"]];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background6"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
 
 
     //帖子的数量
@@ -191,27 +190,7 @@
         
     }
 
-    if (indexPath.row==3) {
-        shoppingViewController *shop = [[shoppingViewController alloc] init];
-        shop.title = @"京东商城";
-        [shop setHidesBottomBarWhenPushed:YES];
-        [self.navigationController pushViewController:shop animated:YES];
-    }
-    if (indexPath.row==4) {
-//        changePWViewController *change = [[changePWViewController alloc] init];
-//        change.title = @"修改密码";
-//        [change setHidesBottomBarWhenPushed:YES];
-//        [self.navigationController pushViewController:change animated:YES];
-//        changePWViewController *change = [self.storyboard instantiateViewControllerWithIdentifier:@"change"];
-//        
-//        //初始化导航控制器
-//        UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:change];
-//        //动画效果
-//        nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-//        //导航条隐藏掉
-//        nc.navigationBarHidden = YES;
-//        //类似那个箭头 跳转到第二个界面
-//        [self presentViewController:nc animated:YES completion:nil];
+        if (indexPath.row==3) {
         changePWViewController *change = [self.storyboard instantiateViewControllerWithIdentifier:@"change"];
         change.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:change animated:YES];

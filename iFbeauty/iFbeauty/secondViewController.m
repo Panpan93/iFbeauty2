@@ -26,6 +26,7 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
 //      _secondTable.separatorColor = [UIColor colorWithRed: 159/255.0 green:159/255.0 blue:159/255.0 alpha:0.4];//换行线颜色
          _secondTable.separatorColor = [UIColor grayColor];//换行线颜色
+     _secondTable.tableFooterView=[[UIView alloc]init];
 
     
 }

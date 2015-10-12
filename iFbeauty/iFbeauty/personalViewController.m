@@ -21,18 +21,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
     CALayer *layer = [_baocunButton layer];
     layer.cornerRadius = 40;//角的弧度
     layer.borderColor = [[UIColor redColor]CGColor];
     layer.borderWidth = 1;//边框宽度
     layer.masksToBounds = YES;//图片填充边框
-    _objectviewshow=[[NSMutableArray alloc]initWithObjects:@"昵称",@"个性签名",@"性别",@"地址",@"邮箱", nil];
+    _objectviewshow=[[NSMutableArray alloc]initWithObjects:@"昵称:",@"个性签名:",@"性别:",@"地址:",@"邮箱:", nil];
     isedit = NO;
     _savebutton.hidden = YES;
     [self requestData];
     [self creatbutton];
-    _headerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tupian1.jpg"]];
+    _tableView.separatorColor = [UIColor blackColor];//换行线颜色
+
+    
 }
 
 
@@ -192,19 +194,20 @@
         }
         
     }
+    cell.editor.textColor=[UIColor blueColor];
     
     return cell;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 70;
+    return 80;
 }
 
 -(void)creatbutton
 {
     self.tabBarController.tabBar.hidden=YES;
-    self.navigationController.navigationBar.translucent=NO;
+    self.navigationController.navigationBar.translucent=YES;
     _button.titleLabel.text=@"编辑";
     
 }

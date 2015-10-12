@@ -19,13 +19,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background1"]];
 
    [Utilities getUserDefaults:@"passWord"];//提取原密码
     
     _oldpassword.clearButtonMode = UITextFieldViewModeAlways;
     _oldpassword.borderStyle = UITextBorderStyleNone;
-    _oldpassword.layer.borderColor = [[UIColor redColor] CGColor];
+    _oldpassword.layer.borderColor = [[UIColor whiteColor] CGColor];
     _oldpassword.layer.borderWidth = 2.0f;
     _oldpassword.layer.masksToBounds = YES;
     _oldpassword.layer.cornerRadius = 3;
@@ -35,7 +35,7 @@
     
     _newpassword.clearButtonMode = UITextFieldViewModeAlways;
     _newpassword.borderStyle = UITextBorderStyleNone;
-    _newpassword.layer.borderColor = [[UIColor redColor] CGColor];
+    _newpassword.layer.borderColor = [[UIColor whiteColor] CGColor];
     _newpassword.layer.borderWidth = 2.0f;
     _newpassword.layer.masksToBounds = YES;
     _newpassword.layer.cornerRadius = 3;
@@ -44,7 +44,7 @@
     
     _newpassword1.clearButtonMode = UITextFieldViewModeAlways;
     _newpassword1.borderStyle = UITextBorderStyleNone;
-    _newpassword1.layer.borderColor = [[UIColor redColor] CGColor];
+    _newpassword1.layer.borderColor = [[UIColor whiteColor] CGColor];
     _newpassword1.layer.borderWidth = 2.0f;
     _newpassword1.layer.masksToBounds = YES;
     _newpassword1.layer.cornerRadius = 3;

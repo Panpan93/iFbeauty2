@@ -22,7 +22,7 @@
     [self requestData];
     [self uiConfiguration];
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
 
     
     self.navigationItem.title = [NSString stringWithFormat:@"美体"];

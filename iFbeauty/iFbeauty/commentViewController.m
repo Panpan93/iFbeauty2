@@ -19,8 +19,9 @@
     [super viewDidLoad];
     [self requestData];
     [self uiConfiguration];
+     _tableView.tableFooterView=[[UIView alloc]init];
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
     
     _titlelabel.text = _commentItem[@"title"];
     _deLabel.text =[NSString stringWithFormat:@"%@", _commentItem[@"detail"]];

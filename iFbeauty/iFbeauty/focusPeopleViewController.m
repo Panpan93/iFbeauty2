@@ -22,10 +22,9 @@
     //[self quxiaoData];
     //[self focusData];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tupian1.jpg"]];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
 
     
-
     [self readData];
     PFFile *imageview = _chuanru[@"photo"];
     [imageview getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {

@@ -23,7 +23,7 @@
     _sexarray = @[@"关于男士",@"关于女士"];
     self.navigationItem.title = [NSString stringWithFormat:@"发帖"];
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
 
 
     self.picker.delegate=self;//设置代理

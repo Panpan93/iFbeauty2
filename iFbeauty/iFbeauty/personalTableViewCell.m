@@ -11,6 +11,7 @@
 @implementation personalTableViewCell
 
 - (void)awakeFromNib {
+      [self textfile];
     // Initialization code
 }
 
@@ -22,10 +23,10 @@
 
 -(void)textfile
 {
-    _editor.textColor=[UIColor blackColor];
-    _editor.clearButtonMode=UITextFieldViewModeAlways;
-    _editor.clearsOnBeginEditing=YES;
-    _editor.adjustsFontSizeToFitWidth=YES;
+    _editor.textColor=[UIColor brownColor];
+//    _editor.clearButtonMode=UITextFieldViewModeAlways;
+//    _editor.clearsOnBeginEditing=YES;
+//    _editor.adjustsFontSizeToFitWidth=YES;
     _editor.backgroundColor=[UIColor clearColor];
     _editor.borderStyle=UITextBorderStyleNone;
 }
@@ -39,6 +40,9 @@
     } else {
        
         _editor.enabled = NO;
+         _editor.clearButtonMode=UITextFieldViewModeAlways;
+           _editor.clearsOnBeginEditing=YES;
+          _editor.adjustsFontSizeToFitWidth=YES;
     }
 }
 

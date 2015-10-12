@@ -20,8 +20,8 @@
     [super viewDidLoad];
     [self requestData];
     // [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestData) name:@"refreshHome" object:nil];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background3"]];
-    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
+     _tableview.tableFooterView=[[UIView alloc]init];
     
     
 }

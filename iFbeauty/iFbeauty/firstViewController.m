@@ -214,6 +214,8 @@
     [query setSkip:(perPage * (loadCount - 1))];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
         [_aiv stopAnimating];
+        UIRefreshControl *rc = (UIRefreshControl *)[_tableView viewWithTag:8001];
+        [rc endRefreshing];
         if (!error) {
             NSLog(@"objects = %@", objects);
             if (objects.count == 0) {
@@ -409,6 +411,8 @@
     refreshControl.tintColor = [UIColor brownColor];
     //背景色 浅灰色
     refreshControl.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    refreshControl.tag = 8001;
+
     //执行的动作
     [refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
     [_tableView addSubview:refreshControl];
@@ -421,14 +425,11 @@
 {
     [self requestData];
     
-    [_tableView reloadData];
-    //怎么样让方法延迟执行的
-    [self performSelector:@selector(endRefreshing:) withObject:rc afterDelay:1.f];
-}
-//闭合
-- (void)endRefreshing:(UIRefreshControl *)rc {
-    [rc endRefreshing];//闭合
-}
+   }
+////闭合
+//- (void)endRefreshing:(UIRefreshControl *)rc {
+//    [rc endRefreshing];//闭合
+//}
 //-(void)delloc
 //{
 //    [_tableView dealloc];

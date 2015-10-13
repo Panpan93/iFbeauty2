@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self requestData];
+   
     [self uiConfiguration];
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
@@ -28,11 +28,11 @@
     self.navigationItem.title = [NSString stringWithFormat:@"美体"];
     _bodybuildingTV.tableFooterView=[[UIView alloc]init];//不显示多余的分隔符
     
-    [self.meitiSegment addTarget:self action:@selector(segmentAction) forControlEvents:UIControlEventValueChanged];
-    [self.xingbieSegment addTarget:self action:@selector(segmentAction) forControlEvents:UIControlEventValueChanged];
+    [self.meitiSegment addTarget:self action:@selector(requestData) forControlEvents:UIControlEventValueChanged];
+    [self.xingbieSegment addTarget:self action:@selector(requestData) forControlEvents:UIControlEventValueChanged];
     _xingbieSegment.selectedSegmentIndex=-1;
     _meitiSegment.selectedSegmentIndex=-1;
-    
+     [self requestData];
 
 }
 

@@ -370,7 +370,7 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
 
 - (void)updateHUDFrame{
     CGFloat hudWidth = UI_SCREEN_W;
-    CGFloat hudHeight = UI_SCREEN_H + 64;
+    CGFloat hudHeight = UI_SCREEN_H + 100;
     CGFloat stringHeightBuffer = 100.0f;
     CGFloat stringAndContentHeightBuffer = 120.0f;
     CGRect labelRect = CGRectZero;

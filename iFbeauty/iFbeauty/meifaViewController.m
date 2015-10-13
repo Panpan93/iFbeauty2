@@ -19,18 +19,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self requestData];
-    [self uiConfiguration];
+      [self uiConfiguration];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
 
     self.navigationItem.title = [NSString stringWithFormat:@"美发"];
     _meifaTV.tableFooterView=[[UIView alloc]init];//不显示多余的分隔符
     
-    [self.meifaSegment addTarget:self action:@selector(segmentAction) forControlEvents:UIControlEventValueChanged];
-    [self.xingbieSegment addTarget:self action:@selector(segmentAction) forControlEvents:UIControlEventValueChanged];
+    [self.meifaSegment addTarget:self action:@selector(requestData) forControlEvents:UIControlEventValueChanged];
+    [self.xingbieSegment addTarget:self action:@selector(requestData) forControlEvents:UIControlEventValueChanged];
     _xingbieSegment.selectedSegmentIndex=-1;
     _meifaSegment.selectedSegmentIndex=-1;
     
+    [self requestData];
 
 }
 

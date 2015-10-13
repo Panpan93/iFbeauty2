@@ -104,6 +104,7 @@
     //        _usernameLB.text=@"";
     //   _imageIV=[UIImage imageNamed:@"background"];
     if (currentUser != nil) {
+
         _usernameLB.text = currentUser[@"secondname"];
         _account.text=[NSString stringWithFormat:@"账号信息：%@", currentUser[@"username"]];
         
@@ -120,12 +121,22 @@
         _loginbutton.enabled=  NO;
         _loginbutton.title=@"已登录";
         _logoutBU.hidden = NO;
+        _post.hidden = NO;
+        _focus.hidden = NO;
+        _fans.hidden = NO;
+        _account.hidden = NO;
+
     } else {
         _loginbutton.enabled=YES;
         _loginbutton.title=@"登录";
         _logoutBU.hidden = YES;
         _usernameLB.text = @"未登录";
         _imageIV.image = nil;
+        _post.hidden = YES;
+        _focus.hidden = YES;
+        _fans.hidden = YES;
+        _account.hidden = YES;
+
         //        _usernameLB.text=@"";
     }
 }
@@ -397,10 +408,12 @@
 #pragma   退出
 - (IBAction)tuichu:(UIButton *)sender forEvent:(UIEvent *)event {
     
-    [PFUser logOut];//Parse 退出
 //     [self dismissViewControllerAnimated:YES completion:nil];//点击退出返回首页
     
+    [PFUser logOut];//Parse 退出
     [self read];
+
+
 
 }
 

@@ -341,6 +341,20 @@
             
             [_item saveInBackground];
             
+            //评论的数量
+            NSPredicate *predicate4 = [NSPredicate predicateWithFormat:@"commentItem == %@", _item];
+            PFQuery *query4 = [PFQuery queryWithClassName:@"comment" predicate:predicate4];
+            [query4 countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
+                if (!error) {
+                    NSString* s = [NSString stringWithFormat:@"%d", count];
+                    _pinglunLabel.text = s;
+                } else {
+                    NSLog(@"Error: %@ %@", error, [error userInfo]);
+                }
+            }];
+            
+
+            
 
             if ([textField.text isEqualToString:@""]) {
                 [Utilities popUpAlertViewWithMsg:@"请填写全部信息" andTitle:nil];
@@ -527,6 +541,19 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+    
+    //赞的数量
+    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"praiseitem == %@", _item];
+    PFQuery *query3 = [PFQuery queryWithClassName:@"praise" predicate:predicate3];
+    [query3 countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
+        if (!error) {
+            NSString* s = [NSString stringWithFormat:@"%d", count];
+            _zanLabel.text = s;
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
 
 }
 

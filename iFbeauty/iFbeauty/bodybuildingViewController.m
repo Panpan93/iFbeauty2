@@ -118,28 +118,12 @@
     cell.userDate.text = [NSString stringWithFormat:@"%@",strDate];
     
     //赞的数量
-    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"praiseitem == %@", object];
-    PFQuery *query3 = [PFQuery queryWithClassName:@"praise" predicate:predicate3];
-    [query3 countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
-        if (!error) {
-            NSString* s = [NSString stringWithFormat:@"%d", count];
-            cell.zanLabel.text = s;
-        } else {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
-    
+    NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
+    cell.zanLabel.text = [numberFormatter stringFromNumber:object[@"praise"]];
     //评论的数量
-    NSPredicate *predicate4 = [NSPredicate predicateWithFormat:@"commentItem == %@", object];
-    PFQuery *query4 = [PFQuery queryWithClassName:@"comment" predicate:predicate4];
-    [query4 countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
-        if (!error) {
-            NSString* s = [NSString stringWithFormat:@"%d", count];
-            cell.pinglunLabel.text = s;
-        } else {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
+    NSNumberFormatter* numberFormatter2 = [[NSNumberFormatter alloc] init];
+    cell.pinglunLabel.text = [numberFormatter2 stringFromNumber:object[@"comment"]];
+    
 
 
     return cell;

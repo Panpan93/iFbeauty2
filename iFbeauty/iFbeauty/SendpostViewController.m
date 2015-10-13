@@ -64,6 +64,7 @@
     item[@"comment"] = @"";
     item[@"typetei"] = type;
     item[@"sex"] = msg;
+    item[@"praise"]=@0;
     
     //设置照片的上传
     NSData *photoData = UIImagePNGRepresentation(_imageView.image);

@@ -150,6 +150,18 @@
                 [self praiseData];
                 [SVProgressHUD dismiss];
                 [Utilities popUpAlertViewWithMsg:@"点赞成功！" andTitle:nil];
+                //赞的数量
+                NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"praiseitem == %@", _item];
+                PFQuery *query3 = [PFQuery queryWithClassName:@"praise" predicate:predicate3];
+                [query3 countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
+                    if (!error) {
+                        NSString* s = [NSString stringWithFormat:@"%d", count];
+                        _zanLabel.text = s;
+                    } else {
+                        NSLog(@"Error: %@ %@", error, [error userInfo]);
+                    }
+                }];
+
 
             }
             else{
@@ -498,17 +510,6 @@
     }];
     
     
-    //赞的数量
-    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"praiseitem == %@", _item];
-    PFQuery *query3 = [PFQuery queryWithClassName:@"praise" predicate:predicate3];
-    [query3 countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
-        if (!error) {
-            NSString* s = [NSString stringWithFormat:@"%d", count];
-            _zanLabel.text = s;
-        } else {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
     
     //评论的数量
     NSPredicate *predicate4 = [NSPredicate predicateWithFormat:@"commentItem == %@", _item];

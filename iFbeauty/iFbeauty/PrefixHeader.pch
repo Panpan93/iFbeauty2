@@ -14,8 +14,7 @@
 #import <Parse/Parse.h>
 #import "storageMgr.h"
 #import "Utilities.h"
-#import "ECSlidingViewController.h"
-#import "BBLaunchAdMonitor.h"
+
 #import "Constants.h"
 #import <UIKit/UIKit.h>
 #import "SVProgressHUD.h"

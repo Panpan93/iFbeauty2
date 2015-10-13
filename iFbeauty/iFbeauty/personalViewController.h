@@ -26,7 +26,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *savebutton;
 
-@property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *button;
+
 
 @property (strong, nonatomic) NSString *secondname;
 @property (strong, nonatomic) NSString *signature;

@@ -19,6 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    CALayer *layer = [_fatie layer];
+    layer.cornerRadius = 35;//角的弧度
+    layer.borderColor = [[UIColor whiteColor]CGColor];
+    layer.borderWidth = 1;//边框宽度
+    layer.masksToBounds = YES;//图片填充边框
+
     _pickerarray=@[@"关于美容",@"关于美发",@"关于美体",@"关于搭配"];
     _sexarray = @[@"关于男士",@"关于女士"];
     self.navigationItem.title = [NSString stringWithFormat:@"发帖"];

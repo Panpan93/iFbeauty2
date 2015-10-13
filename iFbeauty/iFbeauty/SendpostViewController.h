@@ -19,5 +19,6 @@
 @property(nonatomic,strong)  NSArray *sexarray;
 
 @property (strong, nonatomic) UIImagePickerController *imagePickerController;
+@property (weak, nonatomic) IBOutlet UIButton *fatie;
 
 @end

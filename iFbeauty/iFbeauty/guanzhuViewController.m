@@ -20,6 +20,7 @@
     [super viewDidLoad];
     //[self requestData];
     // [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestData) name:@"refreshHome" object:nil];
+        self.navigationItem.title=@"我的关注";
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
      _focusTable.tableFooterView=[[UIView alloc]init];
 }

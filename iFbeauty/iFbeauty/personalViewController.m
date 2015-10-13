@@ -14,7 +14,8 @@
 
 - (IBAction)logout:(UIButton *)sender forEvent:(UIEvent *)event;
 
-- (IBAction)save:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)bianji:(UIBarButtonItem *)sender;
+
 @end
 
 @implementation personalViewController
@@ -208,7 +209,7 @@
 {
     self.tabBarController.tabBar.hidden=YES;
     self.navigationController.navigationBar.translucent=YES;
-    _button.titleLabel.text=@"编辑";
+    _button.title=@"编辑";
     
 }
 #pragma mark-保存按钮的点击事件
@@ -308,7 +309,8 @@
         }
     }];
     isedit=NO;
-    [_button setTitle:@"编辑" forState:UIControlStateNormal];
+    _button.title=@"编辑";
+    
     _savebutton.hidden = YES;
     
     
@@ -316,27 +318,28 @@
     
 }
 
-- (IBAction)save:(UIButton *)sender forEvent:(UIEvent *)event {
-    
-        if(isedit == NO)
-        {
-    
-            isedit=YES;
-            [_button setTitle:@"取消" forState:UIControlStateNormal];
-            _savebutton.hidden = NO;
-
-            [_tableView reloadData];
-        }
-        else if([_button.titleLabel.text isEqualToString:@"取消"])
-        {
-            isedit=NO;
-            [_button setTitle:@"编辑" forState:UIControlStateNormal];
-            _savebutton.hidden = YES;
-
-            [_tableView reloadData];
-        }
+- (IBAction)bianji:(UIBarButtonItem *)sender {
+    if(isedit == NO)
+    {
         
+        isedit=YES;
+        
+        _button.title=@"取消";
+        _savebutton.hidden = NO;
+        
+        [_tableView reloadData];
+    }
+    else if([_button.title isEqualToString:@"取消"])
+    {
+        isedit=NO;
+        _button.title=@"编辑";
+        _savebutton.hidden = YES;
+        
+        [_tableView reloadData];
+    }
     
 
 }
+
+
 @end

@@ -21,6 +21,8 @@
     [super viewDidLoad];
     //[self quxiaoData];
     //[self focusData];
+//    self.navigationController.navigationBar.titleText=@"我关注的人";
+    self.navigationItem.title=@"我的关注";
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tupian1.jpg"]];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
 
@@ -35,6 +37,15 @@
             });
         }
     }];
+    
+    _zhanghao.textColor=[UIColor  darkGrayColor];
+    _xingbie.textColor=[UIColor  darkGrayColor];
+
+    _qianming.textColor=[UIColor  darkGrayColor];
+
+    _dizhi.textColor=[UIColor  darkGrayColor];
+    _youxiang.textColor=[UIColor  darkGrayColor];
+
     
 
 }

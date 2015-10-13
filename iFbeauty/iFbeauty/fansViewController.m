@@ -20,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self requestData];
+    self.navigationItem.title=@"我的粉丝";
+
     // [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestData) name:@"refreshHome" object:nil];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
      _tableview.tableFooterView=[[UIView alloc]init];

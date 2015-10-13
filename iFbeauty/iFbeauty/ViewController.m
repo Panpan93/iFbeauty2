@@ -78,7 +78,7 @@
     
   //  _passwordTF.layer.borderColor = [[UIColor whiteColor] CGColor];
     CALayer *layer = [_dengluButton layer];
-    layer.cornerRadius = 40;//角的弧度
+    layer.cornerRadius = 35;//角的弧度
     layer.borderColor = [[UIColor whiteColor]CGColor];
     layer.borderWidth = 1;//边框宽度
     layer.masksToBounds = YES;//图片填充边框

@@ -153,8 +153,8 @@
 
 
 - (void)requestData {
+    [SVProgressHUD show];
     
-    _aiv = [Utilities getCoverOnView:self.view];
     [self initializeData];
     
 //    [SVProgressHUD show];
@@ -179,9 +179,6 @@
     loadCount = 1;//页码为1，从第一页开始
     perPage = 5;//每页显示3个数据
     loadingMore = NO;
-    if ((_dapeiSegment.selectedSegmentIndex=-1)&&(_xingbieSegment.selectedSegmentIndex=-1)) {
-        [self urlAction];
-    }
     [self segmentAction];
 }
 -(void)segmentAction
@@ -199,7 +196,7 @@
     switch (hair) {
         case 0:
         {
-            [SVProgressHUD show];
+            
             [query orderByDescending:@"praiseuser"];
         }
             
@@ -207,7 +204,6 @@
             
         case 1:
         {
-            [SVProgressHUD show];
             [query orderByDescending:@"createdAt"];
             
         }
@@ -219,7 +215,6 @@
     switch (xingbie) {
         case 0:
         {
-            [SVProgressHUD show];
             
             [query whereKey:@"sex" equalTo:@"关于男士"];
         }
@@ -228,8 +223,6 @@
             
         case 1:
         {
-            [SVProgressHUD show];
-            
             [query whereKey:@"sex" equalTo:@"关于女士"];
         }
             
@@ -238,8 +231,9 @@
     }
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        [_aiv stopAnimating];
         [SVProgressHUD dismiss];
+        UIRefreshControl *rc = (UIRefreshControl *)[_matchTV viewWithTag:8001];
+        [rc endRefreshing];
         if (!error) {
             NSLog(@"objects = %@", objects);
             if (objects.count == 0) {
@@ -265,43 +259,6 @@
     }];
     
 }
-- (void) urlAction
-{
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"typetei == '关于搭配'"];
-    PFQuery *query = [PFQuery queryWithClassName:@"Item" predicate:predicate];
-    
-    [query includeKey:@"owner"];//关联查询
-
-    [query setLimit:perPage];
-    [query setSkip:(perPage * (loadCount - 1))];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        [_aiv stopAnimating];
-        if (!error) {
-            NSLog(@"objects = %@", objects);
-            if (objects.count == 0) {
-                NSLog(@"NO");
-                loadCount --;
-                [self performSelector:@selector(beforeLoadEnd) withObject:nil afterDelay:0.25];//过0.25秒执行终止操作
-            } else {
-                if (loadCount == 1) {
-                    _objectsForShow = nil;
-                    _objectsForShow = [NSMutableArray new];//上拉翻页，新的数据续在第一页的数据之下。若下拉刷新，清空第一二页的内容，然后重新载入第一页的内容
-                }
-                for (PFObject *obj in objects) {
-                    [_objectsForShow addObject:obj];
-                }
-                NSLog(@"_objectsForShow = %@", _objectsForShow);
-                [_matchTV reloadData];
-                [self loadDataEnd];
-            }
-        } else {
-            [self loadDataEnd];
-            NSLog(@"%@", [error description]);
-        }
-    }];
-}
-
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     if (scrollView.contentSize.height > scrollView.frame.size.height) {
@@ -330,9 +287,6 @@
 
 - (void)loadDataing {
     loadCount ++;
-    if ((_dapeiSegment.selectedSegmentIndex=-1)&&(_xingbieSegment.selectedSegmentIndex=-1)) {
-        [self urlAction];
-    }
     [self segmentAction];
 
 }
@@ -385,6 +339,7 @@
     //背景色 浅灰色
     refreshControl.backgroundColor = [UIColor groupTableViewBackgroundColor];
     //执行的动作
+    refreshControl.tag = 8001;
     [refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
     [_matchTV addSubview:refreshControl];
     
@@ -394,16 +349,10 @@
 }
 - (void)refreshData:(UIRefreshControl *)rc
 {
-    [self requestData];
+
     
-    [_matchTV reloadData];
-    //怎么样让方法延迟执行的
-    [self performSelector:@selector(endRefreshing:) withObject:rc afterDelay:1.f];
-}
-//闭合
-- (void)endRefreshing:(UIRefreshControl *)rc {
-    [rc endRefreshing];//闭合
-}
+    [self initializeData];
+   }
 
 
 @end

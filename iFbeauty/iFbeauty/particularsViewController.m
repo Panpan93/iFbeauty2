@@ -337,6 +337,11 @@
             
             item[@"commentItem"] = _item;
             item[@"commentUser"] = user;
+            [_item incrementKey:@"comment"];
+            
+            [_item saveInBackground];
+            
+
             if ([textField.text isEqualToString:@""]) {
                 [Utilities popUpAlertViewWithMsg:@"请填写全部信息" andTitle:nil];
                 return;//终止该方法，下面的代码不会被执行

@@ -46,6 +46,16 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
 
 
+    
+ //   [self read];
+  }
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];//视图出现之前做的事情
+    [self read];
+    
+    
     //帖子的数量
     PFUser *currentUser = [PFUser currentUser];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"owner == %@", currentUser];// 查询owner字段为当前用户的所有商品
@@ -71,8 +81,8 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
-
-
+    
+    
     //粉丝的数量
     NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"focus == %@", currentUser];// 查询focusecond字段为当前用户的所有
     PFQuery *query3 = [PFQuery queryWithClassName:@"Concern" predicate:predicate3];
@@ -84,15 +94,8 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
-
     
-    [self read];
-  }
 
-- (void) viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];//视图出现之前做的事情
-    [self read];
 }
 
 -(void)read

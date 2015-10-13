@@ -9,6 +9,7 @@
 #import "fansViewController.h"
 #import "fansTableViewCell.h"
 #import "focusPeopleViewController.h"
+#import "fansPeopleViewController.h"
 
 @interface fansViewController ()
 
@@ -95,7 +96,7 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
-    focusPeopleViewController *pvc = [Utilities getStoryboardInstanceByIdentity:@"focusPeople"];
+    fansPeopleViewController *pvc = [Utilities getStoryboardInstanceByIdentity:@"fansPeople"];
     PFObject *par = object[@"focusecond"];
     //    pvc.ownername = par;
     //    pvc.item = object;

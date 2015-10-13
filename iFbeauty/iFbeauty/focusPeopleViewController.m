@@ -129,7 +129,7 @@
 -(void)quxiaoData {
     [_obj deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            [Utilities popUpAlertViewWithMsg:@"S" andTitle:nil];
+            [Utilities popUpAlertViewWithMsg:@"取消关注成功" andTitle:nil];
             [self.navigationController popViewControllerAnimated:YES];
         }
     }];

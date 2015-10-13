@@ -22,7 +22,7 @@
     //[self quxiaoData];
     //[self focusData];
 //    self.navigationController.navigationBar.titleText=@"我关注的人";
-    self.navigationItem.title=@"我的关注";
+    self.navigationItem.title=_chuanru[@"secondname"];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tupian1.jpg"]];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
 

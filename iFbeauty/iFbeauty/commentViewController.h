@@ -12,8 +12,7 @@
 - (IBAction)deleteButtenItem:(UIBarButtonItem *)sender;
 @property (weak, nonatomic) IBOutlet UIView *header;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UILabel *like;
-@property (weak, nonatomic) IBOutlet UILabel *comment;
+
 @property (weak, nonatomic) IBOutlet UILabel *deLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *titlelabel;

@@ -366,10 +366,11 @@
         [focus saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             [SVProgressHUD show];
             if (succeeded){
+                [self focusData];
+
                 [SVProgressHUD dismiss];
                 [Utilities popUpAlertViewWithMsg:@"关注成功！" andTitle:nil];
                 NSLog(@"Object Uploaded!");
-                [self focusData];
             }
             else{
                 NSLog(@"error=%@",error);
@@ -378,10 +379,11 @@
     } else {
         if ([_Concern.titleLabel.text isEqualToString:@"取消关注"])
         {
+            [self quxiaoData];
+
            [SVProgressHUD dismiss];
             [Utilities popUpAlertViewWithMsg:@"取消关注成功！" andTitle:nil];
 
-            [self quxiaoData];
         }
         
     }

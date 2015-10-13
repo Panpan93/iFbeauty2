@@ -22,7 +22,7 @@
     [super viewDidLoad];
     //[self quxiaoData];
     [self focusData];
-    self.navigationItem.title=@"我的粉丝";
+    self.navigationItem.title=_chuanru[@"secondname"];
 
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tupian1.jpg"]];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
@@ -87,17 +87,18 @@
         PFUser *current=[PFUser currentUser];
         PFObject *focus = [PFObject objectWithClassName:@"Concern"];
         //关注的人
-        focus[@"focus"] = _obj[@"username"];
+        focus[@"focus"] = _chuanru;
         //当前登陆的用户
         focus[@"focusecond"] = current;
         
         [focus saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             [SVProgressHUD show];
             if (succeeded){
+                [self focusData];
+
                 [SVProgressHUD dismiss];
                 [Utilities popUpAlertViewWithMsg:@"关注成功！" andTitle:nil];
                 NSLog(@"Object Uploaded!");
-                [self focusData];
             }
             else{
                 NSLog(@"error=%@",error);
@@ -106,10 +107,11 @@
     } else {
         if ([_guanzhu.titleLabel.text isEqualToString:@"取消关注"])
         {
+            [self quxiaoData];
+
             [SVProgressHUD dismiss];
             [Utilities popUpAlertViewWithMsg:@"取消关注成功！" andTitle:nil];
             
-            [self quxiaoData];
         }
         
     }
@@ -118,7 +120,7 @@
 {
     PFUser *current=[PFUser currentUser];
     
-    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@" focus == %@ AND focusecond == %@",_obj[@"username"], current];
+    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@" focus == %@ AND focusecond == %@",_chuanru, current];
     PFQuery *query3 = [PFQuery queryWithClassName:@"Concern" predicate:predicate3];
     NSLog(@" query3  == %@ ",query3);
     
@@ -127,13 +129,15 @@
             if (!number == 0) {
                 PFUser *current=[PFUser currentUser];
                 
-                NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@" focus == %@ AND focusecond == %@",_obj[@"username"], current];
+                NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@" focus == %@ AND focusecond == %@",_chuanru, current];
                 
                 PFQuery *query4 = [PFQuery queryWithClassName:@"Concern" predicate:predicate3];
                 
                 [query4 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                     if (!error) {
                         for (PFObject *quxiao in objects) {
+                            _guanzhu.titleLabel.text=@"我要关注";
+
                             [quxiao deleteInBackground];
                         }
                     }
@@ -160,7 +164,7 @@
 {
     PFUser *current=[PFUser currentUser];
     
-    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@" focus == %@ AND focusecond == %@",_obj[@"username"], current];
+    NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@" focus == %@ AND focusecond == %@",_chuanru, current];
     PFQuery *query3 = [PFQuery queryWithClassName:@"Concern" predicate:predicate3];
     NSLog(@" query3  == %@ ",query3);
     

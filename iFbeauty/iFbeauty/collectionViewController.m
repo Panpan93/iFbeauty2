@@ -20,6 +20,8 @@
     [self collectionData];
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
+    self.navigationItem.title=@"我的收藏";
+
 
 }
 

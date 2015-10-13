@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KiI-A1-N48">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KiI-A1-N48">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -3431,7 +3431,7 @@
             </objects>
             <point key="canvasLocation" x="1212.5" y="3226.5"/>
         </scene>
-        <!--详情-->
+        <!--动态详情-->
         <scene sceneID="cSP-zl-Uee">
             <objects>
                 <viewController storyboardIdentifier="comment" id="5Ya-3w-agm" customClass="commentViewController" sceneMemberID="viewController">
@@ -3456,38 +3456,6 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LID-p1-7go">
-                                            <rect key="frame" x="205" y="26" width="30" height="28"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <state key="normal" title="赞">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Pa-1w-vQP">
-                                            <rect key="frame" x="241" y="33" width="30" height="14"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="328-DJ-muK"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AI3-1t-Ahi">
-                                            <rect key="frame" x="291" y="26" width="30" height="28"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <state key="normal" title="评论">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6l-aa-9ba">
-                                            <rect key="frame" x="329" y="29" width="26" height="22"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="26" id="B9Z-7i-vMU"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLU-jr-Yy8">
                                             <rect key="frame" x="20" y="84" width="335" height="94"/>
                                             <string key="text">百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百百</string>
@@ -3506,32 +3474,15 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="iLU-jr-Yy8" firstAttribute="top" secondItem="j4f-NU-xTC" secondAttribute="bottom" constant="29" id="1Bi-CF-LGX"/>
-                                        <constraint firstItem="j4f-NU-xTC" firstAttribute="top" secondItem="LID-p1-7go" secondAttribute="bottom" id="5B0-Vo-eIt"/>
-                                        <constraint firstItem="AI3-1t-Ahi" firstAttribute="leading" secondItem="4Pa-1w-vQP" secondAttribute="trailing" constant="20" id="7Pp-uK-GbD"/>
-                                        <constraint firstAttribute="trailing" secondItem="n6l-aa-9ba" secondAttribute="trailing" constant="20" id="A9n-2L-ZvK"/>
                                         <constraint firstAttribute="trailing" secondItem="j4f-NU-xTC" secondAttribute="trailing" id="AJb-Fa-Jsx"/>
                                         <constraint firstItem="j4f-NU-xTC" firstAttribute="top" secondItem="x11-Cl-guR" secondAttribute="bottom" constant="23" id="DJE-P9-gio"/>
-                                        <constraint firstItem="4Pa-1w-vQP" firstAttribute="centerY" secondItem="AI3-1t-Ahi" secondAttribute="centerY" id="Nl7-s9-Oa6"/>
-                                        <constraint firstItem="n6l-aa-9ba" firstAttribute="leading" secondItem="AI3-1t-Ahi" secondAttribute="trailing" constant="8" id="OYt-49-HpG"/>
-                                        <constraint firstItem="4Pa-1w-vQP" firstAttribute="centerY" secondItem="n6l-aa-9ba" secondAttribute="centerY" id="OtJ-AA-NXH"/>
                                         <constraint firstAttribute="trailing" secondItem="iLU-jr-Yy8" secondAttribute="trailing" constant="20" id="bgL-vZ-gQt"/>
                                         <constraint firstItem="iLU-jr-Yy8" firstAttribute="leading" secondItem="ppb-vD-i0X" secondAttribute="leading" constant="20" id="czJ-mg-JST"/>
-                                        <constraint firstItem="4Pa-1w-vQP" firstAttribute="centerY" secondItem="LID-p1-7go" secondAttribute="centerY" id="eDD-8D-NtL"/>
                                         <constraint firstAttribute="trailing" secondItem="x11-Cl-guR" secondAttribute="trailing" constant="8" id="gZL-NO-IKd"/>
-                                        <constraint firstItem="j4f-NU-xTC" firstAttribute="top" secondItem="n6l-aa-9ba" secondAttribute="bottom" constant="3" id="jLq-dd-6i3"/>
                                         <constraint firstItem="j4f-NU-xTC" firstAttribute="leading" secondItem="ppb-vD-i0X" secondAttribute="leading" id="m1A-Oe-WZi"/>
                                         <constraint firstItem="x11-Cl-guR" firstAttribute="leading" secondItem="ppb-vD-i0X" secondAttribute="leading" constant="8" id="qfv-W6-Pm9"/>
-                                        <constraint firstItem="4Pa-1w-vQP" firstAttribute="centerY" secondItem="n6l-aa-9ba" secondAttribute="centerY" id="rid-dW-GGI"/>
-                                        <constraint firstItem="4Pa-1w-vQP" firstAttribute="centerY" secondItem="LID-p1-7go" secondAttribute="centerY" id="rqc-0S-tBl"/>
                                         <constraint firstItem="x11-Cl-guR" firstAttribute="top" secondItem="ppb-vD-i0X" secondAttribute="top" constant="10" id="vHN-wt-UnE"/>
-                                        <constraint firstItem="LID-p1-7go" firstAttribute="leading" secondItem="ppb-vD-i0X" secondAttribute="leading" constant="205" id="x5X-AT-HnE"/>
-                                        <constraint firstItem="4Pa-1w-vQP" firstAttribute="leading" secondItem="LID-p1-7go" secondAttribute="trailing" constant="6" id="yfb-LN-wL5"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="A9n-2L-ZvK"/>
-                                        </mask>
-                                    </variation>
                                 </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" verticalCompressionResistancePriority="751" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="commentCell" rowHeight="150" id="890-Ig-28a" customClass="commentTableViewCell">
@@ -3604,7 +3555,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="详情" id="lbQ-2B-Ptc">
+                    <navigationItem key="navigationItem" title="动态详情" id="lbQ-2B-Ptc">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="UPW-Oq-8qh">
                             <connections>
                                 <action selector="deleteButtenItem:" destination="5Ya-3w-agm" id="d5I-aY-MM4"/>
@@ -3613,10 +3564,8 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="comment" destination="n6l-aa-9ba" id="jI0-mv-nmD"/>
                         <outlet property="deLabel" destination="iLU-jr-Yy8" id="7fx-dh-wCj"/>
                         <outlet property="header" destination="ppb-vD-i0X" id="As2-l8-ba8"/>
-                        <outlet property="like" destination="4Pa-1w-vQP" id="SpV-DM-8CL"/>
                         <outlet property="tableView" destination="XgO-zc-bVD" id="cMK-Oa-Pf9"/>
                         <outlet property="titlelabel" destination="x11-Cl-guR" id="65O-Nj-0gm"/>
                     </connections>
@@ -4017,7 +3966,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dz-0v-YQC">
                                 <rect key="frame" x="282" y="40" width="60" height="30"/>
-                                <state key="normal" title="取消关注">
+                                <state key="normal" title="我要关注">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>

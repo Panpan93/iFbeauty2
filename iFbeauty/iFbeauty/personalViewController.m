@@ -24,8 +24,8 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background4"]];
     CALayer *layer = [_baocunButton layer];
-    layer.cornerRadius = 40;//角的弧度
-    layer.borderColor = [[UIColor redColor]CGColor];
+    layer.cornerRadius = 30;//角的弧度
+    layer.borderColor = [[UIColor whiteColor]CGColor];
     layer.borderWidth = 1;//边框宽度
     layer.masksToBounds = YES;//图片填充边框
     _objectviewshow=[[NSMutableArray alloc]initWithObjects:@"昵称:",@"个性签名:",@"性别:",@"地址:",@"邮箱:", nil];
@@ -202,7 +202,7 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
+    return 70;
 }
 
 -(void)creatbutton
